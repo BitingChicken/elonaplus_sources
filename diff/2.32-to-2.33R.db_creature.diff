@@ -1,0 +1,4282 @@
+--- ../2.32-borscht/db_creature.hsp	2026-10-05 12:57:05.875242521 +0100
++++ ../2.33R-borscht/db_creature.hsp	2026-10-05 15:46:08.323489128 +0100
+@@ -2,10 +2,406 @@
+ 	if ( dbmode != DBMODE_FIND ) {
+ 		goto *db_creature2
+ 	}
+ 	dbsum = 0
+ 	dbmax = 0
++	if ( 113 > objlv ) {
++		goto *db_creature_SPIRIT_OF_PANTY
++	}
++	if ( fltselect != 0 ) {
++		goto *db_creature_SPIRIT_OF_PANTY
++	}
++	if ( flttypemajor != (0 /*!!!@[FILTER_NOTHING @@@ FILTER_NOTHING]@!!! */) ) {
++		if ( flttypemajor != (0 /*!!!@[FILTER_NOTHING @@@ FILTER_NOTHING]@!!! */) ) {
++			goto *db_creature_SPIRIT_OF_PANTY
++		}
++	}
++	if ( fltnrace != "" ) {
++		if ( fltnrace != "spirit" ) {
++			goto *db_creature_SPIRIT_OF_PANTY
++		}
++	}
++	if ( filtermax != 0 ) {
++		dbtmp = 1
++		repeat filtermax
++			if ( instr(filter_creature(2), 0, filtern(cnt)) == (-1) ) {
++				dbtmp = 0
++				break
++			}
++		loop
++		if ( dbtmp == 0 ) {
++			goto *db_creature_SPIRIT_OF_PANTY
++		}
++	}
++	dbsum += 5000 / (500 + abs(objlv - 113) * 400) + 1
++	dblist(0, dbmax) = 1162, dbsum
++	dbmax++
++
++*db_creature_SPIRIT_OF_PANTY
++	if ( 98 > objlv ) {
++		goto *db_creature_ULTIMATE_PHOENIX
++	}
++	if ( fltselect != 0 ) {
++		goto *db_creature_ULTIMATE_PHOENIX
++	}
++	if ( flttypemajor != (0 /*!!!@[FILTER_NOTHING @@@ FILTER_NOTHING]@!!! */) ) {
++		if ( flttypemajor != 55 ) {
++			goto *db_creature_ULTIMATE_PHOENIX
++		}
++	}
++	if ( fltnrace != "" ) {
++		if ( fltnrace != "spirit" ) {
++			goto *db_creature_ULTIMATE_PHOENIX
++		}
++	}
++	if ( filtermax != 0 ) {
++		dbtmp = 1
++		repeat filtermax
++			if ( instr(filter_creature(3), 0, filtern(cnt)) == (-1) ) {
++				dbtmp = 0
++				break
++			}
++		loop
++		if ( dbtmp == 0 ) {
++			goto *db_creature_ULTIMATE_PHOENIX
++		}
++	}
++	dbsum += 5000 / (500 + abs(objlv - 98) * 400) + 1
++	dblist(0, dbmax) = 1161, dbsum
++	dbmax++
++
++*db_creature_ULTIMATE_PHOENIX
++	if ( 193 > objlv ) {
++		goto *db_creature_THOUSAND_CRANE
++	}
++	if ( fltselect != 0 ) {
++		goto *db_creature_THOUSAND_CRANE
++	}
++	if ( flttypemajor != (0 /*!!!@[FILTER_NOTHING @@@ FILTER_NOTHING]@!!! */) ) {
++		if ( flttypemajor != (0 /*!!!@[FILTER_NOTHING @@@ FILTER_NOTHING]@!!! */) ) {
++			goto *db_creature_THOUSAND_CRANE
++		}
++	}
++	if ( fltnrace != "" ) {
++		if ( fltnrace != "bird" ) {
++			goto *db_creature_THOUSAND_CRANE
++		}
++	}
++	if ( filtermax != 0 ) {
++		dbtmp = 1
++		repeat filtermax
++			if ( instr(filter_creature(4), 0, filtern(cnt)) == (-1) ) {
++				dbtmp = 0
++				break
++			}
++		loop
++		if ( dbtmp == 0 ) {
++			goto *db_creature_THOUSAND_CRANE
++		}
++	}
++	dbsum += 5000 / (500 + abs(objlv - 193) * 400) + 1
++	dblist(0, dbmax) = 1160, dbsum
++	dbmax++
++
++*db_creature_THOUSAND_CRANE
++	if ( 173 > objlv ) {
++		goto *db_creature_MULTI_PEALOCK
++	}
++	if ( fltselect != 0 ) {
++		goto *db_creature_MULTI_PEALOCK
++	}
++	if ( flttypemajor != (0 /*!!!@[FILTER_NOTHING @@@ FILTER_NOTHING]@!!! */) ) {
++		if ( flttypemajor != (0 /*!!!@[FILTER_NOTHING @@@ FILTER_NOTHING]@!!! */) ) {
++			goto *db_creature_MULTI_PEALOCK
++		}
++	}
++	if ( fltnrace != "" ) {
++		if ( fltnrace != "bird" ) {
++			goto *db_creature_MULTI_PEALOCK
++		}
++	}
++	if ( filtermax != 0 ) {
++		dbtmp = 1
++		repeat filtermax
++			if ( instr(filter_creature(5), 0, filtern(cnt)) == (-1) ) {
++				dbtmp = 0
++				break
++			}
++		loop
++		if ( dbtmp == 0 ) {
++			goto *db_creature_MULTI_PEALOCK
++		}
++	}
++	dbsum += 20000 / (500 + abs(objlv - 173) * 400) + 1
++	dblist(0, dbmax) = 1159, dbsum
++	dbmax++
++
++*db_creature_MULTI_PEALOCK
++	if ( 57 > objlv ) {
++		goto *db_creature_CARRIER_PIGEON
++	}
++	if ( fltselect != 0 ) {
++		goto *db_creature_CARRIER_PIGEON
++	}
++	if ( flttypemajor != (0 /*!!!@[FILTER_NOTHING @@@ FILTER_NOTHING]@!!! */) ) {
++		if ( flttypemajor != (0 /*!!!@[FILTER_NOTHING @@@ FILTER_NOTHING]@!!! */) ) {
++			goto *db_creature_CARRIER_PIGEON
++		}
++	}
++	if ( fltnrace != "" ) {
++		if ( fltnrace != "bird" ) {
++			goto *db_creature_CARRIER_PIGEON
++		}
++	}
++	if ( filtermax != 0 ) {
++		dbtmp = 1
++		repeat filtermax
++			if ( instr(filter_creature(6), 0, filtern(cnt)) == (-1) ) {
++				dbtmp = 0
++				break
++			}
++		loop
++		if ( dbtmp == 0 ) {
++			goto *db_creature_CARRIER_PIGEON
++		}
++	}
++	dbsum += 100000 / (500 + abs(objlv - 57) * 400) + 1
++	dblist(0, dbmax) = 1158, dbsum
++	dbmax++
++
++*db_creature_CARRIER_PIGEON
++	if ( 46 > objlv ) {
++		goto *db_creature_CLASHING_WOODPECKER
++	}
++	if ( fltselect != 1 ) {
++		goto *db_creature_CLASHING_WOODPECKER
++	}
++	if ( flttypemajor != (0 /*!!!@[FILTER_NOTHING @@@ FILTER_NOTHING]@!!! */) ) {
++		if ( flttypemajor != (0 /*!!!@[FILTER_NOTHING @@@ FILTER_NOTHING]@!!! */) ) {
++			goto *db_creature_CLASHING_WOODPECKER
++		}
++	}
++	if ( fltnrace != "" ) {
++		if ( fltnrace != "bird" ) {
++			goto *db_creature_CLASHING_WOODPECKER
++		}
++	}
++	if ( filtermax != 0 ) {
++		dbtmp = 1
++		repeat filtermax
++			if ( instr(filter_creature(7), 0, filtern(cnt)) == (-1) ) {
++				dbtmp = 0
++				break
++			}
++		loop
++		if ( dbtmp == 0 ) {
++			goto *db_creature_CLASHING_WOODPECKER
++		}
++	}
++	dbsum += 40000 / (500 + abs(objlv - 46) * 400) + 1
++	dblist(0, dbmax) = 1157, dbsum
++	dbmax++
++
++*db_creature_CLASHING_WOODPECKER
++	if ( 38 > objlv ) {
++		goto *db_creature_DANCING_SWAN
++	}
++	if ( fltselect != 1 ) {
++		goto *db_creature_DANCING_SWAN
++	}
++	if ( flttypemajor != (0 /*!!!@[FILTER_NOTHING @@@ FILTER_NOTHING]@!!! */) ) {
++		if ( flttypemajor != (0 /*!!!@[FILTER_NOTHING @@@ FILTER_NOTHING]@!!! */) ) {
++			goto *db_creature_DANCING_SWAN
++		}
++	}
++	if ( fltnrace != "" ) {
++		if ( fltnrace != "bird" ) {
++			goto *db_creature_DANCING_SWAN
++		}
++	}
++	if ( filtermax != 0 ) {
++		dbtmp = 1
++		repeat filtermax
++			if ( instr(filter_creature(8), 0, filtern(cnt)) == (-1) ) {
++				dbtmp = 0
++				break
++			}
++		loop
++		if ( dbtmp == 0 ) {
++			goto *db_creature_DANCING_SWAN
++		}
++	}
++	dbsum += 5000 / (500 + abs(objlv - 38) * 400) + 1
++	dblist(0, dbmax) = 1156, dbsum
++	dbmax++
++
++*db_creature_DANCING_SWAN
++	if ( 33 > objlv ) {
++		goto *db_creature_MADUCK
++	}
++	if ( fltselect != 0 ) {
++		goto *db_creature_MADUCK
++	}
++	if ( flttypemajor != (0 /*!!!@[FILTER_NOTHING @@@ FILTER_NOTHING]@!!! */) ) {
++		if ( flttypemajor != (0 /*!!!@[FILTER_NOTHING @@@ FILTER_NOTHING]@!!! */) ) {
++			goto *db_creature_MADUCK
++		}
++	}
++	if ( fltnrace != "" ) {
++		if ( fltnrace != "bird" ) {
++			goto *db_creature_MADUCK
++		}
++	}
++	if ( filtermax != 0 ) {
++		dbtmp = 1
++		repeat filtermax
++			if ( instr(filter_creature(9), 0, filtern(cnt)) == (-1) ) {
++				dbtmp = 0
++				break
++			}
++		loop
++		if ( dbtmp == 0 ) {
++			goto *db_creature_MADUCK
++		}
++	}
++	dbsum += 100000 / (500 + abs(objlv - 33) * 400) + 1
++	dblist(0, dbmax) = 1155, dbsum
++	dbmax++
++
++*db_creature_MADUCK
++	if ( 22 > objlv ) {
++		goto *db_creature_MOHAWK_PARROT
++	}
++	if ( fltselect != 0 ) {
++		goto *db_creature_MOHAWK_PARROT
++	}
++	if ( flttypemajor != (0 /*!!!@[FILTER_NOTHING @@@ FILTER_NOTHING]@!!! */) ) {
++		if ( flttypemajor != (0 /*!!!@[FILTER_NOTHING @@@ FILTER_NOTHING]@!!! */) ) {
++			goto *db_creature_MOHAWK_PARROT
++		}
++	}
++	if ( fltnrace != "" ) {
++		if ( fltnrace != "bird" ) {
++			goto *db_creature_MOHAWK_PARROT
++		}
++	}
++	if ( filtermax != 0 ) {
++		dbtmp = 1
++		repeat filtermax
++			if ( instr(filter_creature(10), 0, filtern(cnt)) == (-1) ) {
++				dbtmp = 0
++				break
++			}
++		loop
++		if ( dbtmp == 0 ) {
++			goto *db_creature_MOHAWK_PARROT
++		}
++	}
++	dbsum += 100000 / (500 + abs(objlv - 22) * 400) + 1
++	dblist(0, dbmax) = 1154, dbsum
++	dbmax++
++
++*db_creature_MOHAWK_PARROT
++	if ( 17 > objlv ) {
++		goto *db_creature_JAVA_SPOORROWRITER
++	}
++	if ( fltselect != 0 ) {
++		goto *db_creature_JAVA_SPOORROWRITER
++	}
++	if ( flttypemajor != (0 /*!!!@[FILTER_NOTHING @@@ FILTER_NOTHING]@!!! */) ) {
++		if ( flttypemajor != (0 /*!!!@[FILTER_NOTHING @@@ FILTER_NOTHING]@!!! */) ) {
++			goto *db_creature_JAVA_SPOORROWRITER
++		}
++	}
++	if ( fltnrace != "" ) {
++		if ( fltnrace != "bird" ) {
++			goto *db_creature_JAVA_SPOORROWRITER
++		}
++	}
++	if ( filtermax != 0 ) {
++		dbtmp = 1
++		repeat filtermax
++			if ( instr(filter_creature(11), 0, filtern(cnt)) == (-1) ) {
++				dbtmp = 0
++				break
++			}
++		loop
++		if ( dbtmp == 0 ) {
++			goto *db_creature_JAVA_SPOORROWRITER
++		}
++	}
++	dbsum += 100000 / (500 + abs(objlv - 17) * 400) + 1
++	dblist(0, dbmax) = 1153, dbsum
++	dbmax++
++
++*db_creature_JAVA_SPOORROWRITER
++	if ( 9 > objlv ) {
++		goto *db_creature_HERAUDSTERON
++	}
++	if ( fltselect != 0 ) {
++		goto *db_creature_HERAUDSTERON
++	}
++	if ( flttypemajor != (0 /*!!!@[FILTER_NOTHING @@@ FILTER_NOTHING]@!!! */) ) {
++		if ( flttypemajor != (0 /*!!!@[FILTER_NOTHING @@@ FILTER_NOTHING]@!!! */) ) {
++			goto *db_creature_HERAUDSTERON
++		}
++	}
++	if ( fltnrace != "" ) {
++		if ( fltnrace != "bird" ) {
++			goto *db_creature_HERAUDSTERON
++		}
++	}
++	if ( filtermax != 0 ) {
++		dbtmp = 1
++		repeat filtermax
++			if ( instr(filter_creature(12), 0, filtern(cnt)) == (-1) ) {
++				dbtmp = 0
++				break
++			}
++		loop
++		if ( dbtmp == 0 ) {
++			goto *db_creature_HERAUDSTERON
++		}
++	}
++	dbsum += 50000 / (500 + abs(objlv - 9) * 400) + 1
++	dblist(0, dbmax) = 1152, dbsum
++	dbmax++
++
++*db_creature_HERAUDSTERON
++	if ( 73 > objlv ) {
++		goto *db_creature_TOWN_CHILD4
++	}
++	if ( fltselect != 3 ) {
++		goto *db_creature_TOWN_CHILD4
++	}
++	if ( flttypemajor != (0 /*!!!@[FILTER_NOTHING @@@ FILTER_NOTHING]@!!! */) ) {
++		if ( flttypemajor != (0 /*!!!@[FILTER_NOTHING @@@ FILTER_NOTHING]@!!! */) ) {
++			goto *db_creature_TOWN_CHILD4
++		}
++	}
++	if ( fltnrace != "" ) {
++		if ( fltnrace != "bird" ) {
++			goto *db_creature_TOWN_CHILD4
++		}
++	}
++	if ( filtermax != 0 ) {
++		dbtmp = 1
++		repeat filtermax
++			if ( instr(filter_creature(13), 0, filtern(cnt)) == (-1) ) {
++				dbtmp = 0
++				break
++			}
++		loop
++		if ( dbtmp == 0 ) {
++			goto *db_creature_TOWN_CHILD4
++		}
++	}
++	dbsum += 20000 / (500 + abs(objlv - 73) * 400) + 1
++	dblist(0, dbmax) = 1151, dbsum
++	dbmax++
++
++*db_creature_TOWN_CHILD4
+ 	if ( 5 > objlv ) {
+ 		goto *db_creature_TOWN_CHILD3
+ 	}
+ 	if ( fltselect != 12 ) {
+ 		goto *db_creature_TOWN_CHILD3
+@@ -38066,10 +38462,998 @@
+ 		dbid = 0
+ 	}
+ 	return
+ 
+ *db_creature2
++	if ( dbid == 1162 ) {
++		if ( dbmode == DBMODE_ON_EAT ) {
++			gosub *eatHard
++			return -1
++		}
++		if ( dbmode == DBMODE_REF_SPEC ) {
++			if ( dbspec == 3 ) {
++				return 2
++			}
++			if ( dbspec == 5 ) {
++				return 0
++			}
++			if ( dbspec == 6 ) {
++				return 5
++			}
++			if ( dbspec == 2 ) {
++				if ( jp ) {
++					return "パンジャンの精霊"
++				}
++				else {
++					return "spirit of panjan"
++				}
++			}
++			if ( dbspec == 8 ) {
++				return "" + "/nefia8/"
++			}
++			return 0
++		}
++		if ( dbmode == DBMODE_REF ) {
++			dbidn = "spirit"
++			dbmode = DBMODE_REF
++			gosub *db_race
++			cpicref = 1228
++			cpicref += 0 * 1000
++			return
++		}
++		if ( dbmode == DBMODE_SET ) {
++			cdata(CDATA_ID, rc) = CREATURE_ID_SPIRIT_OF_PANJAN
++			if ( initlv != 0 ) {
++				cdata(CDATA_LEVEL, rc) = initlv
++			}
++			else {
++				cdata(CDATA_LEVEL, rc) = 113
++			}
++			if ( voidlv != 0 ) {
++				cdata(CDATA_LEVEL, rc) = voidlv * (100 + cdata(CDATA_LEVEL, rc) * 2) / 100
++			}
++			cdata(CDATA_PORTRAIT, rc) = -1
++			cdata(CDATA_AI_CALM, rc) = 2
++			cdata(CDATA_AI_MOVE_FREQ, rc) = 80
++			cdata(CDATA_AI_DISTANCE, rc) = 1
++			cdata(CDATA_AI_SUB, rc) = 0
++			creaturepack = FILTER_NOTHING
++			cdata(STARTING_CDATA_ACT_MAIN, rc) = ACTION_RANDOM_MOVE, ACTION_MELEE, ACTION_MELEE, ACTION_MELEE
++			cdata(CDATA_ACT_INDEX, rc) = 4
++			cdata(CDATA_ACT_HEAL, rc) = 644
++			if ( jp ) {
++				cdatan(CDATAN_NAME, rc) = "パンジャンの精霊"
++			}
++			else {
++				cdatan(CDATAN_NAME, rc) = "spirit of panjan"
++			}
++			cdata(CDATA_RELATION, rc) = RELATION_ENEMY
++			cdata(CDATA_RELATION_ORG, rc) = RELATION_ENEMY
++			cdata(CDATA_ALIGNMENT, rc) = -10000
++			dbidn = "spirit"
++			dbmode = DBMODE_SET
++			gosub *db_race
++			dbidn = "predator"
++			dbmode = DBMODE_SET
++			gosub *db_class
++			cdata(CDATA_PIC, rc) = xy2pic(7, 37)
++			cdata(CDATA_PIC, rc) += 0 * 1000
++			cspecialeq = 0
++			return
++		}
++		return 0
++	}
++	if ( dbid == 1161 ) {
++		if ( dbmode == DBMODE_REF_SPEC ) {
++			if ( dbspec == 3 ) {
++				return 2
++			}
++			if ( dbspec == 5 ) {
++				return 0
++			}
++			if ( dbspec == 6 ) {
++				return 5
++			}
++			if ( dbspec == 2 ) {
++				if ( jp ) {
++					return "パンティーの精霊"
++				}
++				else {
++					return "spirit of panty"
++				}
++			}
++			if ( dbspec == 8 ) {
++				return "" + "/nefia8/"
++			}
++			return 0
++		}
++		if ( dbmode == DBMODE_REF ) {
++			dbidn = "spirit"
++			dbmode = DBMODE_REF
++			gosub *db_race
++			cpicref = 1229
++			cpicref += 0 * 1000
++			return
++		}
++		if ( dbmode == DBMODE_SET ) {
++			cdata(CDATA_ID, rc) = CREATURE_ID_SPIRIT_OF_PANTY
++			if ( initlv != 0 ) {
++				cdata(CDATA_LEVEL, rc) = initlv
++			}
++			else {
++				cdata(CDATA_LEVEL, rc) = 98
++			}
++			if ( voidlv != 0 ) {
++				cdata(CDATA_LEVEL, rc) = voidlv * (100 + cdata(CDATA_LEVEL, rc) * 2) / 100
++			}
++			cdata(CDATA_PORTRAIT, rc) = -1
++			cdata(CDATA_AI_CALM, rc) = 1
++			cdata(CDATA_AI_MOVE_FREQ, rc) = 20
++			cdata(CDATA_AI_DISTANCE, rc) = 4
++			cdata(CDATA_AI_SUB, rc) = 8
++			creaturepack = 55
++			cdata(STARTING_CDATA_ACT_MAIN, rc) = SKILL_SPELL_CHAOS_EYE
++			cdata(STARTING_CDATA_ACT_SUB, rc) = SKILL_SPELL_FEATHER
++			cdata(CDATA_ACT_INDEX, rc) = 11
++			if ( jp ) {
++				cdatan(CDATAN_NAME, rc) = "パンティーの精霊"
++			}
++			else {
++				cdatan(CDATAN_NAME, rc) = "spirit of panty"
++			}
++			cdata(CDATA_RELATION, rc) = RELATION_ENEMY
++			cdata(CDATA_RELATION_ORG, rc) = RELATION_ENEMY
++			cdata(CDATA_ALIGNMENT, rc) = -10000
++			dbidn = "spirit"
++			dbmode = DBMODE_SET
++			gosub *db_race
++			dbidn = "wizard"
++			dbmode = DBMODE_SET
++			gosub *db_class
++			cdata(CDATA_SEX, rc) = 1
++			cdata(CDATA_PIC, rc) = xy2pic(8, 37)
++			cdata(CDATA_PIC, rc) += 0 * 1000
++			cspecialeq = 0
++			return
++		}
++		return 0
++	}
++	if ( dbid == 1160 ) {
++		if ( dbmode == DBMODE_REF_SPEC ) {
++			if ( dbspec == 3 ) {
++				return 5
++			}
++			if ( dbspec == 5 ) {
++				return 0
++			}
++			if ( dbspec == 6 ) {
++				return 5
++			}
++			if ( dbspec == 2 ) {
++				if ( jp ) {
++					return "アルティメットフェニックス"
++				}
++				else {
++					return "ultimate phoenix"
++				}
++			}
++			if ( dbspec == 8 ) {
++				return "" + "/nefia2/"
++			}
++			return 0
++		}
++		if ( dbmode == DBMODE_REF ) {
++			dbidn = "bird"
++			dbmode = DBMODE_REF
++			gosub *db_race
++			cpicref = 1221
++			cpicref += 0 * 1000
++			return
++		}
++		if ( dbmode == DBMODE_SET ) {
++			cdata(CDATA_ID, rc) = CREATURE_ID_ULTIMATE_PHOENIX
++			if ( initlv != 0 ) {
++				cdata(CDATA_LEVEL, rc) = initlv
++			}
++			else {
++				cdata(CDATA_LEVEL, rc) = 193
++			}
++			if ( voidlv != 0 ) {
++				cdata(CDATA_LEVEL, rc) = voidlv * (100 + cdata(CDATA_LEVEL, rc) * 2) / 100
++			}
++			cdata(CDATA_PORTRAIT, rc) = -1
++			cdata(CDATA_AI_CALM, rc) = 1
++			cdata(CDATA_AI_MOVE_FREQ, rc) = 30
++			cdata(CDATA_AI_DISTANCE, rc) = 1
++			cdata(CDATA_AI_SUB, rc) = 0
++			creaturepack = FILTER_NOTHING
++			cdata(STARTING_CDATA_ACT_MAIN, rc) = ACTION_MELEE, ACTION_RANGE, ACTION_RANGE, ACTION_RANGE
++			cdata(CDATA_ACT_INDEX, rc) = 4
++			cdata(CDATA_ACT_HEAL, rc) = 677
++			if ( jp ) {
++				cdatan(CDATAN_NAME, rc) = "アルティメットフェニックス"
++			}
++			else {
++				cdatan(CDATAN_NAME, rc) = "ultimate phoenix"
++			}
++			cdata(CDATA_RELATION, rc) = RELATION_ENEMY
++			cdata(CDATA_RELATION_ORG, rc) = RELATION_ENEMY
++			cdata(CDATA_ALIGNMENT, rc) = -10000
++			dbidn = "bird"
++			dbmode = DBMODE_SET
++			gosub *db_race
++			dbidn = "predator"
++			dbmode = DBMODE_SET
++			gosub *db_class
++			cdata(CDATA_SEX, rc) = 0
++			cdata(CDATA_PIC, rc) = xy2pic(0, 37)
++			cdata(CDATA_PIC, rc) += 0 * 1000
++			cspecialeq = 1
++			return
++		}
++		if ( dbmode == DBMODE_INITIAL_EQUIP ) {
++			eqrange = 939, 5
++			return
++		}
++		return 0
++	}
++	if ( dbid == 1159 ) {
++		if ( dbmode == DBMODE_REF_SPEC ) {
++			if ( dbspec == 3 ) {
++				return 1
++			}
++			if ( dbspec == 5 ) {
++				return 0
++			}
++			if ( dbspec == 6 ) {
++				return 20
++			}
++			if ( dbspec == 2 ) {
++				if ( jp ) {
++					return "千刃鶴"
++				}
++				else {
++					return "thousand crane"
++				}
++			}
++			if ( dbspec == 8 ) {
++				return "" + "/nefia2/"
++			}
++			return 0
++		}
++		if ( dbmode == DBMODE_REF ) {
++			dbidn = "bird"
++			dbmode = DBMODE_REF
++			gosub *db_race
++			cpicref = 1258
++			cpicref += 0 * 1000
++			return
++		}
++		if ( dbmode == DBMODE_SET ) {
++			cdata(CDATA_ID, rc) = CREATURE_ID_THOUSAND_CRANE
++			if ( initlv != 0 ) {
++				cdata(CDATA_LEVEL, rc) = initlv
++			}
++			else {
++				cdata(CDATA_LEVEL, rc) = 173
++			}
++			if ( voidlv != 0 ) {
++				cdata(CDATA_LEVEL, rc) = voidlv * (100 + cdata(CDATA_LEVEL, rc) * 2) / 100
++			}
++			cdata(CDATA_PORTRAIT, rc) = -1
++			cdata(CDATA_AI_CALM, rc) = 1
++			cdata(CDATA_AI_MOVE_FREQ, rc) = 30
++			cdata(CDATA_AI_DISTANCE, rc) = 3
++			cdata(CDATA_AI_SUB, rc) = 0
++			creaturepack = FILTER_NOTHING
++			cdata(STARTING_CDATA_ACT_MAIN, rc) = SKILL_SPACT_JUMPING_DROP, SKILL_SPACT_DISTANT_ATTACK, SKILL_SPACT_DISTANT_ATTACK
++			cdata(CDATA_ACT_INDEX, rc) = 3
++			if ( jp ) {
++				cdatan(CDATAN_NAME, rc) = "千刃鶴"
++			}
++			else {
++				cdatan(CDATAN_NAME, rc) = "thousand crane"
++			}
++			cdata(CDATA_RELATION, rc) = RELATION_ENEMY
++			cdata(CDATA_RELATION_ORG, rc) = RELATION_ENEMY
++			cdata(CDATA_ALIGNMENT, rc) = -10000
++			dbidn = "bird"
++			dbmode = DBMODE_SET
++			gosub *db_race
++			dbidn = "warrior"
++			dbmode = DBMODE_SET
++			gosub *db_class
++			cdata(CDATA_PIC, rc) = xy2pic(4, 38)
++			cdata(CDATA_PIC, rc) += 0 * 1000
++			cspecialeq = 0
++			return
++		}
++		return 0
++	}
++	if ( dbid == 1158 ) {
++		if ( dbmode == DBMODE_REF_SPEC ) {
++			if ( dbspec == 3 ) {
++				return 1
++			}
++			if ( dbspec == 5 ) {
++				return 0
++			}
++			if ( dbspec == 6 ) {
++				return 100
++			}
++			if ( dbspec == 2 ) {
++				if ( jp ) {
++					return "マルチロックジャク"
++				}
++				else {
++					return "multi pealock"
++				}
++			}
++			if ( dbspec == 8 ) {
++				return "" + "/nefia2/"
++			}
++			return 0
++		}
++		if ( dbmode == DBMODE_REF ) {
++			dbidn = "bird"
++			dbmode = DBMODE_REF
++			gosub *db_race
++			cpicref = 1255
++			cpicref += 0 * 1000
++			return
++		}
++		if ( dbmode == DBMODE_SET ) {
++			cdata(CDATA_ID, rc) = CREATURE_ID_MULTI_PEALOCK
++			if ( initlv != 0 ) {
++				cdata(CDATA_LEVEL, rc) = initlv
++			}
++			else {
++				cdata(CDATA_LEVEL, rc) = 57
++			}
++			if ( voidlv != 0 ) {
++				cdata(CDATA_LEVEL, rc) = voidlv * (100 + cdata(CDATA_LEVEL, rc) * 2) / 100
++			}
++			cdata(CDATA_PORTRAIT, rc) = -1
++			cdata(CDATA_AI_CALM, rc) = 1
++			cdata(CDATA_AI_MOVE_FREQ, rc) = 10
++			cdata(CDATA_AI_DISTANCE, rc) = 5
++			cdata(CDATA_AI_SUB, rc) = 10
++			creaturepack = FILTER_NOTHING
++			cdata(STARTING_CDATA_ACT_MAIN, rc) = ACTION_RANGE, ACTION_RANGE, SKILL_SPACT_HOMING_LASER
++			cdata(STARTING_CDATA_ACT_SUB, rc) = SKILL_SPACT_GUIDED_BOMBING
++			cdata(CDATA_ACT_INDEX, rc) = 13
++			if ( jp ) {
++				cdatan(CDATAN_NAME, rc) = "マルチロックジャク"
++			}
++			else {
++				cdatan(CDATAN_NAME, rc) = "multi pealock"
++			}
++			cdata(CDATA_RELATION, rc) = RELATION_ENEMY
++			cdata(CDATA_RELATION_ORG, rc) = RELATION_ENEMY
++			cdata(CDATA_ALIGNMENT, rc) = -10000
++			dbidn = "bird"
++			dbmode = DBMODE_SET
++			gosub *db_race
++			dbidn = "gunner"
++			dbmode = DBMODE_SET
++			gosub *db_class
++			cdata(CDATA_PIC, rc) = xy2pic(1, 38)
++			cdata(CDATA_PIC, rc) += 0 * 1000
++			cspecialeq = 0
++			return
++		}
++		return 0
++	}
++	if ( dbid == 1157 ) {
++		if ( dbmode == DBMODE_REF_SPEC ) {
++			if ( dbspec == 3 ) {
++				return 1
++			}
++			if ( dbspec == 5 ) {
++				return 0
++			}
++			if ( dbspec == 6 ) {
++				return 40
++			}
++			if ( dbspec == 2 ) {
++				if ( jp ) {
++					return "伝書鳩"
++				}
++				else {
++					return "carrier pigeon"
++				}
++			}
++			if ( dbspec == 8 ) {
++				return "" + ""
++			}
++			return 0
++		}
++		if ( dbmode == DBMODE_REF ) {
++			dbidn = "bird"
++			dbmode = DBMODE_REF
++			gosub *db_race
++			cpicref = 1256
++			cpicref += 0 * 1000
++			return
++		}
++		if ( dbmode == DBMODE_SET ) {
++			cdata(CDATA_ID, rc) = CREATURE_ID_CARRIER_PIGEON
++			if ( initlv != 0 ) {
++				cdata(CDATA_LEVEL, rc) = initlv
++			}
++			else {
++				cdata(CDATA_LEVEL, rc) = 46
++			}
++			if ( voidlv != 0 ) {
++				cdata(CDATA_LEVEL, rc) = voidlv * (100 + cdata(CDATA_LEVEL, rc) * 2) / 100
++			}
++			cdata(CDATA_PORTRAIT, rc) = -1
++			cdata(CDATA_AI_CALM, rc) = 1
++			cdata(CDATA_AI_MOVE_FREQ, rc) = 90
++			cdata(CDATA_AI_DISTANCE, rc) = 5
++			cdata(CDATA_AI_SUB, rc) = 0
++			creaturepack = FILTER_NOTHING
++			cdata(STARTING_CDATA_ACT_MAIN, rc) = ACTION_MELEE
++			cdata(CDATA_ACT_INDEX, rc) = 1
++			if ( jp ) {
++				cdatan(CDATAN_NAME, rc) = "伝書鳩"
++			}
++			else {
++				cdatan(CDATAN_NAME, rc) = "carrier pigeon"
++			}
++			cdata(CDATA_RELATION, rc) = RELATION_NEUTRAL
++			cdata(CDATA_RELATION_ORG, rc) = RELATION_NEUTRAL
++			cdata(CDATA_ALIGNMENT, rc) = -10000
++			dbidn = "bird"
++			dbmode = DBMODE_SET
++			gosub *db_race
++			dbidn = "tourist"
++			dbmode = DBMODE_SET
++			gosub *db_class
++			cdata(CDATA_PIC, rc) = xy2pic(2, 38)
++			cdata(CDATA_PIC, rc) += 0 * 1000
++			cspecialeq = 0
++			return
++		}
++		return 0
++	}
++	if ( dbid == 1156 ) {
++		if ( dbmode == DBMODE_REF_SPEC ) {
++			if ( dbspec == 3 ) {
++				return 1
++			}
++			if ( dbspec == 5 ) {
++				return 0
++			}
++			if ( dbspec == 6 ) {
++				return 5
++			}
++			if ( dbspec == 2 ) {
++				if ( jp ) {
++					return "激突キツツキ"
++				}
++				else {
++					return "clashing woodpecker"
++				}
++			}
++			if ( dbspec == 8 ) {
++				return "" + ""
++			}
++			return 0
++		}
++		if ( dbmode == DBMODE_REF ) {
++			dbidn = "bird"
++			dbmode = DBMODE_REF
++			gosub *db_race
++			cpicref = 1257
++			cpicref += 0 * 1000
++			return
++		}
++		if ( dbmode == DBMODE_SET ) {
++			cdata(CDATA_ID, rc) = CREATURE_ID_CLASHING_WOODPECKER
++			if ( initlv != 0 ) {
++				cdata(CDATA_LEVEL, rc) = initlv
++			}
++			else {
++				cdata(CDATA_LEVEL, rc) = 38
++			}
++			if ( voidlv != 0 ) {
++				cdata(CDATA_LEVEL, rc) = voidlv * (100 + cdata(CDATA_LEVEL, rc) * 2) / 100
++			}
++			cdata(CDATA_PORTRAIT, rc) = -1
++			cdata(CDATA_AI_CALM, rc) = 1
++			cdata(CDATA_AI_MOVE_FREQ, rc) = 50
++			cdata(CDATA_AI_DISTANCE, rc) = 1
++			cdata(CDATA_AI_SUB, rc) = 0
++			creaturepack = FILTER_NOTHING
++			cdata(STARTING_CDATA_ACT_MAIN, rc) = SKILL_SPACT_CLASH_RUSH
++			cdata(CDATA_ACT_INDEX, rc) = 1
++			cdata(CDATA_ACT_HEAL, rc) = 744
++			if ( jp ) {
++				cdatan(CDATAN_NAME, rc) = "激突キツツキ"
++			}
++			else {
++				cdatan(CDATAN_NAME, rc) = "clashing woodpecker"
++			}
++			cdata(CDATA_RELATION, rc) = RELATION_ENEMY
++			cdata(CDATA_RELATION_ORG, rc) = RELATION_ENEMY
++			cdata(CDATA_ALIGNMENT, rc) = -10000
++			dbidn = "bird"
++			dbmode = DBMODE_SET
++			gosub *db_race
++			dbidn = "predator"
++			dbmode = DBMODE_SET
++			gosub *db_class
++			cdata(CDATA_PIC, rc) = xy2pic(3, 38)
++			cdata(CDATA_PIC, rc) += 0 * 1000
++			cspecialeq = 0
++			return
++		}
++		return 0
++	}
++	if ( dbid == 1155 ) {
++		if ( dbmode == DBMODE_REF_SPEC ) {
++			if ( dbspec == 3 ) {
++				return 3
++			}
++			if ( dbspec == 5 ) {
++				return 0
++			}
++			if ( dbspec == 6 ) {
++				return 100
++			}
++			if ( dbspec == 2 ) {
++				if ( jp ) {
++					return "ダンスワン"
++				}
++				else {
++					return "dancing swan"
++				}
++			}
++			if ( dbspec == 8 ) {
++				return "" + "/nefia2/"
++			}
++			return 0
++		}
++		if ( dbmode == DBMODE_REF ) {
++			dbidn = "bird"
++			dbmode = DBMODE_REF
++			gosub *db_race
++			cpicref = 1226
++			cpicref += 0 * 1000
++			return
++		}
++		if ( dbmode == DBMODE_SET ) {
++			cdata(CDATA_ID, rc) = CREATURE_ID_DANCING_SWAN
++			if ( initlv != 0 ) {
++				cdata(CDATA_LEVEL, rc) = initlv
++			}
++			else {
++				cdata(CDATA_LEVEL, rc) = 33
++			}
++			if ( voidlv != 0 ) {
++				cdata(CDATA_LEVEL, rc) = voidlv * (100 + cdata(CDATA_LEVEL, rc) * 2) / 100
++			}
++			cdata(CDATA_PORTRAIT, rc) = -1
++			cdata(CDATA_AI_CALM, rc) = 1
++			cdata(CDATA_AI_MOVE_FREQ, rc) = 30
++			cdata(CDATA_AI_DISTANCE, rc) = 3
++			cdata(CDATA_AI_SUB, rc) = 10
++			creaturepack = FILTER_NOTHING
++			cdata(STARTING_CDATA_ACT_MAIN, rc) = SKILL_SPELL_MAGIC_DART, SKILL_SPELL_MAGIC_DART, SKILL_SPELL_MAGIC_DART, SKILL_SPELL_MAGIC_DART, SKILL_SPACT_FASCINATION_DANCE
++			cdata(STARTING_CDATA_ACT_SUB, rc) = SKILL_SPACT_KILLING_DANCE
++			cdata(CDATA_ACT_INDEX, rc) = 15
++			if ( jp ) {
++				cdatan(CDATAN_NAME, rc) = "ダンスワン"
++			}
++			else {
++				cdatan(CDATAN_NAME, rc) = "dancing swan"
++			}
++			cdata(CDATA_RELATION, rc) = RELATION_ENEMY
++			cdata(CDATA_RELATION_ORG, rc) = RELATION_ENEMY
++			cdata(CDATA_ALIGNMENT, rc) = -10000
++			dbidn = "bird"
++			dbmode = DBMODE_SET
++			gosub *db_race
++			dbidn = "warmage"
++			dbmode = DBMODE_SET
++			gosub *db_class
++			cdata(CDATA_PIC, rc) = xy2pic(5, 37)
++			cdata(CDATA_PIC, rc) += 0 * 1000
++			cspecialeq = 0
++			return
++		}
++		return 0
++	}
++	if ( dbid == 1154 ) {
++		if ( dbmode == DBMODE_FLAVOR_PASSIVE ) {
++			if ( jp ) {
++				txtmore
++				txtef COLOR_SKY_BLUE
++				txt "「ぐわぐわ」"
++				return 1
++			}
++		}
++		if ( dbmode == DBMODE_FLAVOR_ANGERED ) {
++			if ( jp ) {
++				txtmore
++				txtef COLOR_SKY_BLUE
++				txt "「ぐぐわッ！」"
++				return 1
++			}
++		}
++		if ( dbmode == DBMODE_FLAVOR_DEATH ) {
++			if ( jp ) {
++				txtmore
++				txtef COLOR_SKY_BLUE
++				txt "地面に白い羽が散らばった。"
++				return 1
++			}
++		}
++		if ( dbmode == DBMODE_FLAVOR_KILL ) {
++			if ( jp ) {
++				txtmore
++				txtef COLOR_SKY_BLUE
++				txt "「ぐわッぐッぐぐ！」"
++				return 1
++			}
++		}
++		if ( dbmode == DBMODE_REF_SPEC ) {
++			if ( dbspec == 3 ) {
++				return 1
++			}
++			if ( dbspec == 5 ) {
++				return 0
++			}
++			if ( dbspec == 6 ) {
++				return 100
++			}
++			if ( dbspec == 2 ) {
++				if ( jp ) {
++					return "魔ヒル"
++				}
++				else {
++					return "maduck"
++				}
++			}
++			if ( dbspec == 8 ) {
++				return "" + "/nefia2/"
++			}
++			return 0
++		}
++		if ( dbmode == DBMODE_REF ) {
++			dbidn = "bird"
++			dbmode = DBMODE_REF
++			gosub *db_race
++			cpicref = 1225
++			cpicref += 0 * 1000
++			return
++		}
++		if ( dbmode == DBMODE_SET ) {
++			cdata(CDATA_ID, rc) = CREATURE_ID_MADUCK
++			if ( initlv != 0 ) {
++				cdata(CDATA_LEVEL, rc) = initlv
++			}
++			else {
++				cdata(CDATA_LEVEL, rc) = 22
++			}
++			if ( voidlv != 0 ) {
++				cdata(CDATA_LEVEL, rc) = voidlv * (100 + cdata(CDATA_LEVEL, rc) * 2) / 100
++			}
++			cdata(CDATA_PORTRAIT, rc) = -1
++			cdata(CDATA_AI_CALM, rc) = 1
++			cdata(CDATA_AI_MOVE_FREQ, rc) = 80
++			cdata(CDATA_AI_DISTANCE, rc) = 4
++			cdata(CDATA_AI_SUB, rc) = 8
++			creaturepack = FILTER_NOTHING
++			cdata(STARTING_CDATA_ACT_MAIN, rc) = SKILL_SPELL_HYDRO_FANG
++			cdata(STARTING_CDATA_ACT_SUB, rc) = SKILL_SPELL_SPEED
++			cdata(CDATA_ACT_INDEX, rc) = 11
++			cdata(CDATA_TXT, rc) += 1
++			cdata(CDATA_TXT, rc) += 1
++			cdata(CDATA_TXT, rc) += 1
++			cdata(CDATA_TXT, rc) += 1
++			if ( jp ) {
++				cdatan(CDATAN_NAME, rc) = "魔ヒル"
++			}
++			else {
++				cdatan(CDATAN_NAME, rc) = "maduck"
++			}
++			cdata(CDATA_RELATION, rc) = RELATION_ENEMY
++			cdata(CDATA_RELATION_ORG, rc) = RELATION_ENEMY
++			cdata(CDATA_ALIGNMENT, rc) = -10000
++			dbidn = "bird"
++			dbmode = DBMODE_SET
++			gosub *db_race
++			dbidn = "wizard"
++			dbmode = DBMODE_SET
++			gosub *db_class
++			cdata(CDATA_PIC, rc) = xy2pic(4, 37)
++			cdata(CDATA_PIC, rc) += 0 * 1000
++			cspecialeq = 0
++			return
++		}
++		return 0
++	}
++	if ( dbid == 1153 ) {
++		if ( dbmode == DBMODE_FLAVOR_PASSIVE ) {
++			if ( jp ) {
++				txtmore
++				txtef COLOR_SKY_BLUE
++				txt "「ヒャッハー！」"
++				return 1
++			}
++		}
++		if ( dbmode == DBMODE_FLAVOR_ANGERED ) {
++			if ( jp ) {
++				txtmore
++				txtef COLOR_SKY_BLUE
++				txt "「汚物ハ消毒ダ～！！」"
++				return 1
++			}
++		}
++		if ( dbmode == DBMODE_FLAVOR_DEATH ) {
++			if ( jp ) {
++				txtmore
++				txtef COLOR_SKY_BLUE
++				txt "「アギエエエー！」"
++				return 1
++			}
++		}
++		if ( dbmode == DBMODE_REF_SPEC ) {
++			if ( dbspec == 3 ) {
++				return 1
++			}
++			if ( dbspec == 5 ) {
++				return 0
++			}
++			if ( dbspec == 6 ) {
++				return 100
++			}
++			if ( dbspec == 2 ) {
++				if ( jp ) {
++					return "モヒカンオウム"
++				}
++				else {
++					return "mohawk parrot"
++				}
++			}
++			if ( dbspec == 8 ) {
++				return "" + "/nefia2/"
++			}
++			return 0
++		}
++		if ( dbmode == DBMODE_REF ) {
++			dbidn = "bird"
++			dbmode = DBMODE_REF
++			gosub *db_race
++			cpicref = 1224
++			cpicref += 0 * 1000
++			return
++		}
++		if ( dbmode == DBMODE_SET ) {
++			cdata(CDATA_ID, rc) = CREATURE_ID_MOHAWK_PARROT
++			if ( initlv != 0 ) {
++				cdata(CDATA_LEVEL, rc) = initlv
++			}
++			else {
++				cdata(CDATA_LEVEL, rc) = 17
++			}
++			if ( voidlv != 0 ) {
++				cdata(CDATA_LEVEL, rc) = voidlv * (100 + cdata(CDATA_LEVEL, rc) * 2) / 100
++			}
++			cdata(CDATA_PORTRAIT, rc) = -1
++			cdata(CDATA_AI_CALM, rc) = 1
++			cdata(CDATA_AI_MOVE_FREQ, rc) = 70
++			cdata(CDATA_AI_DISTANCE, rc) = 1
++			cdata(CDATA_AI_SUB, rc) = 20
++			creaturepack = FILTER_NOTHING
++			cdata(STARTING_CDATA_ACT_MAIN, rc) = ACTION_MELEE
++			cdata(STARTING_CDATA_ACT_SUB, rc) = SKILL_SPACT_FIRE_BREATH
++			cdata(CDATA_ACT_INDEX, rc) = 11
++			cdata(CDATA_TXT, rc) += 1
++			cdata(CDATA_TXT, rc) += 1
++			cdata(CDATA_TXT, rc) += 1
++			if ( jp ) {
++				cdatan(CDATAN_NAME, rc) = "モヒカンオウム"
++			}
++			else {
++				cdatan(CDATAN_NAME, rc) = "mohawk parrot"
++			}
++			cdata(CDATA_RELATION, rc) = RELATION_ENEMY
++			cdata(CDATA_RELATION_ORG, rc) = RELATION_ENEMY
++			cdata(CDATA_ALIGNMENT, rc) = -10000
++			dbidn = "bird"
++			dbmode = DBMODE_SET
++			gosub *db_race
++			dbidn = "warrior"
++			dbmode = DBMODE_SET
++			gosub *db_class
++			cdata(CDATA_PIC, rc) = xy2pic(3, 37)
++			cdata(CDATA_PIC, rc) += 0 * 1000
++			cspecialeq = 0
++			return
++		}
++		return 0
++	}
++	if ( dbid == 1152 ) {
++		if ( dbmode == DBMODE_REF_SPEC ) {
++			if ( dbspec == 3 ) {
++				return 1
++			}
++			if ( dbspec == 5 ) {
++				return 0
++			}
++			if ( dbspec == 6 ) {
++				return 50
++			}
++			if ( dbspec == 2 ) {
++				if ( jp ) {
++					return "駄文鳥"
++				}
++				else {
++					return "java spoorrowriter"
++				}
++			}
++			if ( dbspec == 8 ) {
++				return "" + "/nefia2/"
++			}
++			return 0
++		}
++		if ( dbmode == DBMODE_REF ) {
++			dbidn = "bird"
++			dbmode = DBMODE_REF
++			gosub *db_race
++			cpicref = 1223
++			cpicref += 0 * 1000
++			return
++		}
++		if ( dbmode == DBMODE_SET ) {
++			cdata(CDATA_ID, rc) = CREATURE_ID_JAVA_SPOORROWRITER
++			if ( initlv != 0 ) {
++				cdata(CDATA_LEVEL, rc) = initlv
++			}
++			else {
++				cdata(CDATA_LEVEL, rc) = 9
++			}
++			if ( voidlv != 0 ) {
++				cdata(CDATA_LEVEL, rc) = voidlv * (100 + cdata(CDATA_LEVEL, rc) * 2) / 100
++			}
++			cdata(CDATA_PORTRAIT, rc) = -1
++			cdata(CDATA_AI_CALM, rc) = 1
++			cdata(CDATA_AI_MOVE_FREQ, rc) = 90
++			cdata(CDATA_AI_DISTANCE, rc) = 1
++			cdata(CDATA_AI_SUB, rc) = 10
++			creaturepack = FILTER_NOTHING
++			cdata(STARTING_CDATA_ACT_MAIN, rc) = ACTION_MELEE
++			cdata(STARTING_CDATA_ACT_SUB, rc) = SKILL_SPACT_INSULT
++			cdata(CDATA_ACT_INDEX, rc) = 11
++			if ( jp ) {
++				cdatan(CDATAN_NAME, rc) = "駄文鳥"
++			}
++			else {
++				cdatan(CDATAN_NAME, rc) = "java spoorrowriter"
++			}
++			cdata(CDATA_RELATION, rc) = RELATION_ENEMY
++			cdata(CDATA_RELATION_ORG, rc) = RELATION_ENEMY
++			cdata(CDATA_ALIGNMENT, rc) = -10000
++			dbidn = "bird"
++			dbmode = DBMODE_SET
++			gosub *db_race
++			dbidn = "claymore"
++			dbmode = DBMODE_SET
++			gosub *db_class
++			cdata(CDATA_PIC, rc) = xy2pic(2, 37)
++			cdata(CDATA_PIC, rc) += 0 * 1000
++			cspecialeq = 0
++			return
++		}
++		return 0
++	}
++	if ( dbid == 1151 ) {
++		if ( dbmode == DBMODE_FLAVOR_ANGERED ) {
++			if ( jp ) {
++				txtmore
++				txtef COLOR_SKY_BLUE
++				txt "「騙されるやつがアホウドリなのさ！」"
++				return 1
++			}
++		}
++		if ( dbmode == DBMODE_FLAVOR_DEATH ) {
++			if ( jp ) {
++				txtmore
++				txtef COLOR_SKY_BLUE
++				txt "「助けて！私は被害者です！」"
++				return 1
++			}
++		}
++		if ( dbmode == DBMODE_FLAVOR_KILL ) {
++			if ( jp ) {
++				txtmore
++				txtef COLOR_SKY_BLUE
++				txt "「こいつがいきなり襲いかかってきたんです！恐怖を感じました！」"
++				return 1
++			}
++		}
++		if ( dbmode == DBMODE_REF_SPEC ) {
++			if ( dbspec == 3 ) {
++				return 1
++			}
++			if ( dbspec == 5 ) {
++				return 0
++			}
++			if ( dbspec == 6 ) {
++				return 20
++			}
++			if ( dbspec == 2 ) {
++				if ( jp ) {
++					return "『鷺野郎』"
++				}
++				else {
++					return "<Heraudsteron>"
++				}
++			}
++			if ( dbspec == 8 ) {
++				return "" + ""
++			}
++			return 0
++		}
++		if ( dbmode == DBMODE_REF ) {
++			dbidn = "bird"
++			dbmode = DBMODE_REF
++			gosub *db_race
++			cpicref = 1222
++			cpicref += 0 * 1000
++			return
++		}
++		if ( dbmode == DBMODE_SET ) {
++			cdata(CDATA_ID, rc) = CREATURE_ID_HERAUDSTERON
++			if ( initlv != 0 ) {
++				cdata(CDATA_LEVEL, rc) = initlv
++			}
++			else {
++				cdata(CDATA_LEVEL, rc) = 73
++			}
++			if ( voidlv != 0 ) {
++				cdata(CDATA_LEVEL, rc) = voidlv * (100 + cdata(CDATA_LEVEL, rc) * 2) / 100
++			}
++			cdata(CDATA_PORTRAIT, rc) = -1
++			cdata(CDATA_AI_CALM, rc) = 1
++			cdata(CDATA_AI_MOVE_FREQ, rc) = 80
++			cdata(CDATA_AI_DISTANCE, rc) = 1
++			cdata(CDATA_AI_SUB, rc) = 30
++			creaturepack = FILTER_NOTHING
++			cdata(STARTING_CDATA_ACT_MAIN, rc) = ACTION_MELEE
++			cdata(STARTING_CDATA_ACT_SUB, rc) = SKILL_SPACT_BLENDED_LIE
++			cdata(CDATA_ACT_INDEX, rc) = 11
++			cdata(CDATA_TXT, rc) += 1
++			cdata(CDATA_TXT, rc) += 1
++			cdata(CDATA_TXT, rc) += 1
++			if ( jp ) {
++				cdatan(CDATAN_NAME, rc) = "『鷺野郎』"
++			}
++			else {
++				cdatan(CDATAN_NAME, rc) = "<Heraudsteron>"
++			}
++			cdata(CDATA_RELATION, rc) = RELATION_NEUTRAL
++			cdata(CDATA_RELATION_ORG, rc) = RELATION_NEUTRAL
++			cdata(CDATA_ALIGNMENT, rc) = -10000
++			dbidn = "bird"
++			dbmode = DBMODE_SET
++			gosub *db_race
++			dbidn = "thief"
++			dbmode = DBMODE_SET
++			gosub *db_class
++			cdata(CDATA_SEX, rc) = 0
++			cdata(CDATA_PIC, rc) = xy2pic(1, 37)
++			cdata(CDATA_PIC, rc) += 0 * 1000
++			fixlv = FIX_QUALITY_UNIQUE
++			cspecialeq = 0
++			return
++		}
++		return 0
++	}
+ 	if ( dbid == 1150 ) {
+ 		if ( dbmode == DBMODE_FLAVOR_ANGERED ) {
+ 			txtmore
+ 			txtef COLOR_SKY_BLUE
+ 			if ( jp ) {
+@@ -70382,11 +71766,11 @@
+ 			return
+ 		}
+ 		if ( dbmode == DBMODE_INITIAL_EQUIP ) {
+ 			eqmultiweapon = 453, 4
+ 			eqrange = 714, 5
+-			eqarmor = 436, 3
++			eqarmor = 1324
+ 			eqboots = 458, 4
+ 			return
+ 		}
+ 		return 0
+ 	}
+@@ -73355,10 +74739,11 @@
+ 			cspecialeq = 1
+ 			return
+ 		}
+ 		if ( dbmode == DBMODE_INITIAL_EQUIP ) {
+ 			eqmultiweapon = 212, 5
++			eqring1 = 1323
+ 			return
+ 		}
+ 		return 0
+ 	}
+ 	if ( dbid == 754 ) {
+@@ -74475,10 +75860,11 @@
+ 			cspecialeq = 1
+ 			return
+ 		}
+ 		if ( dbmode == DBMODE_INITIAL_EQUIP ) {
+ 			eqmultiweapon = 938, 5
++			eqamulet1 = 1322
+ 			return
+ 		}
+ 		return 0
+ 	}
+ 	if ( dbid == 742 ) {
+@@ -77431,10 +78817,11 @@
+ 			return
+ 		}
+ 		if ( dbmode == DBMODE_INITIAL_EQUIP ) {
+ 			eqweapon1 = 232, 5
+ 			eqtwohand = 1
++			eqboots = 1321
+ 			return
+ 		}
+ 		return 0
+ 	}
+ 	if ( dbid == 709 ) {
+@@ -124643,11 +126030,11 @@
+ 		}
+ 		if ( dbmode == DBMODE_REF ) {
+ 			dbidn = "dog"
+ 			dbmode = DBMODE_REF
+ 			gosub *db_race
+-			cpicref = 203
++			cpicref = 1260
+ 			cpicref += 4 * 1000
+ 			return
+ 		}
+ 		if ( dbmode == DBMODE_SET ) {
+ 			cdata(CDATA_ID, rc) = CREATURE_ID_DARK_HOUND
+@@ -124689,11 +126076,11 @@
+ 				sdata(rsres0, rc) = 500
+ 			}
+ 			if ( 0 != 0 ) {
+ 				sdata(rsres0, rc) = 500
+ 			}
+-			cdata(CDATA_PIC, rc) = xy2pic(5, 6)
++			cdata(CDATA_PIC, rc) = xy2pic(6, 38)
+ 			cdata(CDATA_PIC, rc) += 4 * 1000
+ 			cspecialeq = 0
+ 			return
+ 		}
+ 		return 0
+@@ -124724,11 +126111,11 @@
+ 		}
+ 		if ( dbmode == DBMODE_REF ) {
+ 			dbidn = "dog"
+ 			dbmode = DBMODE_REF
+ 			gosub *db_race
+-			cpicref = 203
++			cpicref = 1260
+ 			cpicref += 10 * 1000
+ 			return
+ 		}
+ 		if ( dbmode == DBMODE_SET ) {
+ 			cdata(CDATA_ID, rc) = CREATURE_ID_ILLUSION_HOUND
+@@ -124770,11 +126157,11 @@
+ 				sdata(rsres0, rc) = 500
+ 			}
+ 			if ( 0 != 0 ) {
+ 				sdata(rsres0, rc) = 500
+ 			}
+-			cdata(CDATA_PIC, rc) = xy2pic(5, 6)
++			cdata(CDATA_PIC, rc) = xy2pic(6, 38)
+ 			cdata(CDATA_PIC, rc) += 10 * 1000
+ 			cspecialeq = 0
+ 			return
+ 		}
+ 		return 0
+@@ -124805,11 +126192,11 @@
+ 		}
+ 		if ( dbmode == DBMODE_REF ) {
+ 			dbidn = "dog"
+ 			dbmode = DBMODE_REF
+ 			gosub *db_race
+-			cpicref = 203
++			cpicref = 1260
+ 			cpicref += 9 * 1000
+ 			return
+ 		}
+ 		if ( dbmode == DBMODE_SET ) {
+ 			cdata(CDATA_ID, rc) = CREATURE_ID_NERVE_HOUND
+@@ -124851,11 +126238,11 @@
+ 				sdata(rsres0, rc) = 500
+ 			}
+ 			if ( 0 != 0 ) {
+ 				sdata(rsres0, rc) = 500
+ 			}
+-			cdata(CDATA_PIC, rc) = xy2pic(5, 6)
++			cdata(CDATA_PIC, rc) = xy2pic(6, 38)
+ 			cdata(CDATA_PIC, rc) += 9 * 1000
+ 			cspecialeq = 0
+ 			return
+ 		}
+ 		return 0
+@@ -124886,11 +126273,11 @@
+ 		}
+ 		if ( dbmode == DBMODE_REF ) {
+ 			dbidn = "dog"
+ 			dbmode = DBMODE_REF
+ 			gosub *db_race
+-			cpicref = 203
++			cpicref = 1260
+ 			cpicref += 2 * 1000
+ 			return
+ 		}
+ 		if ( dbmode == DBMODE_SET ) {
+ 			cdata(CDATA_ID, rc) = CREATURE_ID_POISON_HOUND
+@@ -124932,11 +126319,11 @@
+ 				sdata(rsres0, rc) = 500
+ 			}
+ 			if ( 0 != 0 ) {
+ 				sdata(rsres0, rc) = 500
+ 			}
+-			cdata(CDATA_PIC, rc) = xy2pic(5, 6)
++			cdata(CDATA_PIC, rc) = xy2pic(6, 38)
+ 			cdata(CDATA_PIC, rc) += 2 * 1000
+ 			cspecialeq = 0
+ 			return
+ 		}
+ 		return 0
+@@ -124967,11 +126354,11 @@
+ 		}
+ 		if ( dbmode == DBMODE_REF ) {
+ 			dbidn = "dog"
+ 			dbmode = DBMODE_REF
+ 			gosub *db_race
+-			cpicref = 203
++			cpicref = 1260
+ 			cpicref += 11 * 1000
+ 			return
+ 		}
+ 		if ( dbmode == DBMODE_SET ) {
+ 			cdata(CDATA_ID, rc) = CREATURE_ID_SOUND_HOUND
+@@ -125013,11 +126400,11 @@
+ 				sdata(rsres0, rc) = 500
+ 			}
+ 			if ( 0 != 0 ) {
+ 				sdata(rsres0, rc) = 500
+ 			}
+-			cdata(CDATA_PIC, rc) = xy2pic(5, 6)
++			cdata(CDATA_PIC, rc) = xy2pic(6, 38)
+ 			cdata(CDATA_PIC, rc) += 11 * 1000
+ 			cspecialeq = 0
+ 			return
+ 		}
+ 		return 0
+@@ -125048,11 +126435,11 @@
+ 		}
+ 		if ( dbmode == DBMODE_REF ) {
+ 			dbidn = "dog"
+ 			dbmode = DBMODE_REF
+ 			gosub *db_race
+-			cpicref = 203
++			cpicref = 1260
+ 			cpicref += 15 * 1000
+ 			return
+ 		}
+ 		if ( dbmode == DBMODE_SET ) {
+ 			cdata(CDATA_ID, rc) = CREATURE_ID_NETHER_HOUND
+@@ -125094,11 +126481,11 @@
+ 				sdata(rsres0, rc) = 500
+ 			}
+ 			if ( 0 != 0 ) {
+ 				sdata(rsres0, rc) = 500
+ 			}
+-			cdata(CDATA_PIC, rc) = xy2pic(5, 6)
++			cdata(CDATA_PIC, rc) = xy2pic(6, 38)
+ 			cdata(CDATA_PIC, rc) += 15 * 1000
+ 			cspecialeq = 0
+ 			return
+ 		}
+ 		return 0
+@@ -125129,11 +126516,11 @@
+ 		}
+ 		if ( dbmode == DBMODE_REF ) {
+ 			dbidn = "dog"
+ 			dbmode = DBMODE_REF
+ 			gosub *db_race
+-			cpicref = 203
++			cpicref = 1260
+ 			cpicref += 18 * 1000
+ 			return
+ 		}
+ 		if ( dbmode == DBMODE_SET ) {
+ 			cdata(CDATA_ID, rc) = CREATURE_ID_CHAOS_HOUND
+@@ -125175,11 +126562,11 @@
+ 				sdata(rsres0, rc) = 500
+ 			}
+ 			if ( 0 != 0 ) {
+ 				sdata(rsres0, rc) = 500
+ 			}
+-			cdata(CDATA_PIC, rc) = xy2pic(5, 6)
++			cdata(CDATA_PIC, rc) = xy2pic(6, 38)
+ 			cdata(CDATA_PIC, rc) += 18 * 1000
+ 			cspecialeq = 0
+ 			return
+ 		}
+ 		return 0
+@@ -144389,286 +145776,313 @@
+ 	return 0
+ 
+ *db_setFilterCreature
+ 	maxnpcid = MAX_CREATURE_ID
+ 	dim cbitorg, 30, maxnpcid
+-	filter_creature(2) = "/man/"
+-	filter_creature(3) = "/man/"
+-	filter_creature(4) = "/man/"
+-	filter_creature(5) = ""
+-	filter_creature(6) = ""
++	filter_creature(2) = "/nefia8/"
++	filter_creature(3) = "/nefia8/"
++	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_SPIRIT_OF_PANTY), CHARA_BIT_FLOAT \ 32
++	HMMBITON cbitorg(CHARA_BIT_SUICIDE / 32, CREATURE_ID_SPIRIT_OF_PANTY), CHARA_BIT_SUICIDE \ 32
++	filter_creature(4) = "/nefia2/"
++	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_ULTIMATE_PHOENIX), CHARA_BIT_FLOAT \ 32
++	HMMBITON cbitorg(CHARA_BIT_RES_CONFUSE / 32, CREATURE_ID_ULTIMATE_PHOENIX), CHARA_BIT_RES_CONFUSE \ 32
++	HMMBITON cbitorg(CHARA_BIT_RES_BLIND / 32, CREATURE_ID_ULTIMATE_PHOENIX), CHARA_BIT_RES_BLIND \ 32
++	filter_creature(5) = "/nefia2/"
++	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_THOUSAND_CRANE), CHARA_BIT_FLOAT \ 32
++	HMMBITON cbitorg(CHARA_BIT_RES_FEAR / 32, CREATURE_ID_THOUSAND_CRANE), CHARA_BIT_RES_FEAR \ 32
++	HMMBITON cbitorg(CHARA_BIT_RES_PARALYZE / 32, CREATURE_ID_THOUSAND_CRANE), CHARA_BIT_RES_PARALYZE \ 32
++	filter_creature(6) = "/nefia2/"
++	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_MULTI_PEALOCK), CHARA_BIT_FLOAT \ 32
+ 	filter_creature(7) = ""
++	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_CARRIER_PIGEON), CHARA_BIT_FLOAT \ 32
+ 	filter_creature(8) = ""
+-	filter_creature(9) = ""
+-	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_MOMALARIA_THE_BLOODSUCKER), CHARA_BIT_FLOAT \ 32
++	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_CLASHING_WOODPECKER), CHARA_BIT_FLOAT \ 32
++	filter_creature(9) = "/nefia2/"
++	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_DANCING_SWAN), CHARA_BIT_FLOAT \ 32
+ 	filter_creature(10) = "/nefia2/"
++	filter_creature(11) = "/nefia2/"
++	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_MOHAWK_PARROT), CHARA_BIT_FLOAT \ 32
++	filter_creature(12) = "/nefia2/"
++	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_JAVA_SPOORROWRITER), CHARA_BIT_FLOAT \ 32
++	filter_creature(13) = ""
++	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_HERAUDSTERON), CHARA_BIT_FLOAT \ 32
++	filter_creature(14) = "/man/"
++	filter_creature(15) = "/man/"
++	filter_creature(16) = "/man/"
++	filter_creature(17) = ""
++	filter_creature(18) = ""
++	filter_creature(19) = ""
++	filter_creature(20) = ""
++	filter_creature(21) = ""
++	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_MOMALARIA_THE_BLOODSUCKER), CHARA_BIT_FLOAT \ 32
++	filter_creature(22) = "/nefia2/"
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_BIG_MOSQUITO), CHARA_BIT_FLOAT \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_RES_CONFUSE / 32, CREATURE_ID_BIG_MOSQUITO), CHARA_BIT_RES_CONFUSE \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_RES_BLIND / 32, CREATURE_ID_BIG_MOSQUITO), CHARA_BIT_RES_BLIND \ 32
+-	filter_creature(11) = ""
+-	filter_creature(12) = ""
+-	filter_creature(13) = ""
+-	filter_creature(14) = "/wild/nefia6/"
+-	filter_creature(15) = "/nefia1/"
+-	filter_creature(16) = ""
++	filter_creature(23) = ""
++	filter_creature(24) = ""
++	filter_creature(25) = ""
++	filter_creature(26) = "/wild/nefia6/"
++	filter_creature(27) = "/nefia1/"
++	filter_creature(28) = ""
+ 	HMMBITON cbitorg(CHARA_BIT_SUPERIOR_RIDING / 32, CREATURE_ID_MADEER), CHARA_BIT_SUPERIOR_RIDING \ 32
+-	filter_creature(17) = ""
+-	filter_creature(18) = ""
++	filter_creature(29) = ""
++	filter_creature(30) = ""
+ 	HMMBITON cbitorg(CHARA_BIT_TEMPER / 32, CREATURE_ID_VICIOUS_RACCOON), CHARA_BIT_TEMPER \ 32
+-	filter_creature(19) = ""
++	filter_creature(31) = ""
+ 	HMMBITON cbitorg(CHARA_BIT_SUPERIOR_RIDING / 32, CREATURE_ID_THIEF_LIGHT_TRUCK), CHARA_BIT_SUPERIOR_RIDING \ 32
+-	filter_creature(20) = ""
++	filter_creature(32) = ""
+ 	HMMBITON cbitorg(CHARA_BIT_SUPERIOR_RIDING / 32, CREATURE_ID_MOTUHEGUI), CHARA_BIT_SUPERIOR_RIDING \ 32
+-	filter_creature(21) = ""
+-	filter_creature(22) = ""
++	filter_creature(33) = ""
++	filter_creature(34) = ""
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_HEART_WITCH), CHARA_BIT_FLOAT \ 32
+-	filter_creature(23) = ""
++	filter_creature(35) = ""
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_DIAMOND_EYES), CHARA_BIT_FLOAT \ 32
+-	filter_creature(24) = ""
++	filter_creature(36) = ""
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_CLUB_FEATHER), CHARA_BIT_FLOAT \ 32
+-	filter_creature(25) = ""
++	filter_creature(37) = ""
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_SPADE_WARRIOR), CHARA_BIT_FLOAT \ 32
+-	filter_creature(26) = "/god/"
++	filter_creature(38) = "/god/"
+ 	HMMBITON cbitorg(CHARA_BIT_RES_FEAR / 32, CREATURE_ID_GODWOLF), CHARA_BIT_RES_FEAR \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_RES_PARALYZE / 32, CREATURE_ID_GODWOLF), CHARA_BIT_RES_PARALYZE \ 32
+-	filter_creature(27) = "/god/"
++	filter_creature(39) = "/god/"
+ 	HMMBITON cbitorg(CHARA_BIT_RES_CONFUSE / 32, CREATURE_ID_KYU_BI), CHARA_BIT_RES_CONFUSE \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_RES_BLIND / 32, CREATURE_ID_KYU_BI), CHARA_BIT_RES_BLIND \ 32
+-	filter_creature(28) = ""
++	filter_creature(40) = ""
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_KAMIKAKUSHI_THE_HIDDEN_SHIKIORIGAMI), CHARA_BIT_FLOAT \ 32
+-	filter_creature(29) = "/nefia7/"
++	filter_creature(41) = "/nefia7/"
+ 	HMMBITON cbitorg(CHARA_BIT_RES_CONFUSE / 32, CREATURE_ID_SAIKYO_NEZUMI), CHARA_BIT_RES_CONFUSE \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_RES_BLIND / 32, CREATURE_ID_SAIKYO_NEZUMI), CHARA_BIT_RES_BLIND \ 32
+-	filter_creature(30) = "/nefia7/"
++	filter_creature(42) = "/nefia7/"
+ 	HMMBITON cbitorg(CHARA_BIT_RES_PARALYZE / 32, CREATURE_ID_ULTIMATE_EXPERIMENTAL), CHARA_BIT_RES_PARALYZE \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_RES_FEAR / 32, CREATURE_ID_ULTIMATE_EXPERIMENTAL), CHARA_BIT_RES_FEAR \ 32
+-	filter_creature(31) = "/nefia7/"
+-	filter_creature(32) = "/nefia7/"
+-	filter_creature(33) = "/nefia7/"
+-	filter_creature(34) = "/nefia7/"
+-	filter_creature(35) = "/nefia7/"
+-	filter_creature(36) = "/nefia7/"
+-	filter_creature(37) = ""
++	filter_creature(43) = "/nefia7/"
++	filter_creature(44) = "/nefia7/"
++	filter_creature(45) = "/nefia7/"
++	filter_creature(46) = "/nefia7/"
++	filter_creature(47) = "/nefia7/"
++	filter_creature(48) = "/nefia7/"
++	filter_creature(49) = ""
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_KAMIHIKOUKI), CHARA_BIT_FLOAT \ 32
+-	filter_creature(38) = ""
++	filter_creature(50) = ""
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_KAMISHURIKEN), CHARA_BIT_FLOAT \ 32
+-	filter_creature(39) = ""
++	filter_creature(51) = ""
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_KAMIORIDURU), CHARA_BIT_FLOAT \ 32
+-	filter_creature(40) = ""
+-	filter_creature(41) = ""
+-	filter_creature(42) = ""
+-	filter_creature(43) = ""
+-	filter_creature(44) = ""
+-	filter_creature(45) = ""
+-	filter_creature(46) = ""
+-	filter_creature(47) = ""
++	filter_creature(52) = ""
++	filter_creature(53) = ""
++	filter_creature(54) = ""
++	filter_creature(55) = ""
++	filter_creature(56) = ""
++	filter_creature(57) = ""
++	filter_creature(58) = ""
++	filter_creature(59) = ""
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_RESTOROID_TOKI), CHARA_BIT_FLOAT \ 32
+-	filter_creature(48) = ""
++	filter_creature(60) = ""
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_RESTOROID_PASSENGER_PIGEON), CHARA_BIT_FLOAT \ 32
+-	filter_creature(49) = ""
+-	filter_creature(50) = ""
+-	filter_creature(51) = ""
+-	filter_creature(52) = "/man/"
++	filter_creature(61) = ""
++	filter_creature(62) = ""
++	filter_creature(63) = ""
++	filter_creature(64) = "/man/"
+ 	HMMBITON cbitorg(CHARA_BIT_IMMUNE_MINE / 32, CREATURE_ID_ANTITANK_LANDMINE_GIRL), CHARA_BIT_IMMUNE_MINE \ 32
+-	filter_creature(53) = "/man/"
++	filter_creature(65) = "/man/"
+ 	HMMBITON cbitorg(CHARA_BIT_IMMUNE_MINE / 32, CREATURE_ID_JUMP_LANDMINE_GIRL), CHARA_BIT_IMMUNE_MINE \ 32
+-	filter_creature(54) = "/man/"
++	filter_creature(66) = "/man/"
+ 	HMMBITON cbitorg(CHARA_BIT_IMMUNE_MINE / 32, CREATURE_ID_SCATTER_LANDMINE_GIRL), CHARA_BIT_IMMUNE_MINE \ 32
+-	filter_creature(55) = "/man/"
++	filter_creature(67) = "/man/"
+ 	HMMBITON cbitorg(CHARA_BIT_IMMUNE_MINE / 32, CREATURE_ID_LANDMINE_GIRL), CHARA_BIT_IMMUNE_MINE \ 32
+-	filter_creature(56) = "/nefia5/"
++	filter_creature(68) = "/nefia5/"
+ 	HMMBITON cbitorg(CHARA_BIT_RES_BLIND / 32, CREATURE_ID_WORM_HOLER), CHARA_BIT_RES_BLIND \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_RES_FEAR / 32, CREATURE_ID_WORM_HOLER), CHARA_BIT_RES_FEAR \ 32
+-	filter_creature(57) = "/nefia5/"
++	filter_creature(69) = "/nefia5/"
+ 	HMMBITON cbitorg(CHARA_BIT_RES_BLIND / 32, CREATURE_ID_VINDALIAN_DEATHWORM), CHARA_BIT_RES_BLIND \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_RES_PARALYZE / 32, CREATURE_ID_VINDALIAN_DEATHWORM), CHARA_BIT_RES_PARALYZE \ 32
+-	filter_creature(58) = "/nefia5/"
++	filter_creature(70) = "/nefia5/"
+ 	HMMBITON cbitorg(CHARA_BIT_DEATH_MASTER / 32, CREATURE_ID_DEATH_WORDM), CHARA_BIT_DEATH_MASTER \ 32
+-	filter_creature(59) = "/nefia5/"
+-	filter_creature(60) = "/nefia5/"
+-	filter_creature(61) = "/nefia1/"
+-	filter_creature(62) = "/nefia1/"
++	filter_creature(71) = "/nefia5/"
++	filter_creature(72) = "/nefia5/"
++	filter_creature(73) = "/nefia1/"
++	filter_creature(74) = "/nefia1/"
+ 	HMMBITON cbitorg(CHARA_BIT_SPLIT_KEEP_EFFECT / 32, CREATURE_ID_MONSTER_BACTERIA), CHARA_BIT_SPLIT_KEEP_EFFECT \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_RES_POISON / 32, CREATURE_ID_MONSTER_BACTERIA), CHARA_BIT_RES_POISON \ 32
+-	filter_creature(63) = "/nefia1/"
+-	filter_creature(64) = "/nefia1/"
++	filter_creature(75) = "/nefia1/"
++	filter_creature(76) = "/nefia1/"
+ 	HMMBITON cbitorg(CHARA_BIT_RES_POISON / 32, CREATURE_ID_BOUNCTERIA), CHARA_BIT_RES_POISON \ 32
+-	filter_creature(65) = "/man/"
+-	filter_creature(66) = "/man/"
+-	filter_creature(67) = "/man/"
+-	filter_creature(68) = "/man/"
+-	filter_creature(69) = "/man/"
+-	filter_creature(70) = "/man/"
+-	filter_creature(71) = "/nefia4/"
++	filter_creature(77) = "/man/"
++	filter_creature(78) = "/man/"
++	filter_creature(79) = "/man/"
++	filter_creature(80) = "/man/"
++	filter_creature(81) = "/man/"
++	filter_creature(82) = "/man/"
++	filter_creature(83) = "/nefia4/"
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_CHAOSHAPRINCESS_ZEHLS), CHARA_BIT_FLOAT \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_RES_FEAR / 32, CREATURE_ID_CHAOSHAPRINCESS_ZEHLS), CHARA_BIT_RES_FEAR \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_RES_BLIND / 32, CREATURE_ID_CHAOSHAPRINCESS_ZEHLS), CHARA_BIT_RES_BLIND \ 32
+-	filter_creature(72) = "/nefia4/"
++	filter_creature(84) = "/nefia4/"
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_CHAOSHAPRINCESS_DIBWL), CHARA_BIT_FLOAT \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_TEMPER / 32, CREATURE_ID_CHAOSHAPRINCESS_DIBWL), CHARA_BIT_TEMPER \ 32
+-	filter_creature(73) = "/nefia4/"
++	filter_creature(85) = "/nefia4/"
+ 	HMMBITON cbitorg(CHARA_BIT_SUPERIOR_RIDING / 32, CREATURE_ID_CHAOSHAPRINCESS_VARGM), CHARA_BIT_SUPERIOR_RIDING \ 32
+-	filter_creature(74) = "/nefia4/"
+-	filter_creature(75) = "/nefia4/"
++	filter_creature(86) = "/nefia4/"
++	filter_creature(87) = "/nefia4/"
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_CHAOSHAPRINCESS_CHRDH), CHARA_BIT_FLOAT \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_SUPERIOR_RIDING / 32, CREATURE_ID_CHAOSHAPRINCESS_CHRDH), CHARA_BIT_SUPERIOR_RIDING \ 32
+-	filter_creature(76) = "/nefia4/"
++	filter_creature(88) = "/nefia4/"
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_CHAOSHAPRINCESS_FSSSY), CHARA_BIT_FLOAT \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_RES_FEAR / 32, CREATURE_ID_CHAOSHAPRINCESS_FSSSY), CHARA_BIT_RES_FEAR \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_RES_SLEEP / 32, CREATURE_ID_CHAOSHAPRINCESS_FSSSY), CHARA_BIT_RES_SLEEP \ 32
+-	filter_creature(77) = "/nefia4/"
++	filter_creature(89) = "/nefia4/"
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_CHAOSHAPRINCESS_FWBS), CHARA_BIT_FLOAT \ 32
+-	filter_creature(78) = "/nefia4/"
+-	filter_creature(79) = "/nefia4/"
++	filter_creature(90) = "/nefia4/"
++	filter_creature(91) = "/nefia4/"
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_ETHERIAN), CHARA_BIT_FLOAT \ 32
+-	filter_creature(80) = "/nefia8/"
++	filter_creature(92) = "/nefia8/"
+ 	HMMBITON cbitorg(CHARA_BIT_RES_FEAR / 32, CREATURE_ID_SP_CHAMPION), CHARA_BIT_RES_FEAR \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_RES_SLEEP / 32, CREATURE_ID_SP_CHAMPION), CHARA_BIT_RES_SLEEP \ 32
+-	filter_creature(81) = "/god/nefia8/"
+-	filter_creature(82) = "/nefia8/"
+-	filter_creature(83) = "/nefia8/"
+-	filter_creature(84) = "/nefia8/"
+-	filter_creature(85) = "/nefia8/"
++	filter_creature(93) = "/god/nefia8/"
++	filter_creature(94) = "/nefia8/"
++	filter_creature(95) = "/nefia8/"
++	filter_creature(96) = "/nefia8/"
++	filter_creature(97) = "/nefia8/"
+ 	HMMBITON cbitorg(CHARA_BIT_TEMPER / 32, CREATURE_ID_PROVOCASQUID), CHARA_BIT_TEMPER \ 32
+-	filter_creature(86) = "/man/"
++	filter_creature(98) = "/man/"
+ 	HMMBITON cbitorg(CHARA_BIT_SUPERIOR_RIDING / 32, CREATURE_ID_SIST_THE_OLDER_SISTER), CHARA_BIT_SUPERIOR_RIDING \ 32
+-	filter_creature(87) = "/nefia2/"
++	filter_creature(99) = "/nefia2/"
+ 	HMMBITON cbitorg(CHARA_BIT_RES_CONFUSE / 32, CREATURE_ID_HELRAUNE), CHARA_BIT_RES_CONFUSE \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_RES_PARALYZE / 32, CREATURE_ID_HELRAUNE), CHARA_BIT_RES_PARALYZE \ 32
+-	filter_creature(88) = "/nefia2/"
++	filter_creature(100) = "/nefia2/"
+ 	HMMBITON cbitorg(CHARA_BIT_RES_FEAR / 32, CREATURE_ID_KING_HOGWEEDER), CHARA_BIT_RES_FEAR \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_RES_SLEEP / 32, CREATURE_ID_KING_HOGWEEDER), CHARA_BIT_RES_SLEEP \ 32
+-	filter_creature(89) = "/nefia2/"
+-	filter_creature(90) = "/nefia2/"
+-	filter_creature(91) = "/nefia2/"
++	filter_creature(101) = "/nefia2/"
++	filter_creature(102) = "/nefia2/"
++	filter_creature(103) = "/nefia2/"
+ 	HMMBITON cbitorg(CHARA_BIT_RES_FEAR / 32, CREATURE_ID_KUSOSUGI), CHARA_BIT_RES_FEAR \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_RES_BLIND / 32, CREATURE_ID_KUSOSUGI), CHARA_BIT_RES_BLIND \ 32
+-	filter_creature(92) = "/nefia2/"
++	filter_creature(104) = "/nefia2/"
+ 	HMMBITON cbitorg(CHARA_BIT_TEMPER / 32, CREATURE_ID_HINOCCHIO), CHARA_BIT_TEMPER \ 32
+-	filter_creature(93) = "/god/"
++	filter_creature(105) = "/god/"
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_GREEN_DARK_GUARDIAN), CHARA_BIT_FLOAT \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_RES_FEAR / 32, CREATURE_ID_GREEN_DARK_GUARDIAN), CHARA_BIT_RES_FEAR \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_RES_BLIND / 32, CREATURE_ID_GREEN_DARK_GUARDIAN), CHARA_BIT_RES_BLIND \ 32
+-	filter_creature(94) = "/god/"
++	filter_creature(106) = "/god/"
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_BLUE_DARK_GUARDIAN), CHARA_BIT_FLOAT \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_RES_FEAR / 32, CREATURE_ID_BLUE_DARK_GUARDIAN), CHARA_BIT_RES_FEAR \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_RES_BLIND / 32, CREATURE_ID_BLUE_DARK_GUARDIAN), CHARA_BIT_RES_BLIND \ 32
+-	filter_creature(95) = "/god/"
++	filter_creature(107) = "/god/"
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_CRIMSON_DARK_GUARDIAN), CHARA_BIT_FLOAT \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_RES_FEAR / 32, CREATURE_ID_CRIMSON_DARK_GUARDIAN), CHARA_BIT_RES_FEAR \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_RES_BLIND / 32, CREATURE_ID_CRIMSON_DARK_GUARDIAN), CHARA_BIT_RES_BLIND \ 32
+-	filter_creature(96) = ""
+-	filter_creature(97) = "/nefia4/"
++	filter_creature(108) = ""
++	filter_creature(109) = "/nefia4/"
+ 	HMMBITON cbitorg(CHARA_BIT_RES_FEAR / 32, CREATURE_ID_DARK_ARTIFICIAL_GIANT), CHARA_BIT_RES_FEAR \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_RES_BLIND / 32, CREATURE_ID_DARK_ARTIFICIAL_GIANT), CHARA_BIT_RES_BLIND \ 32
+-	filter_creature(98) = "/nefia4/"
++	filter_creature(110) = "/nefia4/"
+ 	HMMBITON cbitorg(CHARA_BIT_TEMPER / 32, CREATURE_ID_SURTR), CHARA_BIT_TEMPER \ 32
+-	filter_creature(99) = "/nefia4/"
++	filter_creature(111) = "/nefia4/"
+ 	HMMBITON cbitorg(CHARA_BIT_TEMPER / 32, CREATURE_ID_GIGANTES), CHARA_BIT_TEMPER \ 32
+-	filter_creature(100) = "/nefia4/"
++	filter_creature(112) = "/nefia4/"
+ 	HMMBITON cbitorg(CHARA_BIT_RES_FEAR / 32, CREATURE_ID_EIGHTY_SHAKU), CHARA_BIT_RES_FEAR \ 32
+-	filter_creature(101) = "/nefia7/"
+-	filter_creature(102) = "/nefia7/"
+-	filter_creature(103) = "/nefia7/"
+-	filter_creature(104) = ""
+-	filter_creature(105) = ""
++	filter_creature(113) = "/nefia7/"
++	filter_creature(114) = "/nefia7/"
++	filter_creature(115) = "/nefia7/"
++	filter_creature(116) = ""
++	filter_creature(117) = ""
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_MAGIC_BEE), CHARA_BIT_FLOAT \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_TEMPER / 32, CREATURE_ID_MAGIC_BEE), CHARA_BIT_TEMPER \ 32
+-	filter_creature(106) = ""
++	filter_creature(118) = ""
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_YONORNE_THE_ROOKIE_GUIDE), CHARA_BIT_FLOAT \ 32
+-	filter_creature(107) = ""
++	filter_creature(119) = ""
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_SCARD_THE_HAPPY_SWALLOW), CHARA_BIT_FLOAT \ 32
+-	filter_creature(108) = ""
++	filter_creature(120) = ""
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_OXODE_THE_QUEEN_BEE), CHARA_BIT_FLOAT \ 32
+-	filter_creature(109) = "/undead/"
++	filter_creature(121) = "/undead/"
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_IMARITUKA_THE_ZASIKI_WARAI), CHARA_BIT_FLOAT \ 32
+-	filter_creature(110) = "/dragon/"
++	filter_creature(122) = "/dragon/"
+ 	HMMBITON cbitorg(CHARA_BIT_RES_FEAR / 32, CREATURE_ID_TELHUREZA_THE_HOUSE_GUARD), CHARA_BIT_RES_FEAR \ 32
+-	filter_creature(111) = "/nefia6/"
++	filter_creature(123) = "/nefia6/"
+ 	HMMBITON cbitorg(CHARA_BIT_RES_CONFUSE / 32, CREATURE_ID_ANOTHER_WORLD_CHEATAH), CHARA_BIT_RES_CONFUSE \ 32
+-	filter_creature(112) = "/nefia6/"
++	filter_creature(124) = "/nefia6/"
+ 	HMMBITON cbitorg(CHARA_BIT_RES_PARALYZE / 32, CREATURE_ID_SPEED_HACK_CHEATAH), CHARA_BIT_RES_PARALYZE \ 32
+-	filter_creature(113) = "/nefia6/"
+-	filter_creature(114) = "/nefia6/"
++	filter_creature(125) = "/nefia6/"
++	filter_creature(126) = "/nefia6/"
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_WALL_HACK_CHEATAH), CHARA_BIT_FLOAT \ 32
+-	filter_creature(115) = "/undead/nefia6/"
++	filter_creature(127) = "/undead/nefia6/"
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_HELLABYRINTH_RULER), CHARA_BIT_FLOAT \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_RES_FEAR / 32, CREATURE_ID_HELLABYRINTH_RULER), CHARA_BIT_RES_FEAR \ 32
+-	filter_creature(116) = "/nefia6/"
++	filter_creature(128) = "/nefia6/"
+ 	HMMBITON cbitorg(CHARA_BIT_SPLIT_NO_EFFECT / 32, CREATURE_ID_DEATH_FOG), CHARA_BIT_SPLIT_NO_EFFECT \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_DEATH_FOG), CHARA_BIT_FLOAT \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_RES_CONFUSE / 32, CREATURE_ID_DEATH_FOG), CHARA_BIT_RES_CONFUSE \ 32
+-	filter_creature(117) = "/undead/nefia6/"
++	filter_creature(129) = "/undead/nefia6/"
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_CLINGHOST), CHARA_BIT_FLOAT \ 32
+-	filter_creature(118) = "/undead/nefia6/"
++	filter_creature(130) = "/undead/nefia6/"
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_STRAY_SOUL), CHARA_BIT_FLOAT \ 32
+-	filter_creature(119) = "/dragon/nefia3/"
++	filter_creature(131) = "/dragon/nefia3/"
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_POWERFUL_GREAT_WYRM), CHARA_BIT_FLOAT \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_RES_CONFUSE / 32, CREATURE_ID_POWERFUL_GREAT_WYRM), CHARA_BIT_RES_CONFUSE \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_RES_SLEEP / 32, CREATURE_ID_POWERFUL_GREAT_WYRM), CHARA_BIT_RES_SLEEP \ 32
+-	filter_creature(120) = "/dragon/nefia3/"
++	filter_creature(132) = "/dragon/nefia3/"
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_PTERAIUN), CHARA_BIT_FLOAT \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_RES_PARALYZE / 32, CREATURE_ID_PTERAIUN), CHARA_BIT_RES_PARALYZE \ 32
+-	filter_creature(121) = "/dragon/nefia3/"
++	filter_creature(133) = "/dragon/nefia3/"
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_WILD_WYRM), CHARA_BIT_FLOAT \ 32
+-	filter_creature(122) = "/dragon/nefia3/"
++	filter_creature(134) = "/dragon/nefia3/"
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_RATS_BRINGER), CHARA_BIT_FLOAT \ 32
+-	filter_creature(123) = "/nefia3/"
++	filter_creature(135) = "/nefia3/"
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_JANKEN_KING), CHARA_BIT_FLOAT \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_RES_FEAR / 32, CREATURE_ID_JANKEN_KING), CHARA_BIT_RES_FEAR \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_RES_BLIND / 32, CREATURE_ID_JANKEN_KING), CHARA_BIT_RES_BLIND \ 32
+-	filter_creature(124) = "/undead/nefia3/"
+-	filter_creature(125) = "/god/nefia3/"
++	filter_creature(136) = "/undead/nefia3/"
++	filter_creature(137) = "/god/nefia3/"
+ 	HMMBITON cbitorg(CHARA_BIT_RES_PARALYZE / 32, CREATURE_ID_HAND_OF_THE_CATGOD), CHARA_BIT_RES_PARALYZE \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_DROP_GOLD / 32, CREATURE_ID_HAND_OF_THE_CATGOD), CHARA_BIT_DROP_GOLD \ 32
+-	filter_creature(126) = "/undead/nefia3/"
+-	filter_creature(127) = "/undead/nefia3/"
++	filter_creature(138) = "/undead/nefia3/"
++	filter_creature(139) = "/undead/nefia3/"
+ 	HMMBITON cbitorg(CHARA_BIT_RES_FEAR / 32, CREATURE_ID_PALE_INVITER), CHARA_BIT_RES_FEAR \ 32
+-	filter_creature(128) = ""
+-	filter_creature(129) = "/god/nefia3/"
++	filter_creature(140) = ""
++	filter_creature(141) = "/god/nefia3/"
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_SEEING_GOD_EYE), CHARA_BIT_FLOAT \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_RES_FEAR / 32, CREATURE_ID_SEEING_GOD_EYE), CHARA_BIT_RES_FEAR \ 32
+-	filter_creature(130) = "/god/nefia3/"
++	filter_creature(142) = "/god/nefia3/"
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_HORUS_EYE), CHARA_BIT_FLOAT \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_RES_FEAR / 32, CREATURE_ID_HORUS_EYE), CHARA_BIT_RES_FEAR \ 32
+-	filter_creature(131) = "/nefia3/"
++	filter_creature(143) = "/nefia3/"
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_HUNDRED_EYES), CHARA_BIT_FLOAT \ 32
+-	filter_creature(132) = "/nefia3/"
++	filter_creature(144) = "/nefia3/"
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_PROVIDENCE_GAZE), CHARA_BIT_FLOAT \ 32
+-	filter_creature(133) = "/nefia3/"
+-	filter_creature(134) = "/god/"
++	filter_creature(145) = "/nefia3/"
++	filter_creature(146) = "/god/"
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_YAYAUHQUI_TEZCATLIPOCA), CHARA_BIT_FLOAT \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_RES_FEAR / 32, CREATURE_ID_YAYAUHQUI_TEZCATLIPOCA), CHARA_BIT_RES_FEAR \ 32
+-	filter_creature(135) = "/god/"
++	filter_creature(147) = "/god/"
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_JALDABAOTH_THE_CHAOS_CHILD), CHARA_BIT_FLOAT \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_RES_FEAR / 32, CREATURE_ID_JALDABAOTH_THE_CHAOS_CHILD), CHARA_BIT_RES_FEAR \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_DEATH_MASTER / 32, CREATURE_ID_JALDABAOTH_THE_CHAOS_CHILD), CHARA_BIT_DEATH_MASTER \ 32
+-	filter_creature(136) = "/man/"
+-	filter_creature(137) = "/man/god/"
++	filter_creature(148) = "/man/"
++	filter_creature(149) = "/man/god/"
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_ORPHE_THE_CHAOS_DISCPLE), CHARA_BIT_FLOAT \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_RES_FEAR / 32, CREATURE_ID_ORPHE_THE_CHAOS_DISCPLE), CHARA_BIT_RES_FEAR \ 32
+-	filter_creature(138) = "/god/"
++	filter_creature(150) = "/god/"
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_MIKRAANESIS), CHARA_BIT_FLOAT \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_RES_FEAR / 32, CREATURE_ID_MIKRAANESIS), CHARA_BIT_RES_FEAR \ 32
+-	filter_creature(139) = "/god/nefia3/"
+-	filter_creature(140) = "/god/nefia3/"
+-	filter_creature(141) = "/god/nefia3/"
+-	filter_creature(142) = "/god/nefia3/"
++	filter_creature(151) = "/god/nefia3/"
++	filter_creature(152) = "/god/nefia3/"
++	filter_creature(153) = "/god/nefia3/"
++	filter_creature(154) = "/god/nefia3/"
+ 	HMMBITON cbitorg(CHARA_BIT_DROP_GOLD / 32, CREATURE_ID_RAVANA), CHARA_BIT_DROP_GOLD \ 32
+-	filter_creature(143) = "/god/nefia3/"
++	filter_creature(155) = "/god/nefia3/"
+ 	HMMBITON cbitorg(CHARA_BIT_RES_BLIND / 32, CREATURE_ID_ANDHAKA), CHARA_BIT_RES_BLIND \ 32
+-	filter_creature(144) = ""
+-	filter_creature(145) = "/god/nefia8/"
++	filter_creature(156) = ""
++	filter_creature(157) = "/god/nefia8/"
+ 	HMMBITON cbitorg(CHARA_BIT_RES_FEAR / 32, CREATURE_ID_MATANGODDESS), CHARA_BIT_RES_FEAR \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_RES_CONFUSE / 32, CREATURE_ID_MATANGODDESS), CHARA_BIT_RES_CONFUSE \ 32
+-	filter_creature(146) = "/nefia8/"
+-	filter_creature(147) = "/nefia8/"
+-	filter_creature(148) = "/nefia8/"
+-	filter_creature(149) = "/nefia8/"
+-	filter_creature(150) = "/nefia8/"
+-	filter_creature(151) = "/man/"
+-	filter_creature(152) = "/nefia0/"
++	filter_creature(158) = "/nefia8/"
++	filter_creature(159) = "/nefia8/"
++	filter_creature(160) = "/nefia8/"
++	filter_creature(161) = "/nefia8/"
++	filter_creature(162) = "/nefia8/"
++	filter_creature(163) = "/man/"
++	filter_creature(164) = "/nefia0/"
+ 	HMMBITON cbitorg(CHARA_BIT_INFERIOR_RIDING / 32, CREATURE_ID_SILVER_SKULL_MAJESTY), CHARA_BIT_INFERIOR_RIDING \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_METAL / 32, CREATURE_ID_SILVER_SKULL_MAJESTY), CHARA_BIT_METAL \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_RES_ELEMENTAL / 32, CREATURE_ID_SILVER_SKULL_MAJESTY), CHARA_BIT_RES_ELEMENTAL \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_SILVER_SKULL_MAJESTY), CHARA_BIT_FLOAT \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_DEATH_MASTER / 32, CREATURE_ID_SILVER_SKULL_MAJESTY), CHARA_BIT_DEATH_MASTER \ 32
+@@ -144676,197 +146090,197 @@
+ 	HMMBITON cbitorg(CHARA_BIT_INFERIOR_RIDING / 32, CREATURE_ID_OLD_BELL), CHARA_BIT_INFERIOR_RIDING \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_METAL / 32, CREATURE_ID_OLD_BELL), CHARA_BIT_METAL \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_RES_ELEMENTAL / 32, CREATURE_ID_OLD_BELL), CHARA_BIT_RES_ELEMENTAL \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_OLD_BELL), CHARA_BIT_FLOAT \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_DROP_GOLD / 32, CREATURE_ID_OLD_BELL), CHARA_BIT_DROP_GOLD \ 32
+-	filter_creature(154) = "/nefia0/"
++	filter_creature(166) = "/nefia0/"
+ 	HMMBITON cbitorg(CHARA_BIT_INFERIOR_RIDING / 32, CREATURE_ID_ORICHAL_CHILD), CHARA_BIT_INFERIOR_RIDING \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_METAL / 32, CREATURE_ID_ORICHAL_CHILD), CHARA_BIT_METAL \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_ORICHAL_CHILD), CHARA_BIT_FLOAT \ 32
+-	filter_creature(155) = "/nefia0/"
++	filter_creature(167) = "/nefia0/"
+ 	HMMBITON cbitorg(CHARA_BIT_INFERIOR_RIDING / 32, CREATURE_ID_DESKTOP_BIRDIE), CHARA_BIT_INFERIOR_RIDING \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_METAL / 32, CREATURE_ID_DESKTOP_BIRDIE), CHARA_BIT_METAL \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_DESKTOP_BIRDIE), CHARA_BIT_FLOAT \ 32
+-	filter_creature(156) = "/nefia0/"
++	filter_creature(168) = "/nefia0/"
+ 	HMMBITON cbitorg(CHARA_BIT_INFERIOR_RIDING / 32, CREATURE_ID_DESKTOP_NAVY), CHARA_BIT_INFERIOR_RIDING \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_METAL / 32, CREATURE_ID_DESKTOP_NAVY), CHARA_BIT_METAL \ 32
+-	filter_creature(157) = "/man/"
++	filter_creature(169) = "/man/"
+ 	HMMBITON cbitorg(CHARA_BIT_RES_FEAR / 32, CREATURE_ID_STRANGE_OLD_PERSON), CHARA_BIT_RES_FEAR \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_RES_CONFUSE / 32, CREATURE_ID_STRANGE_OLD_PERSON), CHARA_BIT_RES_CONFUSE \ 32
+-	filter_creature(158) = "/god/"
++	filter_creature(170) = "/god/"
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_OBLIVION_RUDE_BEAST), CHARA_BIT_FLOAT \ 32
+-	filter_creature(159) = "/man/"
+-	filter_creature(160) = "/man/"
+-	filter_creature(161) = "/man/"
+-	filter_creature(162) = "/man/"
+-	filter_creature(163) = "/nefia1/"
+-	HMMBITON cbitorg(CHARA_BIT_RES_CONFUSE / 32, CREATURE_ID_URUK_HIGHNESS), CHARA_BIT_RES_CONFUSE \ 32
+-	filter_creature(164) = "/nefia1/"
+-	filter_creature(165) = "/nefia1/"
+-	filter_creature(166) = "/nefia1/"
+-	filter_creature(167) = "/nefia1/"
+-	filter_creature(168) = "/nefia1/"
+-	filter_creature(169) = "/nefia1/"
+-	filter_creature(170) = "/man/"
+ 	filter_creature(171) = "/man/"
+ 	filter_creature(172) = "/man/"
+-	filter_creature(173) = "/nefia1/"
+-	HMMBITON cbitorg(CHARA_BIT_RES_FEAR / 32, CREATURE_ID_KOBOLD_BLASTER), CHARA_BIT_RES_FEAR \ 32
+-	filter_creature(174) = "/nefia1/"
+-	HMMBITON cbitorg(CHARA_BIT_RES_FEAR / 32, CREATURE_ID_DUKE_KOBOLD), CHARA_BIT_RES_FEAR \ 32
+-	HMMBITON cbitorg(CHARA_BIT_RES_PARALYZE / 32, CREATURE_ID_DUKE_KOBOLD), CHARA_BIT_RES_PARALYZE \ 32
++	filter_creature(173) = "/man/"
++	filter_creature(174) = "/man/"
+ 	filter_creature(175) = "/nefia1/"
++	HMMBITON cbitorg(CHARA_BIT_RES_CONFUSE / 32, CREATURE_ID_URUK_HIGHNESS), CHARA_BIT_RES_CONFUSE \ 32
+ 	filter_creature(176) = "/nefia1/"
+ 	filter_creature(177) = "/nefia1/"
+ 	filter_creature(178) = "/nefia1/"
+ 	filter_creature(179) = "/nefia1/"
+-	filter_creature(180) = ""
++	filter_creature(180) = "/nefia1/"
++	filter_creature(181) = "/nefia1/"
++	filter_creature(182) = "/man/"
++	filter_creature(183) = "/man/"
++	filter_creature(184) = "/man/"
++	filter_creature(185) = "/nefia1/"
++	HMMBITON cbitorg(CHARA_BIT_RES_FEAR / 32, CREATURE_ID_KOBOLD_BLASTER), CHARA_BIT_RES_FEAR \ 32
++	filter_creature(186) = "/nefia1/"
++	HMMBITON cbitorg(CHARA_BIT_RES_FEAR / 32, CREATURE_ID_DUKE_KOBOLD), CHARA_BIT_RES_FEAR \ 32
++	HMMBITON cbitorg(CHARA_BIT_RES_PARALYZE / 32, CREATURE_ID_DUKE_KOBOLD), CHARA_BIT_RES_PARALYZE \ 32
++	filter_creature(187) = "/nefia1/"
++	filter_creature(188) = "/nefia1/"
++	filter_creature(189) = "/nefia1/"
++	filter_creature(190) = "/nefia1/"
++	filter_creature(191) = "/nefia1/"
++	filter_creature(192) = ""
+ 	HMMBITON cbitorg(CHARA_BIT_RES_FEAR / 32, CREATURE_ID_BISQUE_DOLL), CHARA_BIT_RES_FEAR \ 32
+-	filter_creature(181) = "/nefia2/"
++	filter_creature(193) = "/nefia2/"
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_PEACE_MAKER), CHARA_BIT_FLOAT \ 32
+-	filter_creature(182) = "/nefia2/"
+-	filter_creature(183) = "/nefia2/"
++	filter_creature(194) = "/nefia2/"
++	filter_creature(195) = "/nefia2/"
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_FOREST_ASSASSIN), CHARA_BIT_FLOAT \ 32
+-	filter_creature(184) = "/nefia2/"
++	filter_creature(196) = "/nefia2/"
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_YOKOSHIMA_ENAGA), CHARA_BIT_FLOAT \ 32
+-	filter_creature(185) = "/nefia2/"
++	filter_creature(197) = "/nefia2/"
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_ARROW_DUCK), CHARA_BIT_FLOAT \ 32
+-	filter_creature(186) = "/nefia2/"
+-	filter_creature(187) = "/man/"
++	filter_creature(198) = "/nefia2/"
++	filter_creature(199) = "/man/"
+ 	HMMBITON cbitorg(CHARA_BIT_INFERIOR_RIDING / 32, CREATURE_ID_OLD_BUTLER), CHARA_BIT_INFERIOR_RIDING \ 32
+-	filter_creature(188) = "/man/"
++	filter_creature(200) = "/man/"
+ 	HMMBITON cbitorg(CHARA_BIT_SUPERIOR_RIDING / 32, CREATURE_ID_BUTLER), CHARA_BIT_SUPERIOR_RIDING \ 32
+-	filter_creature(189) = "/man/"
++	filter_creature(201) = "/man/"
+ 	HMMBITON cbitorg(CHARA_BIT_SUPERIOR_RIDING / 32, CREATURE_ID_S_BOY), CHARA_BIT_SUPERIOR_RIDING \ 32
+-	filter_creature(190) = "/man/nefia0/"
++	filter_creature(202) = "/man/nefia0/"
+ 	HMMBITON cbitorg(CHARA_BIT_SUPERIOR_RIDING / 32, CREATURE_ID_LITTLE_BOY), CHARA_BIT_SUPERIOR_RIDING \ 32
+-	filter_creature(191) = "/god/"
++	filter_creature(203) = "/god/"
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_OBLIVION_BEAST), CHARA_BIT_FLOAT \ 32
+-	filter_creature(192) = ""
++	filter_creature(204) = ""
+ 	HMMBITON cbitorg(CHARA_BIT_RES_FEAR / 32, CREATURE_ID_VESTIGE), CHARA_BIT_RES_FEAR \ 32
+-	filter_creature(193) = ""
+-	filter_creature(194) = ""
+-	filter_creature(195) = ""
+-	filter_creature(196) = ""
+-	filter_creature(197) = ""
+-	filter_creature(198) = ""
+-	filter_creature(199) = ""
++	filter_creature(205) = ""
++	filter_creature(206) = ""
++	filter_creature(207) = ""
++	filter_creature(208) = ""
++	filter_creature(209) = ""
++	filter_creature(210) = ""
++	filter_creature(211) = ""
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_BYSYMLHA_THE_AMBER_EYES), CHARA_BIT_FLOAT \ 32
+-	filter_creature(200) = "/man/"
+-	filter_creature(201) = "/man/"
+-	filter_creature(202) = "/man/"
+-	filter_creature(203) = "/man/"
+-	filter_creature(204) = "/man/"
+-	filter_creature(205) = "/man/"
+-	filter_creature(206) = "/man/"
+-	filter_creature(207) = "/nefia3/"
++	filter_creature(212) = "/man/"
++	filter_creature(213) = "/man/"
++	filter_creature(214) = "/man/"
++	filter_creature(215) = "/man/"
++	filter_creature(216) = "/man/"
++	filter_creature(217) = "/man/"
++	filter_creature(218) = "/man/"
++	filter_creature(219) = "/nefia3/"
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_LAST_DANCER), CHARA_BIT_FLOAT \ 32
+-	filter_creature(208) = "/nefia2/"
++	filter_creature(220) = "/nefia2/"
+ 	HMMBITON cbitorg(CHARA_BIT_RES_FEAR / 32, CREATURE_ID_DRICERADOPS), CHARA_BIT_RES_FEAR \ 32
+-	filter_creature(209) = "/nefia2/"
++	filter_creature(221) = "/nefia2/"
+ 	HMMBITON cbitorg(CHARA_BIT_RES_PARALYZE / 32, CREATURE_ID_BRONTOSAURUS), CHARA_BIT_RES_PARALYZE \ 32
+-	filter_creature(210) = "/nefia2/"
+-	filter_creature(211) = "/dragon/"
++	filter_creature(222) = "/nefia2/"
++	filter_creature(223) = "/dragon/"
+ 	HMMBITON cbitorg(CHARA_BIT_RES_FEAR / 32, CREATURE_ID_BEILGENA_THE_ARTIFICIAL_DRAGON), CHARA_BIT_RES_FEAR \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_BEILGENA_THE_ARTIFICIAL_DRAGON), CHARA_BIT_FLOAT \ 32
+-	filter_creature(212) = ""
++	filter_creature(224) = ""
+ 	HMMBITON cbitorg(CHARA_BIT_INFERIOR_RIDING / 32, CREATURE_ID_GRAVEED_THE_GRAVITY_VALLEY), CHARA_BIT_INFERIOR_RIDING \ 32
+-	filter_creature(213) = ""
++	filter_creature(225) = ""
+ 	HMMBITON cbitorg(CHARA_BIT_RES_CONFUSE / 32, CREATURE_ID_DOROTHIA_STANDING_IN_THE_WETLAND), CHARA_BIT_RES_CONFUSE \ 32
+-	filter_creature(214) = "/dragon/nefia0/"
++	filter_creature(226) = "/dragon/nefia0/"
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_SUNRISE_THE_ARCHIPELAGO_DRAGON), CHARA_BIT_FLOAT \ 32
+-	filter_creature(215) = ""
++	filter_creature(227) = ""
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_ANGRY_BURGER), CHARA_BIT_FLOAT \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_RES_FEAR / 32, CREATURE_ID_ANGRY_BURGER), CHARA_BIT_RES_FEAR \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_TEMPER / 32, CREATURE_ID_ANGRY_BURGER), CHARA_BIT_TEMPER \ 32
+-	filter_creature(216) = ""
++	filter_creature(228) = ""
+ 	HMMBITON cbitorg(CHARA_BIT_INFERIOR_RIDING / 32, CREATURE_ID_MELUGAST_AO_I_THE_DIMENSION_DRIVER), CHARA_BIT_INFERIOR_RIDING \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_MELUGAST_AO_I_THE_DIMENSION_DRIVER), CHARA_BIT_FLOAT \ 32
+-	filter_creature(217) = "/god/"
++	filter_creature(229) = "/god/"
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_NAGAREW_THE_OBLIVION_BEAST), CHARA_BIT_FLOAT \ 32
+-	filter_creature(218) = "/god/"
++	filter_creature(230) = "/god/"
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_THE_CHAOS_CHILD), CHARA_BIT_FLOAT \ 32
+-	filter_creature(219) = "/undead/nefia6/"
++	filter_creature(231) = "/undead/nefia6/"
+ 	HMMBITON cbitorg(CHARA_BIT_RES_FEAR / 32, CREATURE_ID_GASYADOKURO), CHARA_BIT_RES_FEAR \ 32
+-	filter_creature(220) = "/undead/nefia6/"
++	filter_creature(232) = "/undead/nefia6/"
+ 	HMMBITON cbitorg(CHARA_BIT_RES_FEAR / 32, CREATURE_ID_SKULL_BEAST), CHARA_BIT_RES_FEAR \ 32
+-	filter_creature(221) = "/undead/nefia6/"
++	filter_creature(233) = "/undead/nefia6/"
+ 	HMMBITON cbitorg(CHARA_BIT_RES_FEAR / 32, CREATURE_ID_MONEY_DECEASED), CHARA_BIT_RES_FEAR \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_DROP_GOLD / 32, CREATURE_ID_MONEY_DECEASED), CHARA_BIT_DROP_GOLD \ 32
+-	filter_creature(222) = "/undead/nefia6/"
++	filter_creature(234) = "/undead/nefia6/"
+ 	HMMBITON cbitorg(CHARA_BIT_RES_FEAR / 32, CREATURE_ID_SKELETON_MAGICIAN), CHARA_BIT_RES_FEAR \ 32
+-	filter_creature(223) = "/undead/nefia3/"
++	filter_creature(235) = "/undead/nefia3/"
+ 	HMMBITON cbitorg(CHARA_BIT_RES_FEAR / 32, CREATURE_ID_CRIMSON_ARMOR), CHARA_BIT_RES_FEAR \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_ARMOUR / 32, CREATURE_ID_CRIMSON_ARMOR), CHARA_BIT_ARMOUR \ 32
+-	filter_creature(224) = "/undead/nefia3/"
++	filter_creature(236) = "/undead/nefia3/"
+ 	HMMBITON cbitorg(CHARA_BIT_RES_FEAR / 32, CREATURE_ID_MUSHA_SOUL), CHARA_BIT_RES_FEAR \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_ARMOUR / 32, CREATURE_ID_MUSHA_SOUL), CHARA_BIT_ARMOUR \ 32
+-	filter_creature(225) = "/undead/nefia3/"
++	filter_creature(237) = "/undead/nefia3/"
+ 	HMMBITON cbitorg(CHARA_BIT_RES_FEAR / 32, CREATURE_ID_OCHIMUSHA_ARMOR), CHARA_BIT_RES_FEAR \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_ARMOUR / 32, CREATURE_ID_OCHIMUSHA_ARMOR), CHARA_BIT_ARMOUR \ 32
+-	filter_creature(226) = "/undead/"
++	filter_creature(238) = "/undead/"
+ 	HMMBITON cbitorg(CHARA_BIT_RES_FEAR / 32, CREATURE_ID_GILPHEM_THE_MAGIC_STEEL), CHARA_BIT_RES_FEAR \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_ARMOUR / 32, CREATURE_ID_GILPHEM_THE_MAGIC_STEEL), CHARA_BIT_ARMOUR \ 32
+-	filter_creature(227) = "/man/"
++	filter_creature(239) = "/man/"
+ 	HMMBITON cbitorg(CHARA_BIT_RES_FEAR / 32, CREATURE_ID_ALSAPIA_THE_MURDERER_MASK), CHARA_BIT_RES_FEAR \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_RES_BLIND / 32, CREATURE_ID_ALSAPIA_THE_MURDERER_MASK), CHARA_BIT_RES_BLIND \ 32
+-	filter_creature(228) = "/man/nefia0/"
++	filter_creature(240) = "/man/nefia0/"
+ 	HMMBITON cbitorg(CHARA_BIT_INVISIBLE / 32, CREATURE_ID_ZANAN_ASSASSIN), CHARA_BIT_INVISIBLE \ 32
+-	filter_creature(229) = "/god/"
++	filter_creature(241) = "/god/"
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_ENTHUMESIS), CHARA_BIT_FLOAT \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_RES_FEAR / 32, CREATURE_ID_ENTHUMESIS), CHARA_BIT_RES_FEAR \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_RES_CONFUSE / 32, CREATURE_ID_ENTHUMESIS), CHARA_BIT_RES_CONFUSE \ 32
+-	filter_creature(230) = "/man/"
++	filter_creature(242) = "/man/"
+ 	HMMBITON cbitorg(CHARA_BIT_RES_FEAR / 32, CREATURE_ID_SICKFULL_OLDER_BROTHER), CHARA_BIT_RES_FEAR \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_RES_BLIND / 32, CREATURE_ID_SICKFULL_OLDER_BROTHER), CHARA_BIT_RES_BLIND \ 32
+-	filter_creature(231) = "/man/"
+-	filter_creature(232) = "/slime/nefia7/"
++	filter_creature(243) = "/man/"
++	filter_creature(244) = "/slime/nefia7/"
+ 	HMMBITON cbitorg(CHARA_BIT_SPLIT_KEEP_EFFECT / 32, CREATURE_ID_DRAGON_BUBBLE), CHARA_BIT_SPLIT_KEEP_EFFECT \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_RES_CONFUSE / 32, CREATURE_ID_DRAGON_BUBBLE), CHARA_BIT_RES_CONFUSE \ 32
+-	filter_creature(233) = "/slime/nefia7/"
+-	filter_creature(234) = "/slime/nefia7/"
++	filter_creature(245) = "/slime/nefia7/"
++	filter_creature(246) = "/slime/nefia7/"
+ 	HMMBITON cbitorg(CHARA_BIT_SPLIT_NO_EFFECT / 32, CREATURE_ID_LIVING_BLOOD), CHARA_BIT_SPLIT_NO_EFFECT \ 32
+-	filter_creature(235) = "/slime/nefia7/"
+-	filter_creature(236) = "/nefia5/"
++	filter_creature(247) = "/slime/nefia7/"
++	filter_creature(248) = "/nefia5/"
+ 	HMMBITON cbitorg(CHARA_BIT_RES_FEAR / 32, CREATURE_ID_SIN_GORILLA), CHARA_BIT_RES_FEAR \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_RES_BLIND / 32, CREATURE_ID_SIN_GORILLA), CHARA_BIT_RES_BLIND \ 32
+-	filter_creature(237) = "/nefia5/"
+-	filter_creature(238) = "/nefia5/"
+-	filter_creature(239) = "/nefia5/"
++	filter_creature(249) = "/nefia5/"
++	filter_creature(250) = "/nefia5/"
++	filter_creature(251) = "/nefia5/"
+ 	HMMBITON cbitorg(CHARA_BIT_SUPERIOR_RIDING / 32, CREATURE_ID_ELECTRIC_HIPPOPOTAMUS), CHARA_BIT_SUPERIOR_RIDING \ 32
+-	filter_creature(240) = "/nefia5/"
+-	filter_creature(241) = "/god/"
++	filter_creature(252) = "/nefia5/"
++	filter_creature(253) = "/god/"
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_TEZCATLIPOCA), CHARA_BIT_FLOAT \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_RES_FEAR / 32, CREATURE_ID_TEZCATLIPOCA), CHARA_BIT_RES_FEAR \ 32
+-	filter_creature(242) = "/god/"
++	filter_creature(254) = "/god/"
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_FIN_CROCODILE), CHARA_BIT_FLOAT \ 32
+-	filter_creature(243) = "/god/"
++	filter_creature(255) = "/god/"
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_TALON_SOLDIER), CHARA_BIT_FLOAT \ 32
+-	filter_creature(244) = "/nefia2/"
++	filter_creature(256) = "/nefia2/"
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_BLACK_HOPPER_X), CHARA_BIT_FLOAT \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_RES_FEAR / 32, CREATURE_ID_BLACK_HOPPER_X), CHARA_BIT_RES_FEAR \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_TEMPER / 32, CREATURE_ID_BLACK_HOPPER_X), CHARA_BIT_TEMPER \ 32
+-	filter_creature(245) = "/nefia2/"
++	filter_creature(257) = "/nefia2/"
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_ASSAULT_RED_DRAGONFLY), CHARA_BIT_FLOAT \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_RES_BLIND / 32, CREATURE_ID_ASSAULT_RED_DRAGONFLY), CHARA_BIT_RES_BLIND \ 32
+-	filter_creature(246) = "/nefia2/"
+-	filter_creature(247) = "/nefia2/"
++	filter_creature(258) = "/nefia2/"
++	filter_creature(259) = "/nefia2/"
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_MAGIC_HAWK_MOTH), CHARA_BIT_FLOAT \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_RES_CONFUSE / 32, CREATURE_ID_MAGIC_HAWK_MOTH), CHARA_BIT_RES_CONFUSE \ 32
+-	filter_creature(248) = "/nefia2/"
+-	filter_creature(249) = "/nefia2/"
+-	filter_creature(250) = ""
++	filter_creature(260) = "/nefia2/"
++	filter_creature(261) = "/nefia2/"
++	filter_creature(262) = ""
+ 	HMMBITON cbitorg(CHARA_BIT_INFERIOR_RIDING / 32, CREATURE_ID_KARATA_THE_SEMINAR_MASCOT), CHARA_BIT_INFERIOR_RIDING \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_METAL / 32, CREATURE_ID_KARATA_THE_SEMINAR_MASCOT), CHARA_BIT_METAL \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_RES_ELEMENTAL / 32, CREATURE_ID_KARATA_THE_SEMINAR_MASCOT), CHARA_BIT_RES_ELEMENTAL \ 32
+-	filter_creature(251) = "/man/"
+-	filter_creature(252) = "/man/"
+-	filter_creature(253) = "/man/"
+-	filter_creature(254) = "/man/"
+-	filter_creature(255) = "/man/"
+-	filter_creature(256) = "/man/"
+-	filter_creature(257) = "/nefia8/"
++	filter_creature(263) = "/man/"
++	filter_creature(264) = "/man/"
++	filter_creature(265) = "/man/"
++	filter_creature(266) = "/man/"
++	filter_creature(267) = "/man/"
++	filter_creature(268) = "/man/"
++	filter_creature(269) = "/nefia8/"
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_CHAOS_SERPENT), CHARA_BIT_FLOAT \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_RES_BLIND / 32, CREATURE_ID_CHAOS_SERPENT), CHARA_BIT_RES_BLIND \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_RES_FEAR / 32, CREATURE_ID_CHAOS_SERPENT), CHARA_BIT_RES_FEAR \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_RES_CONFUSE / 32, CREATURE_ID_CHAOS_SERPENT), CHARA_BIT_RES_CONFUSE \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_RES_PARALYZE / 32, CREATURE_ID_CHAOS_SERPENT), CHARA_BIT_RES_PARALYZE \ 32
+@@ -145297,1185 +146711,1197 @@
+ 	HMMBITON cbitorg(CHARA_BIT_RES_BLIND / 32, CREATURE_ID_SLEEPING_GIANT), CHARA_BIT_RES_BLIND \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_RES_CONFUSE / 32, CREATURE_ID_SLEEPING_GIANT), CHARA_BIT_RES_CONFUSE \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_RES_SLEEP / 32, CREATURE_ID_SLEEPING_GIANT), CHARA_BIT_RES_SLEEP \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_RES_POISON / 32, CREATURE_ID_SLEEPING_GIANT), CHARA_BIT_RES_POISON \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_RES_PARALYZE / 32, CREATURE_ID_SLEEPING_GIANT), CHARA_BIT_RES_PARALYZE \ 32
+-	filter_creature(453) = "/nefia2/"
++	filter_creature(465) = "/nefia2/"
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_EFFECT_BUTTERFLY), CHARA_BIT_FLOAT \ 32
+-	filter_creature(454) = "/nefia2/"
++	filter_creature(466) = "/nefia2/"
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_MOONLIT_PAPILLON), CHARA_BIT_FLOAT \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_RES_BLIND / 32, CREATURE_ID_MOONLIT_PAPILLON), CHARA_BIT_RES_BLIND \ 32
+-	filter_creature(455) = "/nefia2/"
++	filter_creature(467) = "/nefia2/"
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_BUTTERSPY), CHARA_BIT_FLOAT \ 32
+-	filter_creature(456) = ""
+-	filter_creature(457) = "/man/"
+-	filter_creature(458) = "/nefia6/"
++	filter_creature(468) = ""
++	filter_creature(469) = "/man/"
++	filter_creature(470) = "/nefia6/"
+ 	HMMBITON cbitorg(CHARA_BIT_SUPERIOR_RIDING / 32, CREATURE_ID_BLAZE_LION), CHARA_BIT_SUPERIOR_RIDING \ 32
+-	filter_creature(459) = "/nefia7/"
++	filter_creature(471) = "/nefia7/"
+ 	HMMBITON cbitorg(CHARA_BIT_SUPERIOR_RIDING / 32, CREATURE_ID_SHINING_SILVER_WOLF), CHARA_BIT_SUPERIOR_RIDING \ 32
+-	filter_creature(460) = "/undead/nefia6/"
++	filter_creature(472) = "/undead/nefia6/"
+ 	HMMBITON cbitorg(CHARA_BIT_TEMPER / 32, CREATURE_ID_CRYING_WITCH), CHARA_BIT_TEMPER \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_RES_BLIND / 32, CREATURE_ID_CRYING_WITCH), CHARA_BIT_RES_BLIND \ 32
+-	filter_creature(461) = "/undead/nefia6/"
+-	filter_creature(462) = "/undead/nefia6/"
+-	filter_creature(463) = ""
++	filter_creature(473) = "/undead/nefia6/"
++	filter_creature(474) = "/undead/nefia6/"
++	filter_creature(475) = ""
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_BOYCIANA), CHARA_BIT_FLOAT \ 32
+-	filter_creature(464) = "/man/nefia0/"
+-	filter_creature(465) = "/man/"
+-	filter_creature(466) = "/man/"
++	filter_creature(476) = "/man/nefia0/"
++	filter_creature(477) = "/man/"
++	filter_creature(478) = "/man/"
+ 	HMMBITON cbitorg(CHARA_BIT_RES_FEAR / 32, CREATURE_ID_NERES_THE_AMNESIAC), CHARA_BIT_RES_FEAR \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_TEMPER / 32, CREATURE_ID_NERES_THE_AMNESIAC), CHARA_BIT_TEMPER \ 32
+-	filter_creature(467) = "/man/"
++	filter_creature(479) = "/man/"
+ 	HMMBITON cbitorg(CHARA_BIT_RES_FEAR / 32, CREATURE_ID_REGULUS_THE_ALTERED), CHARA_BIT_RES_FEAR \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_TEMPER / 32, CREATURE_ID_REGULUS_THE_ALTERED), CHARA_BIT_TEMPER \ 32
+-	filter_creature(468) = "/man/"
++	filter_creature(480) = "/man/"
+ 	HMMBITON cbitorg(CHARA_BIT_INFERIOR_RIDING / 32, CREATURE_ID_FRON_THE_TOUR_PLANNER), CHARA_BIT_INFERIOR_RIDING \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_RES_FEAR / 32, CREATURE_ID_FRON_THE_TOUR_PLANNER), CHARA_BIT_RES_FEAR \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_RES_BLIND / 32, CREATURE_ID_FRON_THE_TOUR_PLANNER), CHARA_BIT_RES_BLIND \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_DEATH_MASTER / 32, CREATURE_ID_FRON_THE_TOUR_PLANNER), CHARA_BIT_DEATH_MASTER \ 32
+-	filter_creature(469) = "/man/"
++	filter_creature(481) = "/man/"
+ 	HMMBITON cbitorg(CHARA_BIT_RES_BLIND / 32, CREATURE_ID_KUROYA_THE_LOOKING_UNIVERSE), CHARA_BIT_RES_BLIND \ 32
+-	filter_creature(470) = ""
++	filter_creature(482) = ""
+ 	HMMBITON cbitorg(CHARA_BIT_RES_FEAR / 32, CREATURE_ID_SMALL_WOODEN_GOLEM), CHARA_BIT_RES_FEAR \ 32
+-	filter_creature(471) = ""
++	filter_creature(483) = ""
+ 	HMMBITON cbitorg(CHARA_BIT_RES_FEAR / 32, CREATURE_ID_SMALL_STONE_GOLEM), CHARA_BIT_RES_FEAR \ 32
+-	filter_creature(472) = "/god/"
++	filter_creature(484) = "/god/"
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_YOMAGNTHO), CHARA_BIT_FLOAT \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_RES_BLIND / 32, CREATURE_ID_YOMAGNTHO), CHARA_BIT_RES_BLIND \ 32
+-	filter_creature(473) = "/god/nefia8/"
++	filter_creature(485) = "/god/nefia8/"
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_CTHUGHA), CHARA_BIT_FLOAT \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_RES_FEAR / 32, CREATURE_ID_CTHUGHA), CHARA_BIT_RES_FEAR \ 32
+-	filter_creature(474) = "/nefia8/"
+-	filter_creature(475) = "/nefia4/"
++	filter_creature(486) = "/nefia8/"
++	filter_creature(487) = "/nefia4/"
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_BLACK_BOX), CHARA_BIT_FLOAT \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_RES_BLIND / 32, CREATURE_ID_BLACK_BOX), CHARA_BIT_RES_BLIND \ 32
+-	filter_creature(476) = "/nefia4/"
++	filter_creature(488) = "/nefia4/"
+ 	HMMBITON cbitorg(CHARA_BIT_ARMOUR / 32, CREATURE_ID_G_CUBE), CHARA_BIT_ARMOUR \ 32
+-	filter_creature(477) = "/god/"
++	filter_creature(489) = "/god/"
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_URCAGUARY), CHARA_BIT_FLOAT \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_RES_BLIND / 32, CREATURE_ID_URCAGUARY), CHARA_BIT_RES_BLIND \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_RES_FEAR / 32, CREATURE_ID_URCAGUARY), CHARA_BIT_RES_FEAR \ 32
+-	filter_creature(478) = "/god/"
++	filter_creature(490) = "/god/"
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_KARAVIKA), CHARA_BIT_FLOAT \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_RES_BLIND / 32, CREATURE_ID_KARAVIKA), CHARA_BIT_RES_BLIND \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_RES_FEAR / 32, CREATURE_ID_KARAVIKA), CHARA_BIT_RES_FEAR \ 32
+-	filter_creature(479) = "/nefia8/"
+-	filter_creature(480) = "/nefia7/"
+-	filter_creature(481) = ""
++	filter_creature(491) = "/nefia8/"
++	filter_creature(492) = "/nefia7/"
++	filter_creature(493) = ""
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_NINE_HEAD_DRAGON_THE_ABYSS), CHARA_BIT_FLOAT \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_RES_BLIND / 32, CREATURE_ID_NINE_HEAD_DRAGON_THE_ABYSS), CHARA_BIT_RES_BLIND \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_RES_CONFUSE / 32, CREATURE_ID_NINE_HEAD_DRAGON_THE_ABYSS), CHARA_BIT_RES_CONFUSE \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_RES_FEAR / 32, CREATURE_ID_NINE_HEAD_DRAGON_THE_ABYSS), CHARA_BIT_RES_FEAR \ 32
+-	filter_creature(482) = "/nefia4/"
++	filter_creature(494) = "/nefia4/"
+ 	HMMBITON cbitorg(CHARA_BIT_SUPERIOR_RIDING / 32, CREATURE_ID_R_CLEANER), CHARA_BIT_SUPERIOR_RIDING \ 32
+-	filter_creature(483) = ""
+-	filter_creature(484) = ""
+-	filter_creature(485) = "/god/"
++	filter_creature(495) = ""
++	filter_creature(496) = ""
++	filter_creature(497) = "/god/"
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_GARZIEM), CHARA_BIT_FLOAT \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_RES_BLIND / 32, CREATURE_ID_GARZIEM), CHARA_BIT_RES_BLIND \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_RES_FEAR / 32, CREATURE_ID_GARZIEM), CHARA_BIT_RES_FEAR \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_SUPERIOR_RIDING / 32, CREATURE_ID_GARZIEM), CHARA_BIT_SUPERIOR_RIDING \ 32
+-	filter_creature(486) = "/nefia7/"
+-	filter_creature(487) = "/nefia7/"
+-	filter_creature(488) = "/god/"
++	filter_creature(498) = "/nefia7/"
++	filter_creature(499) = "/nefia7/"
++	filter_creature(500) = "/god/"
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_ROVID), CHARA_BIT_FLOAT \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_RES_FEAR / 32, CREATURE_ID_ROVID), CHARA_BIT_RES_FEAR \ 32
+-	filter_creature(489) = ""
++	filter_creature(501) = ""
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_YERLESWOOD_NEO), CHARA_BIT_FLOAT \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_RES_FEAR / 32, CREATURE_ID_YERLESWOOD_NEO), CHARA_BIT_RES_FEAR \ 32
+-	filter_creature(490) = "/man/"
++	filter_creature(502) = "/man/"
+ 	HMMBITON cbitorg(CHARA_BIT_SPLIT_KEEP_EFFECT / 32, CREATURE_ID_AIKAGE_THE_SHINOBI_MASK), CHARA_BIT_SPLIT_KEEP_EFFECT \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_AIKAGE_THE_SHINOBI_MASK), CHARA_BIT_FLOAT \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_RES_FEAR / 32, CREATURE_ID_AIKAGE_THE_SHINOBI_MASK), CHARA_BIT_RES_FEAR \ 32
+-	filter_creature(491) = "/undead/nefia6/"
++	filter_creature(503) = "/undead/nefia6/"
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_PHANTOM_OF_END), CHARA_BIT_FLOAT \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_RES_BLIND / 32, CREATURE_ID_PHANTOM_OF_END), CHARA_BIT_RES_BLIND \ 32
+-	filter_creature(492) = "/god/nefia3/"
+-	filter_creature(493) = "/wild/nefia2/"
+-	filter_creature(494) = "/dragon/"
++	filter_creature(504) = "/god/nefia3/"
++	filter_creature(505) = "/wild/nefia2/"
++	filter_creature(506) = "/dragon/"
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_VANSESDA_THE_ANCIENT_FIRE), CHARA_BIT_FLOAT \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_RES_FEAR / 32, CREATURE_ID_VANSESDA_THE_ANCIENT_FIRE), CHARA_BIT_RES_FEAR \ 32
+-	filter_creature(495) = "/dragon/nefia5/"
++	filter_creature(507) = "/dragon/nefia5/"
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_YELLOW_FIRE_DRAGON), CHARA_BIT_FLOAT \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_TEMPER / 32, CREATURE_ID_YELLOW_FIRE_DRAGON), CHARA_BIT_TEMPER \ 32
+-	filter_creature(496) = "/nefia8/"
++	filter_creature(508) = "/nefia8/"
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_CHAOS_SHAMAN), CHARA_BIT_FLOAT \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_RES_BLIND / 32, CREATURE_ID_CHAOS_SHAMAN), CHARA_BIT_RES_BLIND \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_RES_CONFUSE / 32, CREATURE_ID_CHAOS_SHAMAN), CHARA_BIT_RES_CONFUSE \ 32
+-	filter_creature(497) = "/nefia8/"
++	filter_creature(509) = "/nefia8/"
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_CHAOS_PALADIN), CHARA_BIT_FLOAT \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_RES_BLIND / 32, CREATURE_ID_CHAOS_PALADIN), CHARA_BIT_RES_BLIND \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_RES_FEAR / 32, CREATURE_ID_CHAOS_PALADIN), CHARA_BIT_RES_FEAR \ 32
+-	filter_creature(498) = "/nefia8/"
++	filter_creature(510) = "/nefia8/"
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_CHAOS_HUNTER), CHARA_BIT_FLOAT \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_RES_BLIND / 32, CREATURE_ID_CHAOS_HUNTER), CHARA_BIT_RES_BLIND \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_RES_SLEEP / 32, CREATURE_ID_CHAOS_HUNTER), CHARA_BIT_RES_SLEEP \ 32
+-	filter_creature(499) = "/man/"
++	filter_creature(511) = "/man/"
+ 	HMMBITON cbitorg(CHARA_BIT_RES_FEAR / 32, CREATURE_ID_MARKA_THE_SILVER_BEAR), CHARA_BIT_RES_FEAR \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_TEMPER / 32, CREATURE_ID_MARKA_THE_SILVER_BEAR), CHARA_BIT_TEMPER \ 32
+-	filter_creature(500) = "/man/"
+-	filter_creature(501) = "/man/"
+-	filter_creature(502) = "/man/"
+-	filter_creature(503) = "/man/"
+-	filter_creature(504) = "/man/"
+-	filter_creature(505) = "/man/"
+-	filter_creature(506) = "/man/"
+-	filter_creature(507) = "/nefia2/"
++	filter_creature(512) = "/man/"
++	filter_creature(513) = "/man/"
++	filter_creature(514) = "/man/"
++	filter_creature(515) = "/man/"
++	filter_creature(516) = "/man/"
++	filter_creature(517) = "/man/"
++	filter_creature(518) = "/man/"
++	filter_creature(519) = "/nefia2/"
+ 	HMMBITON cbitorg(CHARA_BIT_DROP_GOLD / 32, CREATURE_ID_GOLD_KIWI), CHARA_BIT_DROP_GOLD \ 32
+-	filter_creature(508) = "/nefia2/"
+-	filter_creature(509) = "/nefia7/"
++	filter_creature(520) = "/nefia2/"
++	filter_creature(521) = "/nefia7/"
+ 	HMMBITON cbitorg(CHARA_BIT_RES_FEAR / 32, CREATURE_ID_DEATH_HAMSTER), CHARA_BIT_RES_FEAR \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_TEMPER / 32, CREATURE_ID_DEATH_HAMSTER), CHARA_BIT_TEMPER \ 32
+-	filter_creature(510) = "/nefia7/"
+-	filter_creature(511) = "/nefia7/"
+-	filter_creature(512) = ""
+-	filter_creature(513) = "/god/"
++	filter_creature(522) = "/nefia7/"
++	filter_creature(523) = "/nefia7/"
++	filter_creature(524) = ""
++	filter_creature(525) = "/god/"
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_SINAHA), CHARA_BIT_FLOAT \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_RES_FEAR / 32, CREATURE_ID_SINAHA), CHARA_BIT_RES_FEAR \ 32
+-	filter_creature(514) = "/god/"
++	filter_creature(526) = "/god/"
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_ARASIEL), CHARA_BIT_FLOAT \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_RES_FEAR / 32, CREATURE_ID_ARASIEL), CHARA_BIT_RES_FEAR \ 32
+-	filter_creature(515) = "/nefia7/"
++	filter_creature(527) = "/nefia7/"
+ 	HMMBITON cbitorg(CHARA_BIT_RES_CONFUSE / 32, CREATURE_ID_LAVA_GOLEM), CHARA_BIT_RES_CONFUSE \ 32
+-	filter_creature(516) = "/god/"
++	filter_creature(528) = "/god/"
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_AMURDAD), CHARA_BIT_FLOAT \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_RES_FEAR / 32, CREATURE_ID_AMURDAD), CHARA_BIT_RES_FEAR \ 32
+-	filter_creature(517) = "/nefia2/"
+-	filter_creature(518) = "/nefia5/"
+-	filter_creature(519) = "/nefia5/"
+-	filter_creature(520) = "/wild/nefia5/"
++	filter_creature(529) = "/nefia2/"
++	filter_creature(530) = "/nefia5/"
++	filter_creature(531) = "/nefia5/"
++	filter_creature(532) = "/wild/nefia5/"
+ 	HMMBITON cbitorg(CHARA_BIT_TEMPER / 32, CREATURE_ID_DESTROY_BOAR), CHARA_BIT_TEMPER \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_RES_FEAR / 32, CREATURE_ID_DESTROY_BOAR), CHARA_BIT_RES_FEAR \ 32
+-	filter_creature(521) = "/wild/nefia5/"
++	filter_creature(533) = "/wild/nefia5/"
+ 	HMMBITON cbitorg(CHARA_BIT_RES_FEAR / 32, CREATURE_ID_BIG_BOAR), CHARA_BIT_RES_FEAR \ 32
+-	filter_creature(522) = "/wild/nefia5/"
++	filter_creature(534) = "/wild/nefia5/"
+ 	HMMBITON cbitorg(CHARA_BIT_RES_FEAR / 32, CREATURE_ID_CHILD_BOAR), CHARA_BIT_RES_FEAR \ 32
+-	filter_creature(523) = "/nefia1/"
+-	filter_creature(524) = "/man/"
++	filter_creature(535) = "/nefia1/"
++	filter_creature(536) = "/man/"
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_NEIN_THE_FLYING_WITCH), CHARA_BIT_FLOAT \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_RES_FEAR / 32, CREATURE_ID_NEIN_THE_FLYING_WITCH), CHARA_BIT_RES_FEAR \ 32
+-	filter_creature(525) = "/man/"
++	filter_creature(537) = "/man/"
+ 	HMMBITON cbitorg(CHARA_BIT_RES_BLIND / 32, CREATURE_ID_RAIZEL_THE_OLD_WIZARD), CHARA_BIT_RES_BLIND \ 32
+-	filter_creature(526) = ""
++	filter_creature(538) = ""
+ 	HMMBITON cbitorg(CHARA_BIT_TEMPER / 32, CREATURE_ID_CHESTNUT_GIANT), CHARA_BIT_TEMPER \ 32
+-	filter_creature(527) = "/man/nefia0/"
++	filter_creature(539) = "/man/nefia0/"
+ 	HMMBITON cbitorg(CHARA_BIT_RES_FEAR / 32, CREATURE_ID_TEACHER), CHARA_BIT_RES_FEAR \ 32
+-	filter_creature(528) = ""
++	filter_creature(540) = ""
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_TRUFFE_CHOCOLATE_WISP), CHARA_BIT_FLOAT \ 32
+-	filter_creature(529) = "/god/"
++	filter_creature(541) = "/god/"
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_SOPHIA_THE_WISE), CHARA_BIT_FLOAT \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_RES_FEAR / 32, CREATURE_ID_SOPHIA_THE_WISE), CHARA_BIT_RES_FEAR \ 32
+-	filter_creature(530) = "/man/"
+-	filter_creature(531) = "/man/"
+-	filter_creature(532) = ""
+-	filter_creature(533) = ""
++	filter_creature(542) = "/man/"
++	filter_creature(543) = "/man/"
++	filter_creature(544) = ""
++	filter_creature(545) = ""
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_SHOPKEEPER_CROW), CHARA_BIT_FLOAT \ 32
+-	filter_creature(534) = "/nefia6/"
++	filter_creature(546) = "/nefia6/"
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_BLACK_ANGEL_HAIR), CHARA_BIT_FLOAT \ 32
+-	filter_creature(535) = "/nefia6/"
++	filter_creature(547) = "/nefia6/"
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_KESALANPATHARAN), CHARA_BIT_FLOAT \ 32
+-	filter_creature(536) = "/nefia5/"
++	filter_creature(548) = "/nefia5/"
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_QUEEN_GI_ANT), CHARA_BIT_FLOAT \ 32
+-	filter_creature(537) = "/nefia5/"
+-	filter_creature(538) = "/nefia5/"
+-	filter_creature(539) = "/man/nefia0/"
++	filter_creature(549) = "/nefia5/"
++	filter_creature(550) = "/nefia5/"
++	filter_creature(551) = "/man/nefia0/"
+ 	HMMBITON cbitorg(CHARA_BIT_RES_FEAR / 32, CREATURE_ID_JUERE_DEMON_SOLDIER), CHARA_BIT_RES_FEAR \ 32
+-	filter_creature(540) = "/undead/nefia8/"
+-	filter_creature(541) = "/man/"
++	filter_creature(552) = "/undead/nefia8/"
++	filter_creature(553) = "/man/"
+ 	HMMBITON cbitorg(CHARA_BIT_RES_FEAR / 32, CREATURE_ID_SPIPHA_THE_DRAGON_HUNTER), CHARA_BIT_RES_FEAR \ 32
+-	filter_creature(542) = "/god/nefia1/"
+-	filter_creature(543) = "/god/nefia1/"
+-	filter_creature(544) = "/wild/nefia2/"
++	filter_creature(554) = "/god/nefia1/"
++	filter_creature(555) = "/god/nefia1/"
++	filter_creature(556) = "/wild/nefia2/"
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_TREE_SPARROW), CHARA_BIT_FLOAT \ 32
+-	filter_creature(545) = "/nefia8/"
++	filter_creature(557) = "/nefia8/"
+ 	HMMBITON cbitorg(CHARA_BIT_RES_FEAR / 32, CREATURE_ID_SPAGHETTI_MONSTER), CHARA_BIT_RES_FEAR \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_SPAGHETTI_MONSTER), CHARA_BIT_FLOAT \ 32
+-	filter_creature(546) = "/dragon/nefia3/"
++	filter_creature(558) = "/dragon/nefia3/"
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_FLASH_WYVERN), CHARA_BIT_FLOAT \ 32
+-	filter_creature(547) = ""
++	filter_creature(559) = ""
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_MELUGAST_TYPE0_THE_DIMENSION_DRIVER), CHARA_BIT_FLOAT \ 32
+-	filter_creature(548) = "/god/"
++	filter_creature(560) = "/god/"
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_NORNE_THE_GUIDE), CHARA_BIT_FLOAT \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_RES_CONFUSE / 32, CREATURE_ID_NORNE_THE_GUIDE), CHARA_BIT_RES_CONFUSE \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_DEATH_MASTER / 32, CREATURE_ID_NORNE_THE_GUIDE), CHARA_BIT_DEATH_MASTER \ 32
+-	filter_creature(549) = "/nefia6/"
+-	filter_creature(550) = "/nefia4/"
+-	filter_creature(551) = "/man/nefia0/"
++	filter_creature(561) = "/nefia6/"
++	filter_creature(562) = "/nefia4/"
++	filter_creature(563) = "/man/nefia0/"
+ 	HMMBITON cbitorg(CHARA_BIT_TEMPER / 32, CREATURE_ID_BOMB_THROWER), CHARA_BIT_TEMPER \ 32
+-	filter_creature(552) = "/nefia4/"
+-	filter_creature(553) = "/dragon/nefia5/"
+-	filter_creature(554) = "/dragon/nefia5/"
++	filter_creature(564) = "/nefia4/"
++	filter_creature(565) = "/dragon/nefia5/"
++	filter_creature(566) = "/dragon/nefia5/"
+ 	HMMBITON cbitorg(CHARA_BIT_TEMPER / 32, CREATURE_ID_BERSERK_DRAGON), CHARA_BIT_TEMPER \ 32
+-	filter_creature(555) = "/nefia7/"
+-	filter_creature(556) = "/nefia7/"
+-	filter_creature(557) = "/nefia8/"
+-	filter_creature(558) = "/nefia7/"
+-	filter_creature(559) = "/nefia7/"
++	filter_creature(567) = "/nefia7/"
++	filter_creature(568) = "/nefia7/"
++	filter_creature(569) = "/nefia8/"
++	filter_creature(570) = "/nefia7/"
++	filter_creature(571) = "/nefia7/"
+ 	HMMBITON cbitorg(CHARA_BIT_DROP_GOLD / 32, CREATURE_ID_BADGER), CHARA_BIT_DROP_GOLD \ 32
+-	filter_creature(560) = "/nefia0/"
++	filter_creature(572) = "/nefia0/"
+ 	HMMBITON cbitorg(CHARA_BIT_INFERIOR_RIDING / 32, CREATURE_ID_BELL_OF_EMERGENCY), CHARA_BIT_INFERIOR_RIDING \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_METAL / 32, CREATURE_ID_BELL_OF_EMERGENCY), CHARA_BIT_METAL \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_RES_ELEMENTAL / 32, CREATURE_ID_BELL_OF_EMERGENCY), CHARA_BIT_RES_ELEMENTAL \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_BELL_OF_EMERGENCY), CHARA_BIT_FLOAT \ 32
+-	filter_creature(561) = "/nefia7/"
+-	filter_creature(562) = "/dragon/nefia7/"
++	filter_creature(573) = "/nefia7/"
++	filter_creature(574) = "/dragon/nefia7/"
+ 	HMMBITON cbitorg(CHARA_BIT_RES_BLIND / 32, CREATURE_ID_TALPIDAE), CHARA_BIT_RES_BLIND \ 32
+-	filter_creature(563) = "/wild/nefia7/"
++	filter_creature(575) = "/wild/nefia7/"
+ 	HMMBITON cbitorg(CHARA_BIT_RES_BLIND / 32, CREATURE_ID_MEGA_MOLE), CHARA_BIT_RES_BLIND \ 32
+-	filter_creature(564) = "/man/nefia0/"
+-	filter_creature(565) = "/man/nefia0/"
+-	filter_creature(566) = "/god/nefia5/"
+-	filter_creature(567) = "/god/nefia5/"
+-	filter_creature(568) = "/nefia8/"
+-	filter_creature(569) = "/undead/ether/nefia6/"
++	filter_creature(576) = "/man/nefia0/"
++	filter_creature(577) = "/man/nefia0/"
++	filter_creature(578) = "/god/nefia5/"
++	filter_creature(579) = "/god/nefia5/"
++	filter_creature(580) = "/nefia8/"
++	filter_creature(581) = "/undead/ether/nefia6/"
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_DEMONS_SOUL), CHARA_BIT_FLOAT \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_RES_FEAR / 32, CREATURE_ID_DEMONS_SOUL), CHARA_BIT_RES_FEAR \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_DEATH_MASTER / 32, CREATURE_ID_DEMONS_SOUL), CHARA_BIT_DEATH_MASTER \ 32
+-	filter_creature(570) = "/nefia8/"
+-	filter_creature(571) = "/nefia7/"
+-	filter_creature(572) = "/nefia7/"
++	filter_creature(582) = "/nefia8/"
++	filter_creature(583) = "/nefia7/"
++	filter_creature(584) = "/nefia7/"
+ 	HMMBITON cbitorg(CHARA_BIT_TEMPER / 32, CREATURE_ID_MOAI), CHARA_BIT_TEMPER \ 32
+-	filter_creature(573) = "/dragon/nefia3/"
+-	filter_creature(574) = "/undead/dragon/nefia6/"
+-	filter_creature(575) = "/undead/nefia0/"
+-	filter_creature(576) = "/man/"
+-	filter_creature(577) = "/man/"
+-	filter_creature(578) = "/man/"
+-	filter_creature(579) = "/god/nefia3/"
++	filter_creature(585) = "/dragon/nefia3/"
++	filter_creature(586) = "/undead/dragon/nefia6/"
++	filter_creature(587) = "/undead/nefia0/"
++	filter_creature(588) = "/man/"
++	filter_creature(589) = "/man/"
++	filter_creature(590) = "/man/"
++	filter_creature(591) = "/god/nefia3/"
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_SERAPH), CHARA_BIT_FLOAT \ 32
+-	filter_creature(580) = "/god/nefia3/"
++	filter_creature(592) = "/god/nefia3/"
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_DOMINION), CHARA_BIT_FLOAT \ 32
+-	filter_creature(581) = "/god/nefia3/"
++	filter_creature(593) = "/god/nefia3/"
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_ARKHAI), CHARA_BIT_FLOAT \ 32
+-	filter_creature(582) = "/nefia7/"
++	filter_creature(594) = "/nefia7/"
+ 	HMMBITON cbitorg(CHARA_BIT_SUPERIOR_RIDING / 32, CREATURE_ID_PADANGU), CHARA_BIT_SUPERIOR_RIDING \ 32
+-	filter_creature(583) = "/nefia7/"
++	filter_creature(595) = "/nefia7/"
+ 	HMMBITON cbitorg(CHARA_BIT_RES_SLEEP / 32, CREATURE_ID_SHEEPDOG), CHARA_BIT_RES_SLEEP \ 32
+-	filter_creature(584) = "/undead/nefia6/"
++	filter_creature(596) = "/undead/nefia6/"
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_GALACTICA_PHANTOM), CHARA_BIT_FLOAT \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_RES_FEAR / 32, CREATURE_ID_GALACTICA_PHANTOM), CHARA_BIT_RES_FEAR \ 32
+-	filter_creature(585) = "/nefia0/"
++	filter_creature(597) = "/nefia0/"
+ 	HMMBITON cbitorg(CHARA_BIT_INFERIOR_RIDING / 32, CREATURE_ID_CHAOS_MIMIC), CHARA_BIT_INFERIOR_RIDING \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_METAL / 32, CREATURE_ID_CHAOS_MIMIC), CHARA_BIT_METAL \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_RES_ELEMENTAL / 32, CREATURE_ID_CHAOS_MIMIC), CHARA_BIT_RES_ELEMENTAL \ 32
+-	filter_creature(586) = "/nefia7/"
+-	filter_creature(587) = "/dragon/nefia4/"
++	filter_creature(598) = "/nefia7/"
++	filter_creature(599) = "/dragon/nefia4/"
+ 	HMMBITON cbitorg(CHARA_BIT_TEMPER / 32, CREATURE_ID_SUPER_DRAGONEWT), CHARA_BIT_TEMPER \ 32
+-	filter_creature(588) = "/god/nefia5/"
++	filter_creature(600) = "/god/nefia5/"
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_MUCENCAB), CHARA_BIT_FLOAT \ 32
+-	filter_creature(589) = "/nefia4/"
+-	filter_creature(590) = "/nefia5/"
+-	filter_creature(591) = "/god/nefia3/"
++	filter_creature(601) = "/nefia4/"
++	filter_creature(602) = "/nefia5/"
++	filter_creature(603) = "/god/nefia3/"
+ 	HMMBITON cbitorg(CHARA_BIT_TEMPER / 32, CREATURE_ID_KALI), CHARA_BIT_TEMPER \ 32
+-	filter_creature(592) = "/nefia3/"
++	filter_creature(604) = "/nefia3/"
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_EYE_OF_BALOR), CHARA_BIT_FLOAT \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_RES_FEAR / 32, CREATURE_ID_EYE_OF_BALOR), CHARA_BIT_RES_FEAR \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_DEATH_MASTER / 32, CREATURE_ID_EYE_OF_BALOR), CHARA_BIT_DEATH_MASTER \ 32
+-	filter_creature(593) = "/god/nefia5/"
+-	filter_creature(594) = "/nefia4/"
++	filter_creature(605) = "/god/nefia5/"
++	filter_creature(606) = "/nefia4/"
+ 	HMMBITON cbitorg(CHARA_BIT_INFERIOR_RIDING / 32, CREATURE_ID_QUICK_REDCAP), CHARA_BIT_INFERIOR_RIDING \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_RES_ELEMENTAL / 32, CREATURE_ID_QUICK_REDCAP), CHARA_BIT_RES_ELEMENTAL \ 32
+-	filter_creature(595) = "/god/nefia7/"
++	filter_creature(607) = "/god/nefia7/"
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_CAMAZOTZ), CHARA_BIT_FLOAT \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_RES_BLIND / 32, CREATURE_ID_CAMAZOTZ), CHARA_BIT_RES_BLIND \ 32
+-	filter_creature(596) = "/undead/god/nefia6/"
+-	filter_creature(597) = "/undead/god/nefia6/"
+-	filter_creature(598) = "/god/nefia2/"
++	filter_creature(608) = "/undead/god/nefia6/"
++	filter_creature(609) = "/undead/god/nefia6/"
++	filter_creature(610) = "/god/nefia2/"
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_NEMAIN), CHARA_BIT_FLOAT \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_DEATH_MASTER / 32, CREATURE_ID_NEMAIN), CHARA_BIT_DEATH_MASTER \ 32
+-	filter_creature(599) = "/man/nefia0/"
+-	filter_creature(600) = "/nefia4/"
+-	filter_creature(601) = "/nefia7/"
++	filter_creature(611) = "/man/nefia0/"
++	filter_creature(612) = "/nefia4/"
++	filter_creature(613) = "/nefia7/"
+ 	HMMBITON cbitorg(CHARA_BIT_RES_FEAR / 32, CREATURE_ID_ULTIMATE_GOLEM), CHARA_BIT_RES_FEAR \ 32
+-	filter_creature(602) = "/nefia1/"
++	filter_creature(614) = "/nefia1/"
+ 	HMMBITON cbitorg(CHARA_BIT_TEMPER / 32, CREATURE_ID_ULFHEOINN), CHARA_BIT_TEMPER \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_RES_FEAR / 32, CREATURE_ID_ULFHEOINN), CHARA_BIT_RES_FEAR \ 32
+-	filter_creature(603) = "/nefia3/"
++	filter_creature(615) = "/nefia3/"
+ 	HMMBITON cbitorg(CHARA_BIT_DROP_GOLD / 32, CREATURE_ID_DIABOLIC_CLOWN), CHARA_BIT_DROP_GOLD \ 32
+-	filter_creature(604) = "/undead/nefia6/"
+-	filter_creature(605) = "/god/nefia7/"
++	filter_creature(616) = "/undead/nefia6/"
++	filter_creature(617) = "/god/nefia7/"
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_GARUDA), CHARA_BIT_FLOAT \ 32
+-	filter_creature(606) = "/nefia7/"
++	filter_creature(618) = "/nefia7/"
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_BIRD_ARCHER), CHARA_BIT_FLOAT \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_TEMPER / 32, CREATURE_ID_BIRD_ARCHER), CHARA_BIT_TEMPER \ 32
+-	filter_creature(607) = "/nefia7/"
++	filter_creature(619) = "/nefia7/"
+ 	HMMBITON cbitorg(CHARA_BIT_RES_FEAR / 32, CREATURE_ID_BLOOD_GOLEM), CHARA_BIT_RES_FEAR \ 32
+-	filter_creature(608) = "/nefia3/"
++	filter_creature(620) = "/nefia3/"
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_HOLDGAZER), CHARA_BIT_FLOAT \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_RES_FEAR / 32, CREATURE_ID_HOLDGAZER), CHARA_BIT_RES_FEAR \ 32
+-	filter_creature(609) = "/nefia3/"
+-	filter_creature(610) = "/nefia6/"
+-	filter_creature(611) = "/nefia1/"
+-	filter_creature(612) = "/nefia2/"
++	filter_creature(621) = "/nefia3/"
++	filter_creature(622) = "/nefia6/"
++	filter_creature(623) = "/nefia1/"
++	filter_creature(624) = "/nefia2/"
+ 	HMMBITON cbitorg(CHARA_BIT_SUPERIOR_RIDING / 32, CREATURE_ID_OMEGA_HERAKLES), CHARA_BIT_SUPERIOR_RIDING \ 32
+-	filter_creature(613) = "/god/nefia3/"
+-	filter_creature(614) = "/nefia7/"
++	filter_creature(625) = "/god/nefia3/"
++	filter_creature(626) = "/nefia7/"
+ 	HMMBITON cbitorg(CHARA_BIT_SPLIT_NO_EFFECT / 32, CREATURE_ID_CLUSTER_BOMB_ROCK), CHARA_BIT_SPLIT_NO_EFFECT \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_SUICIDE / 32, CREATURE_ID_CLUSTER_BOMB_ROCK), CHARA_BIT_SUICIDE \ 32
+-	filter_creature(615) = "/man/"
+-	filter_creature(616) = "/nefia1/"
++	filter_creature(627) = "/man/"
++	filter_creature(628) = "/nefia1/"
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_MIRAGE_GRYPHON), CHARA_BIT_FLOAT \ 32
+-	filter_creature(617) = "/nefia1/"
++	filter_creature(629) = "/nefia1/"
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_BLACK_GRYFFON), CHARA_BIT_FLOAT \ 32
+-	filter_creature(618) = "/nefia1/"
+-	filter_creature(619) = "/man/"
+-	filter_creature(620) = "/nefia2/"
++	filter_creature(630) = "/nefia1/"
++	filter_creature(631) = "/man/"
++	filter_creature(632) = "/nefia2/"
+ 	HMMBITON cbitorg(CHARA_BIT_RES_FEAR / 32, CREATURE_ID_GIANT_EATER_FLOWER), CHARA_BIT_RES_FEAR \ 32
+-	filter_creature(621) = "/nefia4/"
++	filter_creature(633) = "/nefia4/"
+ 	HMMBITON cbitorg(CHARA_BIT_INVISIBLE / 32, CREATURE_ID_YERLES_CYBORG_SOLDIER), CHARA_BIT_INVISIBLE \ 32
+-	filter_creature(622) = "/nefia0/"
+-	filter_creature(623) = "/nefia5/"
+-	filter_creature(624) = "/nefia4/"
+-	filter_creature(625) = "/nefia6/"
++	filter_creature(634) = "/nefia0/"
++	filter_creature(635) = "/nefia5/"
++	filter_creature(636) = "/nefia4/"
++	filter_creature(637) = "/nefia6/"
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_SHADOW), CHARA_BIT_FLOAT \ 32
+-	filter_creature(626) = "/nefia2/"
++	filter_creature(638) = "/nefia2/"
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_POWER_EAGLE), CHARA_BIT_FLOAT \ 32
+-	filter_creature(627) = "/nefia2/"
++	filter_creature(639) = "/nefia2/"
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_STRIKE_EAGLE), CHARA_BIT_FLOAT \ 32
+-	filter_creature(628) = ""
+-	filter_creature(629) = ""
++	filter_creature(640) = ""
++	filter_creature(641) = ""
+ 	HMMBITON cbitorg(CHARA_BIT_INFERIOR_RIDING / 32, CREATURE_ID_PRO_JET), CHARA_BIT_INFERIOR_RIDING \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_METAL / 32, CREATURE_ID_PRO_JET), CHARA_BIT_METAL \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_PRO_JET), CHARA_BIT_FLOAT \ 32
+-	filter_creature(630) = ""
++	filter_creature(642) = ""
+ 	HMMBITON cbitorg(CHARA_BIT_RES_ELEMENTAL / 32, CREATURE_ID_KING_COCKROACH), CHARA_BIT_RES_ELEMENTAL \ 32
+-	filter_creature(631) = ""
++	filter_creature(643) = ""
+ 	HMMBITON cbitorg(CHARA_BIT_SPLIT_KEEP_EFFECT / 32, CREATURE_ID_MURDER_COCKROACH), CHARA_BIT_SPLIT_KEEP_EFFECT \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_RES_ELEMENTAL / 32, CREATURE_ID_MURDER_COCKROACH), CHARA_BIT_RES_ELEMENTAL \ 32
+-	filter_creature(632) = "/man/"
+-	filter_creature(633) = "/god/nefia1/"
++	filter_creature(644) = "/man/"
++	filter_creature(645) = "/god/nefia1/"
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_SEI_RYU), CHARA_BIT_FLOAT \ 32
+-	filter_creature(634) = "/man/"
+-	filter_creature(635) = "/man/"
++	filter_creature(646) = "/man/"
++	filter_creature(647) = "/man/"
+ 	HMMBITON cbitorg(CHARA_BIT_TEMPER / 32, CREATURE_ID_PART_TIME_WORKER2), CHARA_BIT_TEMPER \ 32
+-	filter_creature(636) = "/god/"
++	filter_creature(648) = "/god/"
+ 	HMMBITON cbitorg(CHARA_BIT_RES_FEAR / 32, CREATURE_ID_ESTORK_THE_DOGGOD), CHARA_BIT_RES_FEAR \ 32
+-	filter_creature(637) = ""
+-	filter_creature(638) = "/man/"
+-	filter_creature(639) = "/man/"
+-	filter_creature(640) = "/man/"
+-	filter_creature(641) = "/dragon/nefia0/"
+-	filter_creature(642) = "/nefia6/"
++	filter_creature(649) = ""
++	filter_creature(650) = "/man/"
++	filter_creature(651) = "/man/"
++	filter_creature(652) = "/man/"
++	filter_creature(653) = "/dragon/nefia0/"
++	filter_creature(654) = "/nefia6/"
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_DEMONS_RULER), CHARA_BIT_FLOAT \ 32
+-	filter_creature(643) = "/nefia6/"
++	filter_creature(655) = "/nefia6/"
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_DEMONS_LORD), CHARA_BIT_FLOAT \ 32
+-	filter_creature(644) = "/nefia6/"
++	filter_creature(656) = "/nefia6/"
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_DEMON), CHARA_BIT_FLOAT \ 32
+-	filter_creature(645) = ""
++	filter_creature(657) = ""
+ 	HMMBITON cbitorg(CHARA_BIT_RES_BLIND / 32, CREATURE_ID_MOBILE_COMMUNICATION_EQUIPMENT), CHARA_BIT_RES_BLIND \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_RES_FEAR / 32, CREATURE_ID_MOBILE_COMMUNICATION_EQUIPMENT), CHARA_BIT_RES_FEAR \ 32
+-	filter_creature(646) = "/nefia5/"
++	filter_creature(658) = "/nefia5/"
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_BLACK_HORNET), CHARA_BIT_FLOAT \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_TEMPER / 32, CREATURE_ID_BLACK_HORNET), CHARA_BIT_TEMPER \ 32
+-	filter_creature(647) = "/nefia5/"
+-	filter_creature(648) = "/dragon/nefia3/"
++	filter_creature(659) = "/nefia5/"
++	filter_creature(660) = "/dragon/nefia3/"
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_VALIANT_WYVERN), CHARA_BIT_FLOAT \ 32
+-	filter_creature(649) = "/god/"
++	filter_creature(661) = "/god/"
+ 	HMMBITON cbitorg(CHARA_BIT_SUPERIOR_RIDING / 32, CREATURE_ID_CHAOS_UNICORN_KING_OF_CHAOS), CHARA_BIT_SUPERIOR_RIDING \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_CHAOS_UNICORN_KING_OF_CHAOS), CHARA_BIT_FLOAT \ 32
+-	filter_creature(650) = "/nefia8/"
++	filter_creature(662) = "/nefia8/"
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_CHAOS_SPIRIT), CHARA_BIT_FLOAT \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_RES_BLIND / 32, CREATURE_ID_CHAOS_SPIRIT), CHARA_BIT_RES_BLIND \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_RES_FEAR / 32, CREATURE_ID_CHAOS_SPIRIT), CHARA_BIT_RES_FEAR \ 32
+-	filter_creature(651) = "/nefia0/"
++	filter_creature(663) = "/nefia0/"
+ 	HMMBITON cbitorg(CHARA_BIT_INFERIOR_RIDING / 32, CREATURE_ID_XEREN_SATELLITE_UNIT), CHARA_BIT_INFERIOR_RIDING \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_METAL / 32, CREATURE_ID_XEREN_SATELLITE_UNIT), CHARA_BIT_METAL \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_XEREN_SATELLITE_UNIT), CHARA_BIT_FLOAT \ 32
+-	filter_creature(652) = "/nefia4/"
+-	filter_creature(653) = "/man/"
+-	filter_creature(654) = "/man/"
+-	filter_creature(655) = "/nefia3/"
++	filter_creature(664) = "/nefia4/"
++	filter_creature(665) = "/man/"
++	filter_creature(666) = "/man/"
++	filter_creature(667) = "/nefia3/"
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_GRIEF_SHIELD), CHARA_BIT_FLOAT \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_ARMOUR / 32, CREATURE_ID_GRIEF_SHIELD), CHARA_BIT_ARMOUR \ 32
+-	filter_creature(656) = "/nefia5/"
+-	filter_creature(657) = "/nefia5/"
++	filter_creature(668) = "/nefia5/"
++	filter_creature(669) = "/nefia5/"
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_FLYING_LEECH), CHARA_BIT_FLOAT \ 32
+-	filter_creature(658) = "/man/"
+-	filter_creature(659) = "/man/"
++	filter_creature(670) = "/man/"
++	filter_creature(671) = "/man/"
+ 	HMMBITON cbitorg(CHARA_BIT_SUPERIOR_RIDING / 32, CREATURE_ID_M_GIRL), CHARA_BIT_SUPERIOR_RIDING \ 32
+-	filter_creature(660) = "/man/"
++	filter_creature(672) = "/man/"
+ 	HMMBITON cbitorg(CHARA_BIT_SUPERIOR_RIDING / 32, CREATURE_ID_LAZY_OLDER_SISTER), CHARA_BIT_SUPERIOR_RIDING \ 32
+-	filter_creature(661) = "/nefia0/"
++	filter_creature(673) = "/nefia0/"
+ 	HMMBITON cbitorg(CHARA_BIT_SUPERIOR_RIDING / 32, CREATURE_ID_PASCAL), CHARA_BIT_SUPERIOR_RIDING \ 32
+-	filter_creature(662) = "/god/"
++	filter_creature(674) = "/god/"
+ 	HMMBITON cbitorg(CHARA_BIT_SUPERIOR_RIDING / 32, CREATURE_ID_LEIKI), CHARA_BIT_SUPERIOR_RIDING \ 32
+-	filter_creature(663) = ""
+-	filter_creature(664) = ""
+-	filter_creature(665) = "/undead/nefia6/"
++	filter_creature(675) = ""
++	filter_creature(676) = ""
++	filter_creature(677) = "/undead/nefia6/"
+ 	HMMBITON cbitorg(CHARA_BIT_RES_FEAR / 32, CREATURE_ID_SKELETON_HERO), CHARA_BIT_RES_FEAR \ 32
+-	filter_creature(666) = "/spirit/nefia8/"
++	filter_creature(678) = "/spirit/nefia8/"
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_GUN_SPIRIT), CHARA_BIT_FLOAT \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_RES_FEAR / 32, CREATURE_ID_GUN_SPIRIT), CHARA_BIT_RES_FEAR \ 32
+-	filter_creature(667) = ""
+-	filter_creature(668) = "/man/"
++	filter_creature(679) = ""
++	filter_creature(680) = "/man/"
+ 	HMMBITON cbitorg(CHARA_BIT_INFERIOR_RIDING / 32, CREATURE_ID_WHITE_YOUNG_LADY), CHARA_BIT_INFERIOR_RIDING \ 32
+-	filter_creature(669) = "/god/"
++	filter_creature(681) = "/god/"
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_ITZPALT), CHARA_BIT_FLOAT \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_RES_FEAR / 32, CREATURE_ID_ITZPALT), CHARA_BIT_RES_FEAR \ 32
+-	filter_creature(670) = "/god/"
++	filter_creature(682) = "/god/"
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_THE_ELEMENT), CHARA_BIT_FLOAT \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_RES_FEAR / 32, CREATURE_ID_THE_ELEMENT), CHARA_BIT_RES_FEAR \ 32
+-	filter_creature(671) = "/god/"
++	filter_creature(683) = "/god/"
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_YACATECT), CHARA_BIT_FLOAT \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_RES_FEAR / 32, CREATURE_ID_YACATECT), CHARA_BIT_RES_FEAR \ 32
+-	filter_creature(672) = "/god/"
++	filter_creature(684) = "/god/"
+ 	HMMBITON cbitorg(CHARA_BIT_TEMPER / 32, CREATURE_ID_HYPER_YACATECT), CHARA_BIT_TEMPER \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_HYPER_YACATECT), CHARA_BIT_FLOAT \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_RES_FEAR / 32, CREATURE_ID_HYPER_YACATECT), CHARA_BIT_RES_FEAR \ 32
+-	filter_creature(673) = "/wild/nefia2/"
+-	filter_creature(674) = "/nefia0/"
++	filter_creature(685) = "/wild/nefia2/"
++	filter_creature(686) = "/nefia0/"
+ 	HMMBITON cbitorg(CHARA_BIT_SPLIT_NO_EFFECT / 32, CREATURE_ID_RED_NINJA), CHARA_BIT_SPLIT_NO_EFFECT \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_INVISIBLE / 32, CREATURE_ID_RED_NINJA), CHARA_BIT_INVISIBLE \ 32
+-	filter_creature(675) = "/man/"
+-	filter_creature(676) = "/man/"
++	filter_creature(687) = "/man/"
++	filter_creature(688) = "/man/"
+ 	HMMBITON cbitorg(CHARA_BIT_INVISIBLE / 32, CREATURE_ID_GETUEI_THE_NINJA_MASTER), CHARA_BIT_INVISIBLE \ 32
+-	filter_creature(677) = "/man/"
+-	filter_creature(678) = "/man/"
+-	filter_creature(679) = "/man/"
+-	filter_creature(680) = "/man/"
+-	filter_creature(681) = "/man/"
+-	filter_creature(682) = "/man/"
+-	filter_creature(683) = "/man/nefia0/"
++	filter_creature(689) = "/man/"
++	filter_creature(690) = "/man/"
++	filter_creature(691) = "/man/"
++	filter_creature(692) = "/man/"
++	filter_creature(693) = "/man/"
++	filter_creature(694) = "/man/"
++	filter_creature(695) = "/man/nefia0/"
+ 	HMMBITON cbitorg(CHARA_BIT_INVISIBLE / 32, CREATURE_ID_NINJA), CHARA_BIT_INVISIBLE \ 32
+-	filter_creature(684) = "/nefia4/"
++	filter_creature(696) = "/nefia4/"
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_BLADE_KING), CHARA_BIT_FLOAT \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_RES_FEAR / 32, CREATURE_ID_BLADE_KING), CHARA_BIT_RES_FEAR \ 32
+-	filter_creature(685) = "/man/"
+-	filter_creature(686) = "/man/nefia0/"
++	filter_creature(697) = "/man/"
++	filter_creature(698) = "/man/nefia0/"
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_YERLES_LATEST_OUTFIT_SOLDIER), CHARA_BIT_FLOAT \ 32
+-	filter_creature(687) = "/man/"
++	filter_creature(699) = "/man/"
+ 	HMMBITON cbitorg(CHARA_BIT_DROP_GOLD / 32, CREATURE_ID_GAMBLER), CHARA_BIT_DROP_GOLD \ 32
+-	filter_creature(688) = "/man/"
++	filter_creature(700) = "/man/"
+ 	HMMBITON cbitorg(CHARA_BIT_RES_FEAR / 32, CREATURE_ID_INFECTED_YERLES_SOLDIER), CHARA_BIT_RES_FEAR \ 32
+-	filter_creature(689) = "/undead/nefia6/"
++	filter_creature(701) = "/undead/nefia6/"
+ 	HMMBITON cbitorg(CHARA_BIT_DEATH_MASTER / 32, CREATURE_ID_CANDLE_WISP), CHARA_BIT_DEATH_MASTER \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_RES_FEAR / 32, CREATURE_ID_CANDLE_WISP), CHARA_BIT_RES_FEAR \ 32
+-	filter_creature(690) = "/spirit/nefia8/"
++	filter_creature(702) = "/spirit/nefia8/"
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_PUDDING_SPIRIT), CHARA_BIT_FLOAT \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_RES_FEAR / 32, CREATURE_ID_PUDDING_SPIRIT), CHARA_BIT_RES_FEAR \ 32
+-	filter_creature(691) = "/spirit/nefia8/"
++	filter_creature(703) = "/spirit/nefia8/"
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_MAGIC_SPIRIT), CHARA_BIT_FLOAT \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_RES_FEAR / 32, CREATURE_ID_MAGIC_SPIRIT), CHARA_BIT_RES_FEAR \ 32
+-	filter_creature(692) = "/spirit/nefia8/"
++	filter_creature(704) = "/spirit/nefia8/"
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_WAR_SPIRIT), CHARA_BIT_FLOAT \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_RES_FEAR / 32, CREATURE_ID_WAR_SPIRIT), CHARA_BIT_RES_FEAR \ 32
+-	filter_creature(693) = "/nefia0/"
++	filter_creature(705) = "/nefia0/"
+ 	HMMBITON cbitorg(CHARA_BIT_INFERIOR_RIDING / 32, CREATURE_ID_BELL_OF_TERMINATION), CHARA_BIT_INFERIOR_RIDING \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_METAL / 32, CREATURE_ID_BELL_OF_TERMINATION), CHARA_BIT_METAL \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_RES_ELEMENTAL / 32, CREATURE_ID_BELL_OF_TERMINATION), CHARA_BIT_RES_ELEMENTAL \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_BELL_OF_TERMINATION), CHARA_BIT_FLOAT \ 32
+-	filter_creature(694) = "/man/"
+-	filter_creature(695) = "/man/"
++	filter_creature(706) = "/man/"
++	filter_creature(707) = "/man/"
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_MESHERA_ALPHA_THE_DEFORMED_ANGEL), CHARA_BIT_FLOAT \ 32
+-	filter_creature(696) = "/nefia1/"
+-	filter_creature(697) = "/undead/nefia3/"
+-	filter_creature(698) = "/undead/nefia3/"
+-	filter_creature(699) = "/nefia1/"
+-	filter_creature(700) = "/nefia1/"
+-	filter_creature(701) = "/nefia1/"
+-	filter_creature(702) = "/nefia8/"
+-	filter_creature(703) = "/fire/nefia5/"
+-	filter_creature(704) = "/man/"
++	filter_creature(708) = "/nefia1/"
++	filter_creature(709) = "/undead/nefia3/"
++	filter_creature(710) = "/undead/nefia3/"
++	filter_creature(711) = "/nefia1/"
++	filter_creature(712) = "/nefia1/"
++	filter_creature(713) = "/nefia1/"
++	filter_creature(714) = "/nefia8/"
++	filter_creature(715) = "/fire/nefia5/"
++	filter_creature(716) = "/man/"
+ 	HMMBITON cbitorg(CHARA_BIT_TEMPER / 32, CREATURE_ID_ARMA_THE_TOUR_GUIDE), CHARA_BIT_TEMPER \ 32
+-	filter_creature(705) = "/undead/nefia6/"
+-	filter_creature(706) = "/undead/nefia6/"
+-	filter_creature(707) = "/nefia4/"
+-	filter_creature(708) = "/man/"
+-	filter_creature(709) = "/nefia0/"
++	filter_creature(717) = "/undead/nefia6/"
++	filter_creature(718) = "/undead/nefia6/"
++	filter_creature(719) = "/nefia4/"
++	filter_creature(720) = "/man/"
++	filter_creature(721) = "/nefia0/"
+ 	HMMBITON cbitorg(CHARA_BIT_INFERIOR_RIDING / 32, CREATURE_ID_MIMIC), CHARA_BIT_INFERIOR_RIDING \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_METAL / 32, CREATURE_ID_MIMIC), CHARA_BIT_METAL \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_RES_ELEMENTAL / 32, CREATURE_ID_MIMIC), CHARA_BIT_RES_ELEMENTAL \ 32
+-	filter_creature(710) = "/man/"
+-	filter_creature(711) = "/man/nefia0/"
+-	filter_creature(712) = "/man/"
+-	filter_creature(713) = "/man/"
+-	filter_creature(714) = ""
++	filter_creature(722) = "/man/"
++	filter_creature(723) = "/man/nefia0/"
++	filter_creature(724) = "/man/"
++	filter_creature(725) = "/man/"
++	filter_creature(726) = ""
+ 	HMMBITON cbitorg(CHARA_BIT_RES_ELEMENTAL / 32, CREATURE_ID_GOKIBURI), CHARA_BIT_RES_ELEMENTAL \ 32
+-	filter_creature(715) = "/man/"
+-	filter_creature(716) = "/man/"
+-	filter_creature(717) = "/man/"
+-	filter_creature(718) = ""
++	filter_creature(727) = "/man/"
++	filter_creature(728) = "/man/"
++	filter_creature(729) = "/man/"
++	filter_creature(730) = ""
+ 	HMMBITON cbitorg(CHARA_BIT_RES_CONFUSE / 32, CREATURE_ID_MESHERA_PLANT), CHARA_BIT_RES_CONFUSE \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_RES_FEAR / 32, CREATURE_ID_MESHERA_PLANT), CHARA_BIT_RES_FEAR \ 32
+-	filter_creature(719) = "/god/nefia0/"
+-	filter_creature(720) = "/nefia8/"
+-	filter_creature(721) = "/god/nefia1/"
++	filter_creature(731) = "/god/nefia0/"
++	filter_creature(732) = "/nefia8/"
++	filter_creature(733) = "/god/nefia1/"
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_SUZAKU), CHARA_BIT_FLOAT \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_RES_FEAR / 32, CREATURE_ID_SUZAKU), CHARA_BIT_RES_FEAR \ 32
+-	filter_creature(722) = "/wild/nefia2/"
+-	filter_creature(723) = "/wild/nefia2/"
++	filter_creature(734) = "/wild/nefia2/"
++	filter_creature(735) = "/wild/nefia2/"
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_GOLD_SHEEP), CHARA_BIT_FLOAT \ 32
+-	filter_creature(724) = "/nefia7/"
++	filter_creature(736) = "/nefia7/"
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_DRAGONS_PET_HARPY), CHARA_BIT_FLOAT \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_SPLIT_NO_EFFECT / 32, CREATURE_ID_DRAGONS_PET_HARPY), CHARA_BIT_SPLIT_NO_EFFECT \ 32
+-	filter_creature(725) = "/nefia7/"
++	filter_creature(737) = "/nefia7/"
+ 	HMMBITON cbitorg(CHARA_BIT_SUICIDE / 32, CREATURE_ID_GIGA_BOMB_ROCK), CHARA_BIT_SUICIDE \ 32
+-	filter_creature(726) = "/nefia4/"
+-	filter_creature(727) = "/nefia8/"
+-	filter_creature(728) = "/dragon/nefia4/"
++	filter_creature(738) = "/nefia4/"
++	filter_creature(739) = "/nefia8/"
++	filter_creature(740) = "/dragon/nefia4/"
+ 	HMMBITON cbitorg(CHARA_BIT_TEMPER / 32, CREATURE_ID_DRAGONEWT), CHARA_BIT_TEMPER \ 32
+-	filter_creature(729) = "/nefia2/"
++	filter_creature(741) = "/nefia2/"
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_TITANIA), CHARA_BIT_FLOAT \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_DROP_GOLD / 32, CREATURE_ID_TITANIA), CHARA_BIT_DROP_GOLD \ 32
+-	filter_creature(730) = "/nefia1/"
++	filter_creature(742) = "/nefia1/"
+ 	HMMBITON cbitorg(CHARA_BIT_TEMPER / 32, CREATURE_ID_DARK_KOBOLD), CHARA_BIT_TEMPER \ 32
+-	filter_creature(731) = "/nefia8/"
+-	filter_creature(732) = "/nefia0/"
++	filter_creature(743) = "/nefia8/"
++	filter_creature(744) = "/nefia0/"
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_WING_SNAIL), CHARA_BIT_FLOAT \ 32
+-	filter_creature(733) = "/nefia4/"
++	filter_creature(745) = "/nefia4/"
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_YERLES_COMBAT_PLANE), CHARA_BIT_FLOAT \ 32
+-	filter_creature(734) = "/undead/god/"
++	filter_creature(746) = "/undead/god/"
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_EXOSSIL_THE_CHAOS_WING), CHARA_BIT_FLOAT \ 32
+-	filter_creature(735) = ""
++	filter_creature(747) = ""
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_METAL_VESDA_THE_FIRE_MACHINE), CHARA_BIT_FLOAT \ 32
+-	filter_creature(736) = "/god/"
+-	filter_creature(737) = "/dragon/undead/nefia6/"
++	filter_creature(748) = "/god/"
++	filter_creature(749) = "/dragon/undead/nefia6/"
+ 	HMMBITON cbitorg(CHARA_BIT_DEATH_MASTER / 32, CREATURE_ID_DRAGON_ZOMBIE), CHARA_BIT_DEATH_MASTER \ 32
+-	filter_creature(738) = ""
+-	filter_creature(739) = "/man/"
+-	filter_creature(740) = "/man/"
+-	filter_creature(741) = "/wild/nefia7/"
+-	filter_creature(742) = "/nefia4/"
+-	filter_creature(743) = "/slime/nefia7/"
+-	filter_creature(744) = "/wild/nefia2/"
+-	filter_creature(745) = "/man/"
+-	filter_creature(746) = "/man/"
+-	filter_creature(747) = "/god/nefia0/"
++	filter_creature(750) = ""
++	filter_creature(751) = "/man/"
++	filter_creature(752) = "/man/"
++	filter_creature(753) = "/wild/nefia7/"
++	filter_creature(754) = "/nefia4/"
++	filter_creature(755) = "/slime/nefia7/"
++	filter_creature(756) = "/wild/nefia2/"
++	filter_creature(757) = "/man/"
++	filter_creature(758) = "/man/"
++	filter_creature(759) = "/god/nefia0/"
+ 	HMMBITON cbitorg(CHARA_BIT_TEMPER / 32, CREATURE_ID_ATLAS), CHARA_BIT_TEMPER \ 32
+-	filter_creature(748) = "/god/nefia5/"
+-	filter_creature(749) = "/nefia2/"
+-	filter_creature(750) = "/nefia2/"
+-	filter_creature(751) = "/nefia5/"
+-	filter_creature(752) = "/dragon/nefia3/"
+-	filter_creature(753) = "/nefia6/"
++	filter_creature(760) = "/god/nefia5/"
++	filter_creature(761) = "/nefia2/"
++	filter_creature(762) = "/nefia2/"
++	filter_creature(763) = "/nefia5/"
++	filter_creature(764) = "/dragon/nefia3/"
++	filter_creature(765) = "/nefia6/"
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_CAMOUFLAGED_IMP), CHARA_BIT_FLOAT \ 32
+-	filter_creature(754) = "/undead/nefia6/"
++	filter_creature(766) = "/undead/nefia6/"
+ 	HMMBITON cbitorg(CHARA_BIT_RES_FEAR / 32, CREATURE_ID_BLACK_BAPTIST), CHARA_BIT_RES_FEAR \ 32
+-	filter_creature(755) = "/god/nefia3/"
++	filter_creature(767) = "/god/nefia3/"
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_CUPID_OF_DEATH), CHARA_BIT_FLOAT \ 32
+-	filter_creature(756) = "/undead/nefia6/"
++	filter_creature(768) = "/undead/nefia6/"
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_VOL_PHANTOM), CHARA_BIT_FLOAT \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_RES_FEAR / 32, CREATURE_ID_VOL_PHANTOM), CHARA_BIT_RES_FEAR \ 32
+-	filter_creature(757) = "/wild/nefia5/"
+-	filter_creature(758) = "/dragon/nefia2/"
++	filter_creature(769) = "/wild/nefia5/"
++	filter_creature(770) = "/dragon/nefia2/"
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_TYRANNOBREAKER), CHARA_BIT_FLOAT \ 32
+-	filter_creature(759) = "/god/nefia5/"
++	filter_creature(771) = "/god/nefia5/"
+ 	HMMBITON cbitorg(CHARA_BIT_DEATH_MASTER / 32, CREATURE_ID_ATLACH_NACHA), CHARA_BIT_DEATH_MASTER \ 32
+-	filter_creature(760) = "/dragon/nefia5/"
+-	filter_creature(761) = "/man/"
+-	filter_creature(762) = "/god/nefia8/"
++	filter_creature(772) = "/dragon/nefia5/"
++	filter_creature(773) = "/man/"
++	filter_creature(774) = "/god/nefia8/"
+ 	HMMBITON cbitorg(CHARA_BIT_RES_FEAR / 32, CREATURE_ID_TSATHOGGUA), CHARA_BIT_RES_FEAR \ 32
+-	filter_creature(763) = "/god/nefia8/"
++	filter_creature(775) = "/god/nefia8/"
+ 	HMMBITON cbitorg(CHARA_BIT_RES_FEAR / 32, CREATURE_ID_NYARLATHOTEP), CHARA_BIT_RES_FEAR \ 32
+-	filter_creature(764) = "/god/nefia8/"
++	filter_creature(776) = "/god/nefia8/"
+ 	HMMBITON cbitorg(CHARA_BIT_RES_FEAR / 32, CREATURE_ID_THE_KING_IN_YELLOW), CHARA_BIT_RES_FEAR \ 32
+-	filter_creature(765) = ""
+-	filter_creature(766) = "/god/nefia1/"
++	filter_creature(777) = ""
++	filter_creature(778) = "/god/nefia1/"
+ 	HMMBITON cbitorg(CHARA_BIT_SUPERIOR_RIDING / 32, CREATURE_ID_KIRIN), CHARA_BIT_SUPERIOR_RIDING \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_KIRIN), CHARA_BIT_FLOAT \ 32
+-	filter_creature(767) = "/wild/horse/nefia2/"
++	filter_creature(779) = "/wild/horse/nefia2/"
+ 	HMMBITON cbitorg(CHARA_BIT_SUPERIOR_RIDING / 32, CREATURE_ID_GIRAFFE), CHARA_BIT_SUPERIOR_RIDING \ 32
+-	filter_creature(768) = "/man/nefia0/"
++	filter_creature(780) = "/man/nefia0/"
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_MURDER_KNIGHT), CHARA_BIT_FLOAT \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_ARMOUR / 32, CREATURE_ID_MURDER_KNIGHT), CHARA_BIT_ARMOUR \ 32
+-	filter_creature(769) = "/god/nefia0/"
++	filter_creature(781) = "/god/nefia0/"
+ 	HMMBITON cbitorg(CHARA_BIT_SUPERIOR_RIDING / 32, CREATURE_ID_LITYOU), CHARA_BIT_SUPERIOR_RIDING \ 32
+-	filter_creature(770) = "/man/"
++	filter_creature(782) = "/man/"
+ 	HMMBITON cbitorg(CHARA_BIT_SUPERIOR_RIDING / 32, CREATURE_ID_RECONCILED_CLEANER), CHARA_BIT_SUPERIOR_RIDING \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_RES_FEAR / 32, CREATURE_ID_RECONCILED_CLEANER), CHARA_BIT_RES_FEAR \ 32
+-	filter_creature(771) = ""
++	filter_creature(783) = ""
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_SNAIL_THE_ANDROID_RIDER), CHARA_BIT_FLOAT \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_RES_FEAR / 32, CREATURE_ID_SNAIL_THE_ANDROID_RIDER), CHARA_BIT_RES_FEAR \ 32
+-	filter_creature(772) = "/man/"
+-	filter_creature(773) = "/man/god/"
+-	filter_creature(774) = "/god/"
+-	filter_creature(775) = "/god/"
+-	filter_creature(776) = "/undead/god/"
+-	filter_creature(777) = "/man/nefia0/"
+-	filter_creature(778) = "/man/nefia0/"
++	filter_creature(784) = "/man/"
++	filter_creature(785) = "/man/god/"
++	filter_creature(786) = "/god/"
++	filter_creature(787) = "/god/"
++	filter_creature(788) = "/undead/god/"
++	filter_creature(789) = "/man/nefia0/"
++	filter_creature(790) = "/man/nefia0/"
+ 	HMMBITON cbitorg(CHARA_BIT_TEMPER / 32, CREATURE_ID_JUERE_BERSERKER), CHARA_BIT_TEMPER \ 32
+-	filter_creature(779) = "/man/"
+-	filter_creature(780) = "/man/"
+-	filter_creature(781) = "/slime/nefia7/"
++	filter_creature(791) = "/man/"
++	filter_creature(792) = "/man/"
++	filter_creature(793) = "/slime/nefia7/"
+ 	HMMBITON cbitorg(CHARA_BIT_SUPERIOR_RIDING / 32, CREATURE_ID_MILITARY_PUTIT), CHARA_BIT_SUPERIOR_RIDING \ 32
+-	filter_creature(782) = "/man/"
++	filter_creature(794) = "/man/"
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_SECURITY_OFFICER_ORVILLE), CHARA_BIT_FLOAT \ 32
+-	filter_creature(783) = "/man/"
+-	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_MILIS_CAPTAIN_OF_THE_SPECIAL_FORCES), CHARA_BIT_FLOAT \ 32
+-	filter_creature(784) = ""
+-	filter_creature(785) = "/man/rogue/"
+-	filter_creature(786) = "/man/"
+-	filter_creature(787) = "/man/"
+-	filter_creature(788) = "/man/"
+-	filter_creature(789) = "/man/"
+-	HMMBITON cbitorg(CHARA_BIT_SUPERIOR_RIDING / 32, CREATURE_ID_OLDER_SISTER2), CHARA_BIT_SUPERIOR_RIDING \ 32
+-	filter_creature(790) = "/man/"
+-	filter_creature(791) = "/god/"
+-	HMMBITON cbitorg(CHARA_BIT_RES_FEAR / 32, CREATURE_ID_RUDRAS), CHARA_BIT_RES_FEAR \ 32
+-	filter_creature(792) = "/man/"
+-	HMMBITON cbitorg(CHARA_BIT_SUPERIOR_RIDING / 32, CREATURE_ID_OLDER_SISTER), CHARA_BIT_SUPERIOR_RIDING \ 32
+-	filter_creature(793) = ""
+-	filter_creature(794) = ""
+ 	filter_creature(795) = "/man/"
+-	filter_creature(796) = "/man/"
+-	filter_creature(797) = "/man/"
++	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_MILIS_CAPTAIN_OF_THE_SPECIAL_FORCES), CHARA_BIT_FLOAT \ 32
++	filter_creature(796) = ""
++	filter_creature(797) = "/man/rogue/"
+ 	filter_creature(798) = "/man/"
+ 	filter_creature(799) = "/man/"
+ 	filter_creature(800) = "/man/"
+ 	filter_creature(801) = "/man/"
++	HMMBITON cbitorg(CHARA_BIT_SUPERIOR_RIDING / 32, CREATURE_ID_OLDER_SISTER2), CHARA_BIT_SUPERIOR_RIDING \ 32
+ 	filter_creature(802) = "/man/"
+-	filter_creature(803) = "/man/"
++	filter_creature(803) = "/god/"
++	HMMBITON cbitorg(CHARA_BIT_RES_FEAR / 32, CREATURE_ID_RUDRAS), CHARA_BIT_RES_FEAR \ 32
+ 	filter_creature(804) = "/man/"
+-	filter_creature(805) = "/man/"
+-	filter_creature(806) = "/man/"
++	HMMBITON cbitorg(CHARA_BIT_SUPERIOR_RIDING / 32, CREATURE_ID_OLDER_SISTER), CHARA_BIT_SUPERIOR_RIDING \ 32
++	filter_creature(805) = ""
++	filter_creature(806) = ""
+ 	filter_creature(807) = "/man/"
+ 	filter_creature(808) = "/man/"
+ 	filter_creature(809) = "/man/"
+-	filter_creature(810) = "/man/god/"
+-	filter_creature(811) = "/man/nefia0/"
+-	filter_creature(812) = "/man/god/nefia0/"
++	filter_creature(810) = "/man/"
++	filter_creature(811) = "/man/"
++	filter_creature(812) = "/man/"
+ 	filter_creature(813) = "/man/"
+ 	filter_creature(814) = "/man/"
+-	filter_creature(815) = "/dragon/"
++	filter_creature(815) = "/man/"
+ 	filter_creature(816) = "/man/"
+ 	filter_creature(817) = "/man/"
+ 	filter_creature(818) = "/man/"
+-	HMMBITON cbitorg(CHARA_BIT_TEMPER / 32, CREATURE_ID_THE_LEOPARD_WARRIOR), CHARA_BIT_TEMPER \ 32
+ 	filter_creature(819) = "/man/"
+-	filter_creature(820) = "/nefia0/"
++	filter_creature(820) = "/man/"
+ 	filter_creature(821) = "/man/"
+-	filter_creature(822) = "/man/"
+-	filter_creature(823) = "/man/"
+-	filter_creature(824) = "/man/"
++	filter_creature(822) = "/man/god/"
++	filter_creature(823) = "/man/nefia0/"
++	filter_creature(824) = "/man/god/nefia0/"
+ 	filter_creature(825) = "/man/"
+-	filter_creature(826) = "/undead/god/"
+-	filter_creature(827) = ""
+-	filter_creature(828) = ""
+-	filter_creature(829) = ""
+-	filter_creature(830) = "/god/"
++	filter_creature(826) = "/man/"
++	filter_creature(827) = "/dragon/"
++	filter_creature(828) = "/man/"
++	filter_creature(829) = "/man/"
++	filter_creature(830) = "/man/"
++	HMMBITON cbitorg(CHARA_BIT_TEMPER / 32, CREATURE_ID_THE_LEOPARD_WARRIOR), CHARA_BIT_TEMPER \ 32
++	filter_creature(831) = "/man/"
++	filter_creature(832) = "/nefia0/"
++	filter_creature(833) = "/man/"
++	filter_creature(834) = "/man/"
++	filter_creature(835) = "/man/"
++	filter_creature(836) = "/man/"
++	filter_creature(837) = "/man/"
++	filter_creature(838) = "/undead/god/"
++	filter_creature(839) = ""
++	filter_creature(840) = ""
++	filter_creature(841) = ""
++	filter_creature(842) = "/god/"
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_JURE), CHARA_BIT_FLOAT \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_RES_FEAR / 32, CREATURE_ID_JURE), CHARA_BIT_RES_FEAR \ 32
+-	filter_creature(831) = "/god/"
++	filter_creature(843) = "/god/"
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_BLESSED_JURE), CHARA_BIT_FLOAT \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_RES_FEAR / 32, CREATURE_ID_BLESSED_JURE), CHARA_BIT_RES_FEAR \ 32
+-	filter_creature(832) = "/god/"
++	filter_creature(844) = "/god/"
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_LULWY), CHARA_BIT_FLOAT \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_RES_FEAR / 32, CREATURE_ID_LULWY), CHARA_BIT_RES_FEAR \ 32
+-	filter_creature(833) = "/god/"
++	filter_creature(845) = "/god/"
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_DEVASTATE_LULWY), CHARA_BIT_FLOAT \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_RES_FEAR / 32, CREATURE_ID_DEVASTATE_LULWY), CHARA_BIT_RES_FEAR \ 32
+-	filter_creature(834) = "/god/"
++	filter_creature(846) = "/god/"
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_BUILDUP_OPATOS), CHARA_BIT_FLOAT \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_RES_FEAR / 32, CREATURE_ID_BUILDUP_OPATOS), CHARA_BIT_RES_FEAR \ 32
+-	filter_creature(835) = "/god/"
++	filter_creature(847) = "/god/"
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_INSANE_KUMIROMI), CHARA_BIT_FLOAT \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_RES_FEAR / 32, CREATURE_ID_INSANE_KUMIROMI), CHARA_BIT_RES_FEAR \ 32
+-	filter_creature(836) = "/god/"
++	filter_creature(848) = "/god/"
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_DEUS_EX_MANINA), CHARA_BIT_FLOAT \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_RES_FEAR / 32, CREATURE_ID_DEUS_EX_MANINA), CHARA_BIT_RES_FEAR \ 32
+-	filter_creature(837) = "/god/"
++	filter_creature(849) = "/god/"
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_EHEKATL), CHARA_BIT_FLOAT \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_RES_FEAR / 32, CREATURE_ID_EHEKATL), CHARA_BIT_RES_FEAR \ 32
+-	filter_creature(838) = "/god/"
++	filter_creature(850) = "/god/"
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_GOD_INSIDE_EHEKATL), CHARA_BIT_FLOAT \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_RES_FEAR / 32, CREATURE_ID_GOD_INSIDE_EHEKATL), CHARA_BIT_RES_FEAR \ 32
+-	filter_creature(839) = "/god/"
++	filter_creature(851) = "/god/"
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_OPATOS), CHARA_BIT_FLOAT \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_RES_FEAR / 32, CREATURE_ID_OPATOS), CHARA_BIT_RES_FEAR \ 32
+-	filter_creature(840) = "/god/"
++	filter_creature(852) = "/god/"
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_KUMIROMI), CHARA_BIT_FLOAT \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_RES_FEAR / 32, CREATURE_ID_KUMIROMI), CHARA_BIT_RES_FEAR \ 32
+-	filter_creature(841) = "/god/"
++	filter_creature(853) = "/god/"
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_MANI), CHARA_BIT_FLOAT \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_RES_FEAR / 32, CREATURE_ID_MANI), CHARA_BIT_RES_FEAR \ 32
+-	filter_creature(842) = "/nefia2/"
+-	filter_creature(843) = "/slime/nefia7/"
++	filter_creature(854) = "/nefia2/"
++	filter_creature(855) = "/slime/nefia7/"
+ 	HMMBITON cbitorg(CHARA_BIT_SUPERIOR_RIDING / 32, CREATURE_ID_PUTIT), CHARA_BIT_SUPERIOR_RIDING \ 32
+-	filter_creature(844) = "/fire/slime/nefia7/"
++	filter_creature(856) = "/fire/slime/nefia7/"
+ 	HMMBITON cbitorg(CHARA_BIT_SUPERIOR_RIDING / 32, CREATURE_ID_RED_PUTIT), CHARA_BIT_SUPERIOR_RIDING \ 32
+-	filter_creature(845) = "/slime/nefia7/"
+-	filter_creature(846) = "/slime/nefia7/"
+-	filter_creature(847) = "/slime/nefia7/"
++	filter_creature(857) = "/slime/nefia7/"
++	filter_creature(858) = "/slime/nefia7/"
++	filter_creature(859) = "/slime/nefia7/"
+ 	HMMBITON cbitorg(CHARA_BIT_SPLIT_KEEP_EFFECT / 32, CREATURE_ID_BUBBLE), CHARA_BIT_SPLIT_KEEP_EFFECT \ 32
+-	filter_creature(848) = "/slime/nefia7/"
++	filter_creature(860) = "/slime/nefia7/"
+ 	HMMBITON cbitorg(CHARA_BIT_SPLIT_KEEP_EFFECT / 32, CREATURE_ID_BLUE_BUBBLE), CHARA_BIT_SPLIT_KEEP_EFFECT \ 32
+-	filter_creature(849) = "/nefia3/"
++	filter_creature(861) = "/nefia3/"
+ 	HMMBITON cbitorg(CHARA_BIT_SPLIT_KEEP_EFFECT / 32, CREATURE_ID_MASS_MONSTER), CHARA_BIT_SPLIT_KEEP_EFFECT \ 32
+-	filter_creature(850) = "/nefia4/"
++	filter_creature(862) = "/nefia4/"
+ 	HMMBITON cbitorg(CHARA_BIT_SPLIT_NO_EFFECT / 32, CREATURE_ID_CUBE), CHARA_BIT_SPLIT_NO_EFFECT \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_RES_ELEMENTAL / 32, CREATURE_ID_CUBE), CHARA_BIT_RES_ELEMENTAL \ 32
+-	filter_creature(851) = "/wild/nefia5/"
+-	filter_creature(852) = "/wild/nefia8/"
+-	filter_creature(853) = "/man/nefia0/"
+-	filter_creature(854) = "/man/"
+-	filter_creature(855) = "/man/"
+-	HMMBITON cbitorg(CHARA_BIT_DROP_GOLD / 32, CREATURE_ID_BEGGAR), CHARA_BIT_DROP_GOLD \ 32
+-	filter_creature(856) = "/man/"
+-	filter_creature(857) = "/man/"
+-	filter_creature(858) = "/man/"
+-	filter_creature(859) = "/man/"
+-	filter_creature(860) = "/man/"
+-	filter_creature(861) = "/man/god/"
+-	HMMBITON cbitorg(CHARA_BIT_TEMPER / 32, CREATURE_ID_HOLY_BEAST), CHARA_BIT_TEMPER \ 32
+-	filter_creature(862) = "/man/"
+-	HMMBITON cbitorg(CHARA_BIT_TEMPER / 32, CREATURE_ID_PART_TIME_WORKER), CHARA_BIT_TEMPER \ 32
+-	filter_creature(863) = "/man/"
+-	HMMBITON cbitorg(CHARA_BIT_TEMPER / 32, CREATURE_ID_JURE_FANATIC), CHARA_BIT_TEMPER \ 32
+-	filter_creature(864) = "/man/"
+-	HMMBITON cbitorg(CHARA_BIT_DROP_GOLD / 32, CREATURE_ID_ROGUE), CHARA_BIT_DROP_GOLD \ 32
+-	filter_creature(865) = "/man/"
++	filter_creature(863) = "/wild/nefia5/"
++	filter_creature(864) = "/wild/nefia8/"
++	filter_creature(865) = "/man/nefia0/"
+ 	filter_creature(866) = "/man/"
+ 	filter_creature(867) = "/man/"
++	HMMBITON cbitorg(CHARA_BIT_DROP_GOLD / 32, CREATURE_ID_BEGGAR), CHARA_BIT_DROP_GOLD \ 32
+ 	filter_creature(868) = "/man/"
+ 	filter_creature(869) = "/man/"
+ 	filter_creature(870) = "/man/"
+ 	filter_creature(871) = "/man/"
+ 	filter_creature(872) = "/man/"
+-	filter_creature(873) = "/man/"
+-	filter_creature(874) = "/man/sf/nefia0/"
+-	filter_creature(875) = "/wild/nefia2/"
+-	filter_creature(876) = "/wild/nefia8/"
++	filter_creature(873) = "/man/god/"
++	HMMBITON cbitorg(CHARA_BIT_TEMPER / 32, CREATURE_ID_HOLY_BEAST), CHARA_BIT_TEMPER \ 32
++	filter_creature(874) = "/man/"
++	HMMBITON cbitorg(CHARA_BIT_TEMPER / 32, CREATURE_ID_PART_TIME_WORKER), CHARA_BIT_TEMPER \ 32
++	filter_creature(875) = "/man/"
++	HMMBITON cbitorg(CHARA_BIT_TEMPER / 32, CREATURE_ID_JURE_FANATIC), CHARA_BIT_TEMPER \ 32
++	filter_creature(876) = "/man/"
++	HMMBITON cbitorg(CHARA_BIT_DROP_GOLD / 32, CREATURE_ID_ROGUE), CHARA_BIT_DROP_GOLD \ 32
++	filter_creature(877) = "/man/"
++	filter_creature(878) = "/man/"
++	filter_creature(879) = "/man/"
++	filter_creature(880) = "/man/"
++	filter_creature(881) = "/man/"
++	filter_creature(882) = "/man/"
++	filter_creature(883) = "/man/"
++	filter_creature(884) = "/man/"
++	filter_creature(885) = "/man/"
++	filter_creature(886) = "/man/sf/nefia0/"
++	filter_creature(887) = "/wild/nefia2/"
++	filter_creature(888) = "/wild/nefia8/"
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_FLYING_FROG), CHARA_BIT_FLOAT \ 32
+-	filter_creature(877) = "/man/nefia0/"
+-	filter_creature(878) = "/nefia1/"
+-	filter_creature(879) = "/yeek/nefia1/"
+-	filter_creature(880) = "/yeek/nefia1/"
+-	filter_creature(881) = "/yeek/nefia1/"
+-	filter_creature(882) = "/yeek/nefia1/"
+-	filter_creature(883) = "/yeek/nefia1/"
++	filter_creature(889) = "/man/nefia0/"
++	filter_creature(890) = "/nefia1/"
++	filter_creature(891) = "/yeek/nefia1/"
++	filter_creature(892) = "/yeek/nefia1/"
++	filter_creature(893) = "/yeek/nefia1/"
++	filter_creature(894) = "/yeek/nefia1/"
++	filter_creature(895) = "/yeek/nefia1/"
+ 	HMMBITON cbitorg(CHARA_BIT_SUICIDE / 32, CREATURE_ID_KAMIKAZE_YEEK), CHARA_BIT_SUICIDE \ 32
+-	filter_creature(884) = "/nefia0/"
++	filter_creature(896) = "/nefia0/"
+ 	HMMBITON cbitorg(CHARA_BIT_SUICIDE / 32, CREATURE_ID_KAMIKAZE_SAMURAI), CHARA_BIT_SUICIDE \ 32
+-	filter_creature(885) = "/nefia7/"
++	filter_creature(897) = "/nefia7/"
+ 	HMMBITON cbitorg(CHARA_BIT_SUICIDE / 32, CREATURE_ID_BOMB_ROCK), CHARA_BIT_SUICIDE \ 32
+-	filter_creature(886) = "/nefia0/"
++	filter_creature(898) = "/nefia0/"
+ 	HMMBITON cbitorg(CHARA_BIT_SUICIDE / 32, CREATURE_ID_HARD_GAY), CHARA_BIT_SUICIDE \ 32
+-	filter_creature(887) = "/yeek/"
+-	filter_creature(888) = "/man/"
+-	filter_creature(889) = "/nefia5/"
+-	filter_creature(890) = "/nefia8/"
+-	filter_creature(891) = "/nefia8/"
+-	filter_creature(892) = "/nefia8/"
+-	filter_creature(893) = "/man/"
+-	filter_creature(894) = "/man/"
+-	filter_creature(895) = "/man/"
+-	filter_creature(896) = "/man/"
+-	filter_creature(897) = "/man/"
+-	filter_creature(898) = "/man/"
+-	filter_creature(899) = "/man/"
++	filter_creature(899) = "/yeek/"
+ 	filter_creature(900) = "/man/"
+-	filter_creature(901) = "/man/"
+-	filter_creature(902) = "/nefia1/"
+-	filter_creature(903) = "/dragon/nefia4/"
++	filter_creature(901) = "/nefia5/"
++	filter_creature(902) = "/nefia8/"
++	filter_creature(903) = "/nefia8/"
++	filter_creature(904) = "/nefia8/"
++	filter_creature(905) = "/man/"
++	filter_creature(906) = "/man/"
++	filter_creature(907) = "/man/"
++	filter_creature(908) = "/man/"
++	filter_creature(909) = "/man/"
++	filter_creature(910) = "/man/"
++	filter_creature(911) = "/man/"
++	filter_creature(912) = "/man/"
++	filter_creature(913) = "/man/"
++	filter_creature(914) = "/nefia1/"
++	filter_creature(915) = "/dragon/nefia4/"
+ 	HMMBITON cbitorg(CHARA_BIT_TEMPER / 32, CREATURE_ID_LIZARD_MAN), CHARA_BIT_TEMPER \ 32
+-	filter_creature(904) = "/mino/nefia5/"
+-	filter_creature(905) = "/mino/nefia5/"
+-	filter_creature(906) = "/mino/nefia5/"
++	filter_creature(916) = "/mino/nefia5/"
++	filter_creature(917) = "/mino/nefia5/"
++	filter_creature(918) = "/mino/nefia5/"
+ 	HMMBITON cbitorg(CHARA_BIT_TEMPER / 32, CREATURE_ID_MINOTAUR_BOXER), CHARA_BIT_TEMPER \ 32
+-	filter_creature(907) = "/mino/nefia5/"
+-	filter_creature(908) = "/mino/"
+-	filter_creature(909) = "/nefia4/"
+-	filter_creature(910) = "/man/nefia0/"
+-	filter_creature(911) = "/man/nefia0/"
+-	filter_creature(912) = "/god/nefia3/"
+-	filter_creature(913) = "/god/nefia3/"
+-	filter_creature(914) = "/god/nefia3/"
+-	filter_creature(915) = "/man/"
+-	filter_creature(916) = "/man/"
+-	filter_creature(917) = "/nefia2/"
+-	filter_creature(918) = "/nefia2/"
+-	filter_creature(919) = "/nefia1/"
+-	filter_creature(920) = "/nefia0/"
++	filter_creature(919) = "/mino/nefia5/"
++	filter_creature(920) = "/mino/"
++	filter_creature(921) = "/nefia4/"
++	filter_creature(922) = "/man/nefia0/"
++	filter_creature(923) = "/man/nefia0/"
++	filter_creature(924) = "/god/nefia3/"
++	filter_creature(925) = "/god/nefia3/"
++	filter_creature(926) = "/god/nefia3/"
++	filter_creature(927) = "/man/"
++	filter_creature(928) = "/man/"
++	filter_creature(929) = "/nefia2/"
++	filter_creature(930) = "/nefia2/"
++	filter_creature(931) = "/nefia1/"
++	filter_creature(932) = "/nefia0/"
+ 	HMMBITON cbitorg(CHARA_BIT_TEMPER / 32, CREATURE_ID_GODA_THE_CAPTAIN_OF_ORC), CHARA_BIT_TEMPER \ 32
+-	filter_creature(921) = "/undead/nefia6/"
+-	filter_creature(922) = "/wild/nefia7/"
++	filter_creature(933) = "/undead/nefia6/"
++	filter_creature(934) = "/wild/nefia7/"
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_BAT), CHARA_BIT_FLOAT \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_RES_BLIND / 32, CREATURE_ID_BAT), CHARA_BIT_RES_BLIND \ 32
+-	filter_creature(923) = "/wild/nefia7/"
++	filter_creature(935) = "/wild/nefia7/"
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_VAMPIRE_BAT), CHARA_BIT_FLOAT \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_RES_BLIND / 32, CREATURE_ID_VAMPIRE_BAT), CHARA_BIT_RES_BLIND \ 32
+-	filter_creature(924) = "/wild/fire/dragon/nefia7/"
++	filter_creature(936) = "/wild/fire/dragon/nefia7/"
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_DRAGON_BAT), CHARA_BIT_FLOAT \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_RES_BLIND / 32, CREATURE_ID_DRAGON_BAT), CHARA_BIT_RES_BLIND \ 32
+-	filter_creature(925) = "/fire/nefia2/"
+-	filter_creature(926) = "/nefia2/"
+-	filter_creature(927) = "/undead/nefia6/"
+-	filter_creature(928) = "/undead/nefia6/"
+-	filter_creature(929) = "/undead/nefia6/"
+-	filter_creature(930) = "/undead/nefia6/"
++	filter_creature(937) = "/fire/nefia2/"
++	filter_creature(938) = "/nefia2/"
++	filter_creature(939) = "/undead/nefia6/"
++	filter_creature(940) = "/undead/nefia6/"
++	filter_creature(941) = "/undead/nefia6/"
++	filter_creature(942) = "/undead/nefia6/"
+ 	HMMBITON cbitorg(CHARA_BIT_DEATH_MASTER / 32, CREATURE_ID_EXECUTIONER), CHARA_BIT_DEATH_MASTER \ 32
+-	filter_creature(931) = "/undead/nefia6/"
++	filter_creature(943) = "/undead/nefia6/"
+ 	HMMBITON cbitorg(CHARA_BIT_DEATH_MASTER / 32, CREATURE_ID_MESSENGER_OF_DEATH), CHARA_BIT_DEATH_MASTER \ 32
+-	filter_creature(932) = "/wild/nefia7/"
++	filter_creature(944) = "/wild/nefia7/"
+ 	HMMBITON cbitorg(CHARA_BIT_SUPERIOR_RIDING / 32, CREATURE_ID_HOUND), CHARA_BIT_SUPERIOR_RIDING \ 32
+-	filter_creature(933) = "/nefia7/"
++	filter_creature(945) = "/nefia7/"
+ 	HMMBITON cbitorg(CHARA_BIT_SUPERIOR_RIDING / 32, CREATURE_ID_FIRE_HOUND), CHARA_BIT_SUPERIOR_RIDING \ 32
+-	filter_creature(934) = "/nefia7/"
++	filter_creature(946) = "/nefia7/"
+ 	HMMBITON cbitorg(CHARA_BIT_SUPERIOR_RIDING / 32, CREATURE_ID_ICE_HOUND), CHARA_BIT_SUPERIOR_RIDING \ 32
+-	filter_creature(935) = "/nefia7/"
++	filter_creature(947) = "/nefia7/"
+ 	HMMBITON cbitorg(CHARA_BIT_SUPERIOR_RIDING / 32, CREATURE_ID_LIGHTNING_HOUND), CHARA_BIT_SUPERIOR_RIDING \ 32
+-	filter_creature(936) = "/nefia7/"
++	filter_creature(948) = "/nefia7/"
+ 	HMMBITON cbitorg(CHARA_BIT_SUPERIOR_RIDING / 32, CREATURE_ID_DARK_HOUND), CHARA_BIT_SUPERIOR_RIDING \ 32
+-	filter_creature(937) = "/nefia7/"
++	filter_creature(949) = "/nefia7/"
+ 	HMMBITON cbitorg(CHARA_BIT_SUPERIOR_RIDING / 32, CREATURE_ID_ILLUSION_HOUND), CHARA_BIT_SUPERIOR_RIDING \ 32
+-	filter_creature(938) = "/nefia7/"
++	filter_creature(950) = "/nefia7/"
+ 	HMMBITON cbitorg(CHARA_BIT_SUPERIOR_RIDING / 32, CREATURE_ID_NERVE_HOUND), CHARA_BIT_SUPERIOR_RIDING \ 32
+-	filter_creature(939) = "/nefia7/"
++	filter_creature(951) = "/nefia7/"
+ 	HMMBITON cbitorg(CHARA_BIT_SUPERIOR_RIDING / 32, CREATURE_ID_POISON_HOUND), CHARA_BIT_SUPERIOR_RIDING \ 32
+-	filter_creature(940) = "/nefia7/"
++	filter_creature(952) = "/nefia7/"
+ 	HMMBITON cbitorg(CHARA_BIT_SUPERIOR_RIDING / 32, CREATURE_ID_SOUND_HOUND), CHARA_BIT_SUPERIOR_RIDING \ 32
+-	filter_creature(941) = "/nefia7/"
++	filter_creature(953) = "/nefia7/"
+ 	HMMBITON cbitorg(CHARA_BIT_SUPERIOR_RIDING / 32, CREATURE_ID_NETHER_HOUND), CHARA_BIT_SUPERIOR_RIDING \ 32
+-	filter_creature(942) = "/nefia7/"
++	filter_creature(954) = "/nefia7/"
+ 	HMMBITON cbitorg(CHARA_BIT_SUPERIOR_RIDING / 32, CREATURE_ID_CHAOS_HOUND), CHARA_BIT_SUPERIOR_RIDING \ 32
+-	filter_creature(943) = "/wild/nefia5/"
+-	filter_creature(944) = "/wild/nefia5/"
+-	filter_creature(945) = "/undead/nefia6/"
++	filter_creature(955) = "/wild/nefia5/"
++	filter_creature(956) = "/wild/nefia5/"
++	filter_creature(957) = "/undead/nefia6/"
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_GRUDGE), CHARA_BIT_FLOAT \ 32
+-	filter_creature(946) = "/undead/nefia6/"
++	filter_creature(958) = "/undead/nefia6/"
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_HUNGRY_DEMON), CHARA_BIT_FLOAT \ 32
+-	filter_creature(947) = "/nefia5/"
++	filter_creature(959) = "/nefia5/"
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_HUNGRY_SEA_LION), CHARA_BIT_FLOAT \ 32
+-	filter_creature(948) = "/nefia5/"
++	filter_creature(960) = "/nefia5/"
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_SUPER_HUNGRY_SEA_LION), CHARA_BIT_FLOAT \ 32
+-	filter_creature(949) = "/nefia6/"
++	filter_creature(961) = "/nefia6/"
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_ELECTRIC_CLOUD), CHARA_BIT_FLOAT \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_RES_FEAR / 32, CREATURE_ID_ELECTRIC_CLOUD), CHARA_BIT_RES_FEAR \ 32
+-	filter_creature(950) = "/nefia6/"
++	filter_creature(962) = "/nefia6/"
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_CHAOS_CLOUD), CHARA_BIT_FLOAT \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_RES_FEAR / 32, CREATURE_ID_CHAOS_CLOUD), CHARA_BIT_RES_FEAR \ 32
+-	filter_creature(951) = "/nefia3/"
++	filter_creature(963) = "/nefia3/"
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_FLOATING_EYE), CHARA_BIT_FLOAT \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_RES_FEAR / 32, CREATURE_ID_FLOATING_EYE), CHARA_BIT_RES_FEAR \ 32
+-	filter_creature(952) = "/nefia3/"
++	filter_creature(964) = "/nefia3/"
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_CHAOS_EYE), CHARA_BIT_FLOAT \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_RES_FEAR / 32, CREATURE_ID_CHAOS_EYE), CHARA_BIT_RES_FEAR \ 32
+-	filter_creature(953) = "/nefia3/"
++	filter_creature(965) = "/nefia3/"
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_MAD_GAZE), CHARA_BIT_FLOAT \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_RES_FEAR / 32, CREATURE_ID_MAD_GAZE), CHARA_BIT_RES_FEAR \ 32
+-	filter_creature(954) = "/nefia3/"
++	filter_creature(966) = "/nefia3/"
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_DEATH_GAZE), CHARA_BIT_FLOAT \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_RES_FEAR / 32, CREATURE_ID_DEATH_GAZE), CHARA_BIT_RES_FEAR \ 32
+-	filter_creature(955) = "/dragon/nefia3/"
++	filter_creature(967) = "/dragon/nefia3/"
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_WYVERN), CHARA_BIT_FLOAT \ 32
+-	filter_creature(956) = "/nefia0/"
+-	filter_creature(957) = "/nefia5/"
++	filter_creature(968) = "/nefia0/"
++	filter_creature(969) = "/nefia5/"
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_WASP), CHARA_BIT_FLOAT \ 32
+-	filter_creature(958) = "/fire/nefia5/"
++	filter_creature(970) = "/fire/nefia5/"
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_RED_WASP), CHARA_BIT_FLOAT \ 32
+-	filter_creature(959) = "/nefia4/"
++	filter_creature(971) = "/nefia4/"
+ 	HMMBITON cbitorg(CHARA_BIT_TEMPER / 32, CREATURE_ID_CYCLOPS), CHARA_BIT_TEMPER \ 32
+-	filter_creature(960) = "/nefia4/"
++	filter_creature(972) = "/nefia4/"
+ 	HMMBITON cbitorg(CHARA_BIT_TEMPER / 32, CREATURE_ID_TITAN), CHARA_BIT_TEMPER \ 32
+-	filter_creature(961) = "/fire/nefia6/"
++	filter_creature(973) = "/fire/nefia6/"
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_IMP), CHARA_BIT_FLOAT \ 32
+-	filter_creature(962) = "/god/nefia6/"
++	filter_creature(974) = "/god/nefia6/"
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_NETHER_IMP), CHARA_BIT_FLOAT \ 32
+-	filter_creature(963) = "/nefia6/"
++	filter_creature(975) = "/nefia6/"
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_CHAOS_IMP), CHARA_BIT_FLOAT \ 32
+-	filter_creature(964) = "/undead/nefia3/"
+-	filter_creature(965) = "/undead/nefia3/"
+-	filter_creature(966) = "/undead/nefia3/"
+-	filter_creature(967) = "/undead/nefia6/"
++	filter_creature(976) = "/undead/nefia3/"
++	filter_creature(977) = "/undead/nefia3/"
++	filter_creature(978) = "/undead/nefia3/"
++	filter_creature(979) = "/undead/nefia6/"
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_GHOST), CHARA_BIT_FLOAT \ 32
+-	filter_creature(968) = "/undead/nefia6/"
++	filter_creature(980) = "/undead/nefia6/"
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_NYMPH), CHARA_BIT_FLOAT \ 32
+-	filter_creature(969) = "/nefia2/"
+-	filter_creature(970) = "/nefia2/"
+-	filter_creature(971) = "/wild/nefia5/"
+-	filter_creature(972) = "/wild/nefia5/"
+-	filter_creature(973) = "/fire/dragon/nefia3/"
+-	filter_creature(974) = "/dragon/nefia3/"
+-	filter_creature(975) = "/undead/nefia6/"
+-	filter_creature(976) = "/undead/nefia6/"
+-	filter_creature(977) = "/undead/nefia6/"
+-	filter_creature(978) = "/undead/"
++	filter_creature(981) = "/nefia2/"
++	filter_creature(982) = "/nefia2/"
++	filter_creature(983) = "/wild/nefia5/"
++	filter_creature(984) = "/wild/nefia5/"
++	filter_creature(985) = "/fire/dragon/nefia3/"
++	filter_creature(986) = "/dragon/nefia3/"
++	filter_creature(987) = "/undead/nefia6/"
++	filter_creature(988) = "/undead/nefia6/"
++	filter_creature(989) = "/undead/nefia6/"
++	filter_creature(990) = "/undead/"
+ 	HMMBITON cbitorg(CHARA_BIT_DEATH_MASTER / 32, CREATURE_ID_TUWEN_THE_MASTER_OF_THE_PYRAMID), CHARA_BIT_DEATH_MASTER \ 32
+-	filter_creature(979) = "/undead/nefia6/"
+-	filter_creature(980) = "/nefia1/"
+-	filter_creature(981) = "/nefia1/"
+-	filter_creature(982) = "/nefia1/"
+-	filter_creature(983) = "/nefia1/"
+-	filter_creature(984) = "/undead/fire/nefia6/"
++	filter_creature(991) = "/undead/nefia6/"
++	filter_creature(992) = "/nefia1/"
++	filter_creature(993) = "/nefia1/"
++	filter_creature(994) = "/nefia1/"
++	filter_creature(995) = "/nefia1/"
++	filter_creature(996) = "/undead/fire/nefia6/"
+ 	HMMBITON cbitorg(CHARA_BIT_RES_FEAR / 32, CREATURE_ID_RED_BAPTIST), CHARA_BIT_RES_FEAR \ 32
+-	filter_creature(985) = "/undead/nefia6/"
++	filter_creature(997) = "/undead/nefia6/"
+ 	HMMBITON cbitorg(CHARA_BIT_RES_FEAR / 32, CREATURE_ID_BLUE_BAPTIST), CHARA_BIT_RES_FEAR \ 32
+-	filter_creature(986) = "/wild/nefia1/"
+-	filter_creature(987) = "/nefia1/"
++	filter_creature(998) = "/wild/nefia1/"
++	filter_creature(999) = "/nefia1/"
+ 	HMMBITON cbitorg(CHARA_BIT_TEMPER / 32, CREATURE_ID_GRIZZLY), CHARA_BIT_TEMPER \ 32
+-	filter_creature(988) = "/nefia5/"
+-	filter_creature(989) = "/undead/nefia3/"
++	filter_creature(1000) = "/nefia5/"
++	filter_creature(1001) = "/undead/nefia3/"
+ 	HMMBITON cbitorg(CHARA_BIT_RES_FEAR / 32, CREATURE_ID_LIVING_ARMOR), CHARA_BIT_RES_FEAR \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_ARMOUR / 32, CREATURE_ID_LIVING_ARMOR), CHARA_BIT_ARMOUR \ 32
+-	filter_creature(990) = "/undead/nefia3/"
++	filter_creature(1002) = "/undead/nefia3/"
+ 	HMMBITON cbitorg(CHARA_BIT_RES_FEAR / 32, CREATURE_ID_STEEL_MASS), CHARA_BIT_RES_FEAR \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_ARMOUR / 32, CREATURE_ID_STEEL_MASS), CHARA_BIT_ARMOUR \ 32
+-	filter_creature(991) = "/undead/nefia3/"
++	filter_creature(1003) = "/undead/nefia3/"
+ 	HMMBITON cbitorg(CHARA_BIT_RES_FEAR / 32, CREATURE_ID_GOLDEN_ARMOR), CHARA_BIT_RES_FEAR \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_ARMOUR / 32, CREATURE_ID_GOLDEN_ARMOR), CHARA_BIT_ARMOUR \ 32
+-	filter_creature(992) = "/undead/nefia3/"
++	filter_creature(1004) = "/undead/nefia3/"
+ 	HMMBITON cbitorg(CHARA_BIT_DEATH_MASTER / 32, CREATURE_ID_DEATH_ARMOR), CHARA_BIT_DEATH_MASTER \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_RES_FEAR / 32, CREATURE_ID_DEATH_ARMOR), CHARA_BIT_RES_FEAR \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_ARMOUR / 32, CREATURE_ID_DEATH_ARMOR), CHARA_BIT_ARMOUR \ 32
+-	filter_creature(993) = "/god/nefia1/"
+-	filter_creature(994) = "/god/nefia1/"
+-	filter_creature(995) = "/god/nefia1/"
+-	filter_creature(996) = "/god/nefia3/"
++	filter_creature(1005) = "/god/nefia1/"
++	filter_creature(1006) = "/god/nefia1/"
++	filter_creature(1007) = "/god/nefia1/"
++	filter_creature(1008) = "/god/nefia3/"
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_CUPID_OF_LOVE), CHARA_BIT_FLOAT \ 32
+-	filter_creature(997) = "/undead/nefia6/"
++	filter_creature(1009) = "/undead/nefia6/"
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_LESSER_PHANTOM), CHARA_BIT_FLOAT \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_RES_FEAR / 32, CREATURE_ID_LESSER_PHANTOM), CHARA_BIT_RES_FEAR \ 32
+-	filter_creature(998) = "/dragon/nefia2/"
+-	filter_creature(999) = "/nefia7/"
++	filter_creature(1010) = "/dragon/nefia2/"
++	filter_creature(1011) = "/nefia7/"
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_HARPY), CHARA_BIT_FLOAT \ 32
+-	filter_creature(1000) = "/dragon/nefia5/"
+-	filter_creature(1001) = "/fire/dragon/nefia5/"
+-	filter_creature(1002) = "/dragon/nefia5/"
+-	filter_creature(1003) = "/dragon/nefia5/"
+-	filter_creature(1004) = "/undead/dragon/nefia5/"
+-	filter_creature(1005) = "/dragon/nefia5/"
+-	filter_creature(1006) = "/nefia1/"
+-	filter_creature(1007) = "/wild/nefia5/"
+-	filter_creature(1008) = "/wild/nefia5/"
+-	filter_creature(1009) = "/wild/nefia5/"
+-	filter_creature(1010) = "/wild/nefia5/"
+-	filter_creature(1011) = "/wild/nefia5/"
+-	filter_creature(1012) = "/wild/nefia5/"
+-	filter_creature(1013) = "/undead/nefia5/"
+-	filter_creature(1014) = "/nefia7/"
++	filter_creature(1012) = "/dragon/nefia5/"
++	filter_creature(1013) = "/fire/dragon/nefia5/"
++	filter_creature(1014) = "/dragon/nefia5/"
++	filter_creature(1015) = "/dragon/nefia5/"
++	filter_creature(1016) = "/undead/dragon/nefia5/"
++	filter_creature(1017) = "/dragon/nefia5/"
++	filter_creature(1018) = "/nefia1/"
++	filter_creature(1019) = "/wild/nefia5/"
++	filter_creature(1020) = "/wild/nefia5/"
++	filter_creature(1021) = "/wild/nefia5/"
++	filter_creature(1022) = "/wild/nefia5/"
++	filter_creature(1023) = "/wild/nefia5/"
++	filter_creature(1024) = "/wild/nefia5/"
++	filter_creature(1025) = "/undead/nefia5/"
++	filter_creature(1026) = "/nefia7/"
+ 	HMMBITON cbitorg(CHARA_BIT_RES_FEAR / 32, CREATURE_ID_WOODEN_GOLEM), CHARA_BIT_RES_FEAR \ 32
+-	filter_creature(1015) = "/fire/nefia7/"
++	filter_creature(1027) = "/fire/nefia7/"
+ 	HMMBITON cbitorg(CHARA_BIT_RES_FEAR / 32, CREATURE_ID_STONE_GOLEM), CHARA_BIT_RES_FEAR \ 32
+-	filter_creature(1016) = "/fire/nefia7/"
++	filter_creature(1028) = "/fire/nefia7/"
+ 	HMMBITON cbitorg(CHARA_BIT_RES_FEAR / 32, CREATURE_ID_STEEL_GOLEM), CHARA_BIT_RES_FEAR \ 32
+-	filter_creature(1017) = "/nefia7/"
++	filter_creature(1029) = "/nefia7/"
+ 	HMMBITON cbitorg(CHARA_BIT_RES_FEAR / 32, CREATURE_ID_GOLDEN_GOLEM), CHARA_BIT_RES_FEAR \ 32
+-	filter_creature(1018) = "/nefia7/"
++	filter_creature(1030) = "/nefia7/"
+ 	HMMBITON cbitorg(CHARA_BIT_RES_FEAR / 32, CREATURE_ID_MITHRIL_GOLEM), CHARA_BIT_RES_FEAR \ 32
+-	filter_creature(1019) = "/nefia7/"
++	filter_creature(1031) = "/nefia7/"
+ 	HMMBITON cbitorg(CHARA_BIT_RES_FEAR / 32, CREATURE_ID_SKY_GOLEM), CHARA_BIT_RES_FEAR \ 32
+-	filter_creature(1020) = "/nefia7/"
++	filter_creature(1032) = "/nefia7/"
+ 	HMMBITON cbitorg(CHARA_BIT_RES_FEAR / 32, CREATURE_ID_ADAMANTIUM_GOLEM), CHARA_BIT_RES_FEAR \ 32
+-	filter_creature(1021) = "/fire/nefia8/"
+-	filter_creature(1022) = "/fire/nefia5/"
+-	filter_creature(1023) = "/fire/nefia1/"
+-	filter_creature(1024) = "/undead/nefia6/"
++	filter_creature(1033) = "/fire/nefia8/"
++	filter_creature(1034) = "/fire/nefia5/"
++	filter_creature(1035) = "/fire/nefia1/"
++	filter_creature(1036) = "/undead/nefia6/"
+ 	HMMBITON cbitorg(CHARA_BIT_RES_FEAR / 32, CREATURE_ID_SKELETON_WARRIOR), CHARA_BIT_RES_FEAR \ 32
+-	filter_creature(1025) = "/undead/nefia6/"
++	filter_creature(1037) = "/undead/nefia6/"
+ 	HMMBITON cbitorg(CHARA_BIT_RES_FEAR / 32, CREATURE_ID_SKELETON_BERSERKER), CHARA_BIT_RES_FEAR \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_TEMPER / 32, CREATURE_ID_SKELETON_BERSERKER), CHARA_BIT_TEMPER \ 32
+-	filter_creature(1026) = "/man/nefia0/"
++	filter_creature(1038) = "/man/nefia0/"
+ 	HMMBITON cbitorg(CHARA_BIT_RES_FEAR / 32, CREATURE_ID_MISSIONARY_OF_DARKNESS), CHARA_BIT_RES_FEAR \ 32
+-	filter_creature(1027) = "/pawn/nefia4/"
+-	filter_creature(1028) = "/pawn/nefia4/"
+-	filter_creature(1029) = "/pawn/nefia4/"
+-	filter_creature(1030) = "/pawn/nefia4/"
+-	filter_creature(1031) = "/nefia4/"
+-	filter_creature(1032) = "/nefia4/"
+-	filter_creature(1033) = "/man/shopguard/nefia0/"
+-	filter_creature(1034) = "/man/shopguard/nefia0/"
+-	filter_creature(1035) = "/man/shopguard/nefia0/"
+-	filter_creature(1036) = "/man/rogue/"
+-	filter_creature(1037) = "/man/rogue/nefia0/"
+-	filter_creature(1038) = "/man/rogue/nefia0/"
+-	filter_creature(1039) = "/man/rogue/nefia0/"
+-	filter_creature(1040) = "/man/nefia0/"
+-	filter_creature(1041) = "/man/nefia0/"
+-	filter_creature(1042) = "/man/"
++	filter_creature(1039) = "/pawn/nefia4/"
++	filter_creature(1040) = "/pawn/nefia4/"
++	filter_creature(1041) = "/pawn/nefia4/"
++	filter_creature(1042) = "/pawn/nefia4/"
+ 	filter_creature(1043) = "/nefia4/"
+-	filter_creature(1044) = "/man/nefia0/"
+-	filter_creature(1045) = "/man/nefia0/"
+-	filter_creature(1046) = "/man/nefia0/"
+-	filter_creature(1047) = "/wild/cat/nefia6/"
++	filter_creature(1044) = "/nefia4/"
++	filter_creature(1045) = "/man/shopguard/nefia0/"
++	filter_creature(1046) = "/man/shopguard/nefia0/"
++	filter_creature(1047) = "/man/shopguard/nefia0/"
++	filter_creature(1048) = "/man/rogue/"
++	filter_creature(1049) = "/man/rogue/nefia0/"
++	filter_creature(1050) = "/man/rogue/nefia0/"
++	filter_creature(1051) = "/man/rogue/nefia0/"
++	filter_creature(1052) = "/man/nefia0/"
++	filter_creature(1053) = "/man/nefia0/"
++	filter_creature(1054) = "/man/"
++	filter_creature(1055) = "/nefia4/"
++	filter_creature(1056) = "/man/nefia0/"
++	filter_creature(1057) = "/man/nefia0/"
++	filter_creature(1058) = "/man/nefia0/"
++	filter_creature(1059) = "/wild/cat/nefia6/"
+ 	HMMBITON cbitorg(CHARA_BIT_SUPERIOR_RIDING / 32, CREATURE_ID_CAT), CHARA_BIT_SUPERIOR_RIDING \ 32
+-	filter_creature(1048) = "/wild/cat/nefia6/"
+-	filter_creature(1049) = "/wild/cat/nefia6/"
+-	filter_creature(1050) = "/wild/cat/nefia6/"
++	filter_creature(1060) = "/wild/cat/nefia6/"
++	filter_creature(1061) = "/wild/cat/nefia6/"
++	filter_creature(1062) = "/wild/cat/nefia6/"
+ 	HMMBITON cbitorg(CHARA_BIT_SUPERIOR_RIDING / 32, CREATURE_ID_LION), CHARA_BIT_SUPERIOR_RIDING \ 32
+-	filter_creature(1051) = "/wild/cat/"
+-	filter_creature(1052) = "/wild/cat/nefia6/"
+-	filter_creature(1053) = "/wild/nefia7/"
++	filter_creature(1063) = "/wild/cat/"
++	filter_creature(1064) = "/wild/cat/nefia6/"
++	filter_creature(1065) = "/wild/nefia7/"
+ 	HMMBITON cbitorg(CHARA_BIT_SUPERIOR_RIDING / 32, CREATURE_ID_DOG), CHARA_BIT_SUPERIOR_RIDING \ 32
+-	filter_creature(1054) = "/wild/"
++	filter_creature(1066) = "/wild/"
+ 	HMMBITON cbitorg(CHARA_BIT_SUPERIOR_RIDING / 32, CREATURE_ID_POPPY_THE_LITTLE_DOG), CHARA_BIT_SUPERIOR_RIDING \ 32
+-	filter_creature(1055) = "/man/"
+-	filter_creature(1056) = "/man/"
+-	filter_creature(1057) = "/man/nefia0/"
++	filter_creature(1067) = "/man/"
++	filter_creature(1068) = "/man/"
++	filter_creature(1069) = "/man/nefia0/"
+ 	HMMBITON cbitorg(CHARA_BIT_SUPERIOR_RIDING / 32, CREATURE_ID_LITTLE_GIRL), CHARA_BIT_SUPERIOR_RIDING \ 32
+-	filter_creature(1058) = "/wild/nefia7/"
+-	filter_creature(1059) = "/wild/nefia8/"
+-	filter_creature(1060) = "/man/nefia0/"
+-	filter_creature(1061) = "/god/"
+-	filter_creature(1062) = "/man/"
++	filter_creature(1070) = "/wild/nefia7/"
++	filter_creature(1071) = "/wild/nefia8/"
++	filter_creature(1072) = "/man/nefia0/"
++	filter_creature(1073) = "/god/"
++	filter_creature(1074) = "/man/"
+ 	HMMBITON cbitorg(CHARA_BIT_SUPERIOR_RIDING / 32, CREATURE_ID_YOUNGER_SISTER), CHARA_BIT_SUPERIOR_RIDING \ 32
+-	filter_creature(1063) = "/man/"
++	filter_creature(1075) = "/man/"
+ 	HMMBITON cbitorg(CHARA_BIT_SUPERIOR_RIDING / 32, CREATURE_ID_YOUNGER_SISTER2), CHARA_BIT_SUPERIOR_RIDING \ 32
+-	filter_creature(1064) = "/man/"
+-	filter_creature(1065) = "/man/"
++	filter_creature(1076) = "/man/"
++	filter_creature(1077) = "/man/"
+ 	HMMBITON cbitorg(CHARA_BIT_SUPERIOR_RIDING / 32, CREATURE_ID_YOUNG_LADY), CHARA_BIT_SUPERIOR_RIDING \ 32
+-	filter_creature(1066) = "/god/"
+-	filter_creature(1067) = "/undead/god/"
+-	filter_creature(1068) = "/man/"
+-	filter_creature(1069) = "/man/"
+-	filter_creature(1070) = "/man/"
+-	filter_creature(1071) = ""
++	filter_creature(1078) = "/god/"
++	filter_creature(1079) = "/undead/god/"
++	filter_creature(1080) = "/man/"
++	filter_creature(1081) = "/man/"
++	filter_creature(1082) = "/man/"
++	filter_creature(1083) = ""
+ 	HMMBITON cbitorg(CHARA_BIT_SUPERIOR_RIDING / 32, CREATURE_ID_TWINTAIL), CHARA_BIT_SUPERIOR_RIDING \ 32
+-	filter_creature(1072) = "/god/"
+-	filter_creature(1073) = "/man/nefia0/"
++	filter_creature(1084) = "/god/"
++	filter_creature(1085) = "/man/nefia0/"
+ 	HMMBITON cbitorg(CHARA_BIT_SUPERIOR_RIDING / 32, CREATURE_ID_NURSE), CHARA_BIT_SUPERIOR_RIDING \ 32
+-	filter_creature(1074) = "/man/"
+-	filter_creature(1075) = "/man/"
+-	filter_creature(1076) = "/man/"
+-	filter_creature(1077) = "/man/"
+-	filter_creature(1078) = "/nefia4/"
++	filter_creature(1086) = "/man/"
++	filter_creature(1087) = "/man/"
++	filter_creature(1088) = "/man/"
++	filter_creature(1089) = "/man/"
++	filter_creature(1090) = "/nefia4/"
+ 	HMMBITON cbitorg(CHARA_BIT_RES_FEAR / 32, CREATURE_ID_BLADE), CHARA_BIT_RES_FEAR \ 32
+-	filter_creature(1079) = "/nefia4/"
++	filter_creature(1091) = "/nefia4/"
+ 	HMMBITON cbitorg(CHARA_BIT_RES_FEAR / 32, CREATURE_ID_BLADE_ALPHA), CHARA_BIT_RES_FEAR \ 32
+-	filter_creature(1080) = "/nefia4/"
++	filter_creature(1092) = "/nefia4/"
+ 	HMMBITON cbitorg(CHARA_BIT_RES_FEAR / 32, CREATURE_ID_BLADE_OMEGA), CHARA_BIT_RES_FEAR \ 32
+-	filter_creature(1081) = ""
++	filter_creature(1093) = ""
+ 	HMMBITON cbitorg(CHARA_BIT_RES_FEAR / 32, CREATURE_ID_KANEDA_BIKE), CHARA_BIT_RES_FEAR \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_SUPERIOR_RIDING / 32, CREATURE_ID_KANEDA_BIKE), CHARA_BIT_SUPERIOR_RIDING \ 32
+-	filter_creature(1082) = "/nefia4/"
++	filter_creature(1094) = "/nefia4/"
+ 	HMMBITON cbitorg(CHARA_BIT_RES_FEAR / 32, CREATURE_ID_CUB), CHARA_BIT_RES_FEAR \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_SUPERIOR_RIDING / 32, CREATURE_ID_CUB), CHARA_BIT_SUPERIOR_RIDING \ 32
+-	filter_creature(1083) = "/nefia4/"
++	filter_creature(1095) = "/nefia4/"
+ 	HMMBITON cbitorg(CHARA_BIT_RES_FEAR / 32, CREATURE_ID_MINE_DOG), CHARA_BIT_RES_FEAR \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_IMMUNE_MINE / 32, CREATURE_ID_MINE_DOG), CHARA_BIT_IMMUNE_MINE \ 32
+-	filter_creature(1084) = "/nefia4/"
++	filter_creature(1096) = "/nefia4/"
+ 	HMMBITON cbitorg(CHARA_BIT_RES_FEAR / 32, CREATURE_ID_IRON_MAIDEN), CHARA_BIT_RES_FEAR \ 32
+-	filter_creature(1085) = "/undead/nefia3/"
++	filter_creature(1097) = "/undead/nefia3/"
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_DEFORMED_EYE), CHARA_BIT_FLOAT \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_RES_FEAR / 32, CREATURE_ID_DEFORMED_EYE), CHARA_BIT_RES_FEAR \ 32
+-	filter_creature(1086) = "/undead/nefia3/"
++	filter_creature(1098) = "/undead/nefia3/"
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_IMPURE_EYE), CHARA_BIT_FLOAT \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_RES_FEAR / 32, CREATURE_ID_IMPURE_EYE), CHARA_BIT_RES_FEAR \ 32
+-	filter_creature(1087) = "/undead/ether/nefia6/"
++	filter_creature(1099) = "/undead/ether/nefia6/"
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_WISP), CHARA_BIT_FLOAT \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_RES_FEAR / 32, CREATURE_ID_WISP), CHARA_BIT_RES_FEAR \ 32
+-	filter_creature(1088) = "/wild/nefia7/"
+-	filter_creature(1089) = "/wild/ether/nefia7/"
+-	filter_creature(1090) = "/wild/nefia2/"
+-	filter_creature(1091) = "/undead/nefia2/"
+-	filter_creature(1092) = "/undead/nefia2/"
++	filter_creature(1100) = "/wild/nefia7/"
++	filter_creature(1101) = "/wild/ether/nefia7/"
++	filter_creature(1102) = "/wild/nefia2/"
++	filter_creature(1103) = "/undead/nefia2/"
++	filter_creature(1104) = "/undead/nefia2/"
+ 	HMMBITON cbitorg(CHARA_BIT_INVISIBLE / 32, CREATURE_ID_PUPPY), CHARA_BIT_INVISIBLE \ 32
+-	filter_creature(1093) = "/undead/nefia2/"
++	filter_creature(1105) = "/undead/nefia2/"
+ 	HMMBITON cbitorg(CHARA_BIT_INVISIBLE / 32, CREATURE_ID_GREATER_PUMPKIN), CHARA_BIT_INVISIBLE \ 32
+-	filter_creature(1094) = "/undead/nefia2/"
++	filter_creature(1106) = "/undead/nefia2/"
+ 	HMMBITON cbitorg(CHARA_BIT_INVISIBLE / 32, CREATURE_ID_HALLOWEEN_NIGHTMARE), CHARA_BIT_INVISIBLE \ 32
+-	filter_creature(1095) = "/undead/nefia6/"
++	filter_creature(1107) = "/undead/nefia6/"
+ 	HMMBITON cbitorg(CHARA_BIT_INVISIBLE / 32, CREATURE_ID_STALKER), CHARA_BIT_INVISIBLE \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_RES_FEAR / 32, CREATURE_ID_STALKER), CHARA_BIT_RES_FEAR \ 32
+-	filter_creature(1096) = "/undead/nefia6/"
++	filter_creature(1108) = "/undead/nefia6/"
+ 	HMMBITON cbitorg(CHARA_BIT_INVISIBLE / 32, CREATURE_ID_SHADOW_STALKER), CHARA_BIT_INVISIBLE \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_RES_FEAR / 32, CREATURE_ID_SHADOW_STALKER), CHARA_BIT_RES_FEAR \ 32
+-	filter_creature(1097) = ""
+-	filter_creature(1098) = "/man/"
+-	filter_creature(1099) = "/man/"
+-	filter_creature(1100) = "/slime/nefia4/"
++	filter_creature(1109) = ""
++	filter_creature(1110) = "/man/"
++	filter_creature(1111) = "/man/"
++	filter_creature(1112) = "/slime/nefia4/"
+ 	HMMBITON cbitorg(CHARA_BIT_INFERIOR_RIDING / 32, CREATURE_ID_PUTIT_TANK), CHARA_BIT_INFERIOR_RIDING \ 32
+-	filter_creature(1101) = "/man/"
+-	filter_creature(1102) = "/man/"
+-	filter_creature(1103) = "/man/"
+-	filter_creature(1104) = "/man/"
+-	filter_creature(1105) = "/man/"
+-	filter_creature(1106) = "/man/"
+-	filter_creature(1107) = "/man/"
+-	filter_creature(1108) = "/man/"
+-	filter_creature(1109) = "/man/"
++	filter_creature(1113) = "/man/"
++	filter_creature(1114) = "/man/"
++	filter_creature(1115) = "/man/"
++	filter_creature(1116) = "/man/"
++	filter_creature(1117) = "/man/"
++	filter_creature(1118) = "/man/"
++	filter_creature(1119) = "/man/"
++	filter_creature(1120) = "/man/"
++	filter_creature(1121) = "/man/"
+ 	HMMBITON cbitorg(CHARA_BIT_DROP_GOLD / 32, CREATURE_ID_MARKS_THE_GREAT_THIEF), CHARA_BIT_DROP_GOLD \ 32
+-	filter_creature(1110) = "/man/"
++	filter_creature(1122) = "/man/"
+ 	HMMBITON cbitorg(CHARA_BIT_DROP_GOLD / 32, CREATURE_ID_NOEL_THE_BOMBER), CHARA_BIT_DROP_GOLD \ 32
+-	filter_creature(1111) = "/man/"
++	filter_creature(1123) = "/man/"
+ 	HMMBITON cbitorg(CHARA_BIT_TEMPER / 32, CREATURE_ID_CONERY_PALMIAN_MAJOR_GENERAL), CHARA_BIT_TEMPER \ 32
+-	filter_creature(1112) = "/man/nefia0/"
++	filter_creature(1124) = "/man/nefia0/"
+ 	HMMBITON cbitorg(CHARA_BIT_DROP_GOLD / 32, CREATURE_ID_THIEF), CHARA_BIT_DROP_GOLD \ 32
+-	filter_creature(1113) = "/man/nefia0/"
++	filter_creature(1125) = "/man/nefia0/"
+ 	HMMBITON cbitorg(CHARA_BIT_DROP_GOLD / 32, CREATURE_ID_ROBBER), CHARA_BIT_DROP_GOLD \ 32
+-	filter_creature(1114) = "/man/nefia0/"
++	filter_creature(1126) = "/man/nefia0/"
+ 	HMMBITON cbitorg(CHARA_BIT_DROP_GOLD / 32, CREATURE_ID_MASTER_THIEF), CHARA_BIT_DROP_GOLD \ 32
+-	filter_creature(1115) = "/nefia8/"
++	filter_creature(1127) = "/nefia8/"
+ 	HMMBITON cbitorg(CHARA_BIT_RES_FEAR / 32, CREATURE_ID_GREAT_RACE_OF_YITH), CHARA_BIT_RES_FEAR \ 32
+-	filter_creature(1116) = "/nefia8/"
++	filter_creature(1128) = "/nefia8/"
+ 	HMMBITON cbitorg(CHARA_BIT_RES_FEAR / 32, CREATURE_ID_SHUB_NIGGURATH), CHARA_BIT_RES_FEAR \ 32
+-	filter_creature(1117) = "/nefia1/"
+-	filter_creature(1118) = "/god/nefia8/"
++	filter_creature(1129) = "/nefia1/"
++	filter_creature(1130) = "/god/nefia8/"
+ 	HMMBITON cbitorg(CHARA_BIT_RES_FEAR / 32, CREATURE_ID_SPIRAL_KING), CHARA_BIT_RES_FEAR \ 32
+-	filter_creature(1119) = "/nefia2/"
++	filter_creature(1131) = "/nefia2/"
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_FAIRY), CHARA_BIT_FLOAT \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_DROP_GOLD / 32, CREATURE_ID_FAIRY), CHARA_BIT_DROP_GOLD \ 32
+-	filter_creature(1120) = "/god/"
++	filter_creature(1132) = "/god/"
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_GOOSE), CHARA_BIT_FLOAT \ 32
+-	filter_creature(1121) = "/god/"
++	filter_creature(1133) = "/god/"
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_BLACK_CAT), CHARA_BIT_FLOAT \ 32
+-	filter_creature(1122) = "/god/"
++	filter_creature(1134) = "/god/"
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_CUTE_FAIRY), CHARA_BIT_FLOAT \ 32
+-	filter_creature(1123) = "/god/"
++	filter_creature(1135) = "/god/"
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_ANDROID), CHARA_BIT_FLOAT \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_ARMOUR / 32, CREATURE_ID_ANDROID), CHARA_BIT_ARMOUR \ 32
+-	filter_creature(1124) = "/god/"
++	filter_creature(1136) = "/god/"
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_BLACK_ANGEL), CHARA_BIT_FLOAT \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_SUPERIOR_RIDING / 32, CREATURE_ID_BLACK_ANGEL), CHARA_BIT_SUPERIOR_RIDING \ 32
+-	filter_creature(1125) = "/god/"
++	filter_creature(1137) = "/god/"
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_EXILE), CHARA_BIT_FLOAT \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_RAPID_MAGIC / 32, CREATURE_ID_EXILE), CHARA_BIT_RAPID_MAGIC \ 32
+-	filter_creature(1126) = "/god/"
++	filter_creature(1138) = "/god/"
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_GOLDEN_KNIGHT), CHARA_BIT_FLOAT \ 32
+-	filter_creature(1127) = "/god/"
++	filter_creature(1139) = "/god/"
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_DEFENDER), CHARA_BIT_FLOAT \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_LAY_HANDS / 32, CREATURE_ID_DEFENDER), CHARA_BIT_LAY_HANDS \ 32
+-	filter_creature(1128) = "/wild/horse/nefia2/"
++	filter_creature(1140) = "/wild/horse/nefia2/"
+ 	HMMBITON cbitorg(CHARA_BIT_SUPERIOR_RIDING / 32, CREATURE_ID_LAME_HORSE), CHARA_BIT_SUPERIOR_RIDING \ 32
+-	filter_creature(1129) = "/wild/horse/nefia2/"
++	filter_creature(1141) = "/wild/horse/nefia2/"
+ 	HMMBITON cbitorg(CHARA_BIT_SUPERIOR_RIDING / 32, CREATURE_ID_WILD_HORSE), CHARA_BIT_SUPERIOR_RIDING \ 32
+-	filter_creature(1130) = "/wild/horse/nefia2/"
++	filter_creature(1142) = "/wild/horse/nefia2/"
+ 	HMMBITON cbitorg(CHARA_BIT_SUPERIOR_RIDING / 32, CREATURE_ID_NOYEL_HORSE), CHARA_BIT_SUPERIOR_RIDING \ 32
+-	filter_creature(1131) = "/wild/horse/nefia2/"
++	filter_creature(1143) = "/wild/horse/nefia2/"
+ 	HMMBITON cbitorg(CHARA_BIT_SUPERIOR_RIDING / 32, CREATURE_ID_YOWYN_HORSE), CHARA_BIT_SUPERIOR_RIDING \ 32
+-	filter_creature(1132) = "/wild/horse/nefia2/"
++	filter_creature(1144) = "/wild/horse/nefia2/"
+ 	HMMBITON cbitorg(CHARA_BIT_SUPERIOR_RIDING / 32, CREATURE_ID_THOROUGHBRED), CHARA_BIT_SUPERIOR_RIDING \ 32
+-	filter_creature(1133) = "/nefia4/"
+-	filter_creature(1134) = "/man/"
+-	filter_creature(1135) = "/man/"
+-	filter_creature(1136) = "/man/"
+-	filter_creature(1137) = "/man/"
+-	filter_creature(1138) = "/man/"
+-	filter_creature(1139) = "/man/"
+-	filter_creature(1140) = "/man/"
+-	filter_creature(1141) = "/man/"
+-	filter_creature(1142) = "/nefia0/"
+-	filter_creature(1143) = ""
+-	HMMBITON cbitorg(CHARA_BIT_RES_FEAR / 32, CREATURE_ID_BIG_DADDY), CHARA_BIT_RES_FEAR \ 32
+-	filter_creature(1144) = ""
+-	filter_creature(1145) = "/man/"
++	filter_creature(1145) = "/nefia4/"
+ 	filter_creature(1146) = "/man/"
+-	filter_creature(1147) = "/undead/nefia6/"
++	filter_creature(1147) = "/man/"
++	filter_creature(1148) = "/man/"
++	filter_creature(1149) = "/man/"
++	filter_creature(1150) = "/man/"
++	filter_creature(1151) = "/man/"
++	filter_creature(1152) = "/man/"
++	filter_creature(1153) = "/man/"
++	filter_creature(1154) = "/nefia0/"
++	filter_creature(1155) = ""
++	HMMBITON cbitorg(CHARA_BIT_RES_FEAR / 32, CREATURE_ID_BIG_DADDY), CHARA_BIT_RES_FEAR \ 32
++	filter_creature(1156) = ""
++	filter_creature(1157) = "/man/"
++	filter_creature(1158) = "/man/"
++	filter_creature(1159) = "/undead/nefia6/"
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_SHADE), CHARA_BIT_FLOAT \ 32
+-	filter_creature(1148) = "/nefia4/"
++	filter_creature(1160) = "/nefia4/"
+ 	HMMBITON cbitorg(CHARA_BIT_INFERIOR_RIDING / 32, CREATURE_ID_QUICKLING), CHARA_BIT_INFERIOR_RIDING \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_RES_ELEMENTAL / 32, CREATURE_ID_QUICKLING), CHARA_BIT_RES_ELEMENTAL \ 32
+-	filter_creature(1149) = "/nefia4/"
++	filter_creature(1161) = "/nefia4/"
+ 	HMMBITON cbitorg(CHARA_BIT_INFERIOR_RIDING / 32, CREATURE_ID_QUICKLING_ARCHER), CHARA_BIT_INFERIOR_RIDING \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_RES_ELEMENTAL / 32, CREATURE_ID_QUICKLING_ARCHER), CHARA_BIT_RES_ELEMENTAL \ 32
+-	filter_creature(1150) = "/nefia0/"
++	filter_creature(1162) = "/nefia0/"
+ 	HMMBITON cbitorg(CHARA_BIT_INFERIOR_RIDING / 32, CREATURE_ID_PLATINA_BELL), CHARA_BIT_INFERIOR_RIDING \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_METAL / 32, CREATURE_ID_PLATINA_BELL), CHARA_BIT_METAL \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_RES_ELEMENTAL / 32, CREATURE_ID_PLATINA_BELL), CHARA_BIT_RES_ELEMENTAL \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_PLATINA_BELL), CHARA_BIT_FLOAT \ 32
+-	filter_creature(1151) = "/nefia0/"
++	filter_creature(1163) = "/nefia0/"
+ 	HMMBITON cbitorg(CHARA_BIT_INFERIOR_RIDING / 32, CREATURE_ID_GOLD_BELL), CHARA_BIT_INFERIOR_RIDING \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_METAL / 32, CREATURE_ID_GOLD_BELL), CHARA_BIT_METAL \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_RES_ELEMENTAL / 32, CREATURE_ID_GOLD_BELL), CHARA_BIT_RES_ELEMENTAL \ 32
+ 	HMMBITON cbitorg(CHARA_BIT_FLOAT / 32, CREATURE_ID_GOLD_BELL), CHARA_BIT_FLOAT \ 32
+-	filter_creature(1152) = "/dragon/nefia2/"
++	filter_creature(1164) = "/dragon/nefia2/"
+ 	return
+ 	goto *randname_test
+ 
+ 
+ 
+ 
+ 
++
++
++
++
++
++
++
++
++
++
++
++
+ 
+ 
+ 
+ 
+ 

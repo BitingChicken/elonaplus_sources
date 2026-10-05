@@ -1,0 +1,1671 @@
+--- ../2.32-borscht/db_item.hsp	2026-10-05 12:57:06.414236667 +0100
++++ ../2.33R-borscht/db_item.hsp	2026-10-05 15:46:08.569486828 +0100
+@@ -2,10 +2,439 @@
+ 	if ( dbmode != DBMODE_FIND ) {
+ 		goto *db_item_set
+ 	}
+ 	dbmax = 0
+ 	dbsum = 0
++	if ( 50 > objlv ) {
++		goto *db_item_GLASSES
++	}
++	if ( fltselect != 3 ) {
++		goto *db_item_GLASSES
++	}
++	if ( flttypemajor != (0 /*!!!@[FILTER_NOTHING @@@ FILTER_NOTHING]@!!! */) ) {
++		if ( flttypemajor != FILTER_RANGE ) {
++			goto *db_item_GLASSES
++		}
++	}
++	if ( flttypeminor != (0 /*!!!@[FILTER_NOTHING @@@ FILTER_NOTHING]@!!! */) ) {
++		if ( flttypeminor != FILTER_RANGE_ROCK_THROW ) {
++			goto *db_item_GLASSES
++		}
++	}
++	if ( filtermax != 0 ) {
++		dbtmp = 1
++		repeat filtermax
++			if ( instr(filter_item(ITEM_ID_DEVIL_SHOOT), 0, filtern(cnt)) == (-1) ) {
++				dbtmp = 0
++				break
++			}
++		loop
++		if ( dbtmp == 0 ) {
++			goto *db_item_GLASSES
++		}
++	}
++	dbsum += 1000000 / (1000 + abs(objlv - 50) * 10) + 1
++	dblist(0, dbmax) = 1333, dbsum
++	dbmax++
++
++*db_item_GLASSES
++	if ( 1 > objlv ) {
++		goto *db_item_INVITATION_LETTER
++	}
++	if ( fltselect != 0 ) {
++		goto *db_item_INVITATION_LETTER
++	}
++	if ( flttypemajor != (0 /*!!!@[FILTER_NOTHING @@@ FILTER_NOTHING]@!!! */) ) {
++		if ( flttypemajor != FILTER_ITEM_TOOL ) {
++			goto *db_item_INVITATION_LETTER
++		}
++	}
++	if ( flttypeminor != (0 /*!!!@[FILTER_NOTHING @@@ FILTER_NOTHING]@!!! */) ) {
++		if ( flttypeminor != FILTER_NONE ) {
++			goto *db_item_INVITATION_LETTER
++		}
++	}
++	if ( filtermax != 0 ) {
++		dbtmp = 1
++		repeat filtermax
++			if ( instr(filter_item(ITEM_ID_GLASSES), 0, filtern(cnt)) == (-1) ) {
++				dbtmp = 0
++				break
++			}
++		loop
++		if ( dbtmp == 0 ) {
++			goto *db_item_INVITATION_LETTER
++		}
++	}
++	dbsum += 1000000 / (1000 + abs(objlv - 1) * 10) + 1
++	dblist(0, dbmax) = 1332, dbsum
++	dbmax++
++
++*db_item_INVITATION_LETTER
++	if ( 1 > objlv ) {
++		goto *db_item_LOVE_LETTER
++	}
++	if ( fltselect != 0 ) {
++		goto *db_item_LOVE_LETTER
++	}
++	if ( flttypemajor != (0 /*!!!@[FILTER_NOTHING @@@ FILTER_NOTHING]@!!! */) ) {
++		if ( flttypemajor != FILTER_JUNK ) {
++			goto *db_item_LOVE_LETTER
++		}
++	}
++	if ( flttypeminor != (0 /*!!!@[FILTER_NOTHING @@@ FILTER_NOTHING]@!!! */) ) {
++		if ( flttypeminor != FILTER_NONE ) {
++			goto *db_item_LOVE_LETTER
++		}
++	}
++	if ( filtermax != 0 ) {
++		dbtmp = 1
++		repeat filtermax
++			if ( instr(filter_item(ITEM_ID_INVITATION_LETTER), 0, filtern(cnt)) == (-1) ) {
++				dbtmp = 0
++				break
++			}
++		loop
++		if ( dbtmp == 0 ) {
++			goto *db_item_LOVE_LETTER
++		}
++	}
++	dbsum += 600000 / (1000 + abs(objlv - 1) * 10) + 1
++	dblist(0, dbmax) = 1331, dbsum
++	dbmax++
++
++*db_item_LOVE_LETTER
++	if ( 1 > objlv ) {
++		goto *db_item_WINNING_NOTIFICATION
++	}
++	if ( fltselect != 0 ) {
++		goto *db_item_WINNING_NOTIFICATION
++	}
++	if ( flttypemajor != (0 /*!!!@[FILTER_NOTHING @@@ FILTER_NOTHING]@!!! */) ) {
++		if ( flttypemajor != FILTER_JUNK ) {
++			goto *db_item_WINNING_NOTIFICATION
++		}
++	}
++	if ( flttypeminor != (0 /*!!!@[FILTER_NOTHING @@@ FILTER_NOTHING]@!!! */) ) {
++		if ( flttypeminor != FILTER_NONE ) {
++			goto *db_item_WINNING_NOTIFICATION
++		}
++	}
++	if ( filtermax != 0 ) {
++		dbtmp = 1
++		repeat filtermax
++			if ( instr(filter_item(ITEM_ID_LOVE_LETTER), 0, filtern(cnt)) == (-1) ) {
++				dbtmp = 0
++				break
++			}
++		loop
++		if ( dbtmp == 0 ) {
++			goto *db_item_WINNING_NOTIFICATION
++		}
++	}
++	dbsum += 600000 / (1000 + abs(objlv - 1) * 10) + 1
++	dblist(0, dbmax) = 1330, dbsum
++	dbmax++
++
++*db_item_WINNING_NOTIFICATION
++	if ( 1 > objlv ) {
++		goto *db_item_BUSINESS_LETTER
++	}
++	if ( fltselect != 0 ) {
++		goto *db_item_BUSINESS_LETTER
++	}
++	if ( flttypemajor != (0 /*!!!@[FILTER_NOTHING @@@ FILTER_NOTHING]@!!! */) ) {
++		if ( flttypemajor != FILTER_JUNK ) {
++			goto *db_item_BUSINESS_LETTER
++		}
++	}
++	if ( flttypeminor != (0 /*!!!@[FILTER_NOTHING @@@ FILTER_NOTHING]@!!! */) ) {
++		if ( flttypeminor != FILTER_NONE ) {
++			goto *db_item_BUSINESS_LETTER
++		}
++	}
++	if ( filtermax != 0 ) {
++		dbtmp = 1
++		repeat filtermax
++			if ( instr(filter_item(ITEM_ID_WINNING_NOTIFICATION), 0, filtern(cnt)) == (-1) ) {
++				dbtmp = 0
++				break
++			}
++		loop
++		if ( dbtmp == 0 ) {
++			goto *db_item_BUSINESS_LETTER
++		}
++	}
++	dbsum += 600000 / (1000 + abs(objlv - 1) * 10) + 1
++	dblist(0, dbmax) = 1329, dbsum
++	dbmax++
++
++*db_item_BUSINESS_LETTER
++	if ( 1 > objlv ) {
++		goto *db_item_FAN_LETTER
++	}
++	if ( fltselect != 0 ) {
++		goto *db_item_FAN_LETTER
++	}
++	if ( flttypemajor != (0 /*!!!@[FILTER_NOTHING @@@ FILTER_NOTHING]@!!! */) ) {
++		if ( flttypemajor != FILTER_JUNK ) {
++			goto *db_item_FAN_LETTER
++		}
++	}
++	if ( flttypeminor != (0 /*!!!@[FILTER_NOTHING @@@ FILTER_NOTHING]@!!! */) ) {
++		if ( flttypeminor != FILTER_NONE ) {
++			goto *db_item_FAN_LETTER
++		}
++	}
++	if ( filtermax != 0 ) {
++		dbtmp = 1
++		repeat filtermax
++			if ( instr(filter_item(ITEM_ID_BUSINESS_LETTER), 0, filtern(cnt)) == (-1) ) {
++				dbtmp = 0
++				break
++			}
++		loop
++		if ( dbtmp == 0 ) {
++			goto *db_item_FAN_LETTER
++		}
++	}
++	dbsum += 600000 / (1000 + abs(objlv - 1) * 10) + 1
++	dblist(0, dbmax) = 1328, dbsum
++	dbmax++
++
++*db_item_FAN_LETTER
++	if ( 1 > objlv ) {
++		goto *db_item_SUSPICIOUS_LETTER
++	}
++	if ( fltselect != 0 ) {
++		goto *db_item_SUSPICIOUS_LETTER
++	}
++	if ( flttypemajor != (0 /*!!!@[FILTER_NOTHING @@@ FILTER_NOTHING]@!!! */) ) {
++		if ( flttypemajor != FILTER_JUNK ) {
++			goto *db_item_SUSPICIOUS_LETTER
++		}
++	}
++	if ( flttypeminor != (0 /*!!!@[FILTER_NOTHING @@@ FILTER_NOTHING]@!!! */) ) {
++		if ( flttypeminor != FILTER_NONE ) {
++			goto *db_item_SUSPICIOUS_LETTER
++		}
++	}
++	if ( filtermax != 0 ) {
++		dbtmp = 1
++		repeat filtermax
++			if ( instr(filter_item(ITEM_ID_FAN_LETTER), 0, filtern(cnt)) == (-1) ) {
++				dbtmp = 0
++				break
++			}
++		loop
++		if ( dbtmp == 0 ) {
++			goto *db_item_SUSPICIOUS_LETTER
++		}
++	}
++	dbsum += 600000 / (1000 + abs(objlv - 1) * 10) + 1
++	dblist(0, dbmax) = 1327, dbsum
++	dbmax++
++
++*db_item_SUSPICIOUS_LETTER
++	if ( 1 > objlv ) {
++		goto *db_item_CHAIN_LETTER_OF_MISFORTUNE
++	}
++	if ( fltselect != 0 ) {
++		goto *db_item_CHAIN_LETTER_OF_MISFORTUNE
++	}
++	if ( flttypemajor != (0 /*!!!@[FILTER_NOTHING @@@ FILTER_NOTHING]@!!! */) ) {
++		if ( flttypemajor != FILTER_JUNK ) {
++			goto *db_item_CHAIN_LETTER_OF_MISFORTUNE
++		}
++	}
++	if ( flttypeminor != (0 /*!!!@[FILTER_NOTHING @@@ FILTER_NOTHING]@!!! */) ) {
++		if ( flttypeminor != FILTER_NONE ) {
++			goto *db_item_CHAIN_LETTER_OF_MISFORTUNE
++		}
++	}
++	if ( filtermax != 0 ) {
++		dbtmp = 1
++		repeat filtermax
++			if ( instr(filter_item(ITEM_ID_SUSPICIOUS_LETTER), 0, filtern(cnt)) == (-1) ) {
++				dbtmp = 0
++				break
++			}
++		loop
++		if ( dbtmp == 0 ) {
++			goto *db_item_CHAIN_LETTER_OF_MISFORTUNE
++		}
++	}
++	dbsum += 600000 / (1000 + abs(objlv - 1) * 10) + 1
++	dblist(0, dbmax) = 1326, dbsum
++	dbmax++
++
++*db_item_CHAIN_LETTER_OF_MISFORTUNE
++	if ( 1 > objlv ) {
++		goto *db_item_EGELMAIL
++	}
++	if ( fltselect != 0 ) {
++		goto *db_item_EGELMAIL
++	}
++	if ( flttypemajor != (0 /*!!!@[FILTER_NOTHING @@@ FILTER_NOTHING]@!!! */) ) {
++		if ( flttypemajor != FILTER_JUNK ) {
++			goto *db_item_EGELMAIL
++		}
++	}
++	if ( flttypeminor != (0 /*!!!@[FILTER_NOTHING @@@ FILTER_NOTHING]@!!! */) ) {
++		if ( flttypeminor != FILTER_NONE ) {
++			goto *db_item_EGELMAIL
++		}
++	}
++	if ( filtermax != 0 ) {
++		dbtmp = 1
++		repeat filtermax
++			if ( instr(filter_item(ITEM_ID_CHAIN_LETTER_OF_MISFORTUNE), 0, filtern(cnt)) == (-1) ) {
++				dbtmp = 0
++				break
++			}
++		loop
++		if ( dbtmp == 0 ) {
++			goto *db_item_EGELMAIL
++		}
++	}
++	dbsum += 600000 / (1000 + abs(objlv - 1) * 10) + 1
++	dblist(0, dbmax) = 1325, dbsum
++	dbmax++
++
++*db_item_EGELMAIL
++	if ( 60 > objlv ) {
++		goto *db_item_ROATONING
++	}
++	if ( fltselect != 3 ) {
++		goto *db_item_ROATONING
++	}
++	if ( flttypemajor != (0 /*!!!@[FILTER_NOTHING @@@ FILTER_NOTHING]@!!! */) ) {
++		if ( flttypemajor != FILTER_ARMOR ) {
++			goto *db_item_ROATONING
++		}
++	}
++	if ( flttypeminor != (0 /*!!!@[FILTER_NOTHING @@@ FILTER_NOTHING]@!!! */) ) {
++		if ( flttypeminor != FILTER_ARMOR_HEAVY ) {
++			goto *db_item_ROATONING
++		}
++	}
++	if ( filtermax != 0 ) {
++		dbtmp = 1
++		repeat filtermax
++			if ( instr(filter_item(ITEM_ID_EGELMAIL), 0, filtern(cnt)) == (-1) ) {
++				dbtmp = 0
++				break
++			}
++		loop
++		if ( dbtmp == 0 ) {
++			goto *db_item_ROATONING
++		}
++	}
++	dbsum += 1000000 / (1000 + abs(objlv - 60) * 10) + 1
++	dblist(0, dbmax) = 1324, dbsum
++	dbmax++
++
++*db_item_ROATONING
++	if ( 60 > objlv ) {
++		goto *db_item_INQTUAFFLER
++	}
++	if ( fltselect != 3 ) {
++		goto *db_item_INQTUAFFLER
++	}
++	if ( flttypemajor != (0 /*!!!@[FILTER_NOTHING @@@ FILTER_NOTHING]@!!! */) ) {
++		if ( flttypemajor != FILTER_ACCESSORY_RING ) {
++			goto *db_item_INQTUAFFLER
++		}
++	}
++	if ( flttypeminor != (0 /*!!!@[FILTER_NOTHING @@@ FILTER_NOTHING]@!!! */) ) {
++		if ( flttypeminor != FILTER_ACCESSORY_SMALL_RING ) {
++			goto *db_item_INQTUAFFLER
++		}
++	}
++	if ( filtermax != 0 ) {
++		dbtmp = 1
++		repeat filtermax
++			if ( instr(filter_item(ITEM_ID_ROATONING), 0, filtern(cnt)) == (-1) ) {
++				dbtmp = 0
++				break
++			}
++		loop
++		if ( dbtmp == 0 ) {
++			goto *db_item_INQTUAFFLER
++		}
++	}
++	dbsum += 1000000 / (1000 + abs(objlv - 60) * 10) + 1
++	dblist(0, dbmax) = 1323, dbsum
++	dbmax++
++
++*db_item_INQTUAFFLER
++	if ( 60 > objlv ) {
++		goto *db_item_LAZASYEEL
++	}
++	if ( fltselect != 3 ) {
++		goto *db_item_LAZASYEEL
++	}
++	if ( flttypemajor != (0 /*!!!@[FILTER_NOTHING @@@ FILTER_NOTHING]@!!! */) ) {
++		if ( flttypemajor != FILTER_ACCESSORY_AMULET ) {
++			goto *db_item_LAZASYEEL
++		}
++	}
++	if ( flttypeminor != (0 /*!!!@[FILTER_NOTHING @@@ FILTER_NOTHING]@!!! */) ) {
++		if ( flttypeminor != FILTER_ACCESSORY_SMALL_AMULET ) {
++			goto *db_item_LAZASYEEL
++		}
++	}
++	if ( filtermax != 0 ) {
++		dbtmp = 1
++		repeat filtermax
++			if ( instr(filter_item(ITEM_ID_INQTUAFFLER), 0, filtern(cnt)) == (-1) ) {
++				dbtmp = 0
++				break
++			}
++		loop
++		if ( dbtmp == 0 ) {
++			goto *db_item_LAZASYEEL
++		}
++	}
++	dbsum += 1000000 / (1000 + abs(objlv - 60) * 10) + 1
++	dblist(0, dbmax) = 1322, dbsum
++	dbmax++
++
++*db_item_LAZASYEEL
++	if ( 30 > objlv ) {
++		goto *db_item_TZ500_K
++	}
++	if ( fltselect != 3 ) {
++		goto *db_item_TZ500_K
++	}
++	if ( flttypemajor != (0 /*!!!@[FILTER_NOTHING @@@ FILTER_NOTHING]@!!! */) ) {
++		if ( flttypemajor != FILTER_BOOTS ) {
++			goto *db_item_TZ500_K
++		}
++	}
++	if ( flttypeminor != (0 /*!!!@[FILTER_NOTHING @@@ FILTER_NOTHING]@!!! */) ) {
++		if ( flttypeminor != FILTER_BOOTS_HEAVY ) {
++			goto *db_item_TZ500_K
++		}
++	}
++	if ( filtermax != 0 ) {
++		dbtmp = 1
++		repeat filtermax
++			if ( instr(filter_item(ITEM_ID_LAZASYEEL), 0, filtern(cnt)) == (-1) ) {
++				dbtmp = 0
++				break
++			}
++		loop
++		if ( dbtmp == 0 ) {
++			goto *db_item_TZ500_K
++		}
++	}
++	dbsum += 1000000 / (1000 + abs(objlv - 30) * 10) + 1
++	dblist(0, dbmax) = 1321, dbsum
++	dbmax++
++
++*db_item_TZ500_K
+ 	if ( 10 > objlv ) {
+ 		goto *db_item_TZC_500
+ 	}
+ 	if ( fltselect != 0 ) {
+ 		goto *db_item_TZC_500
+@@ -43610,10 +44039,831 @@
+ 		dbid = 25
+ 	}
+ 	return
+ 
+ *db_item_set
++	if ( dbid == 1333 ) {
++		if ( dbmode == DBMODE_SET_STATS | dbmode == DBMODE_SET ) {
++			inv(INV_ITEM_DICE1, ci) = 9
++			inv(INV_ITEM_DICE2, ci) = 9
++			inv(INV_ITEM_ATTACK, ci) = -5
++			inv(INV_ITEM_MATERIAL, ci) = ITEM_MATERIAL_METAL
++			inv(INV_ITEM_VALUE, ci) = 33000
++			inv(INV_ITEM_WEIGHT, ci) = 5000
++		}
++		if ( dbmode == DBMODE_SET ) {
++			inv(INV_ITEM_SKILL_REF, ci) = SKILL_WEAPON_THROWING
++			inv(INV_ITEM_ID, ci) = ITEM_ID_DEVIL_SHOOT
++			inv(INV_ITEM_PIC, ci) = xy2pic(28, 39)
++			reftype = FILTER_RANGE
++			reftypeminor = FILTER_RANGE_ROCK_THROW
++			inv(INV_ITEM_NUM, ci) = 1
++			fixeditemenc = ENCHANT_PROC * EXT_ENCHANTMENT + ENCHANT_PROC_SPEED, 100, ENCHANT_RESISTANCE * EXT_ENCHANTMENT + SKILL_RES_COLD, 700, ENCHANT_RESISTANCE * EXT_ENCHANTMENT + SKILL_RES_FIRE, -200, ENCHANT_SKILL * EXT_ENCHANTMENT + SKILL_WEAPON_THROWING, 400, ENCHANT_ATTRIBUTE * EXT_ENCHANTMENT + SKILL_ATTR_DEX, 300, 0
++			ibitmod ITEM_BIT_PRECIOUS, ci, TRUE
++			inv(INV_ITEM_IDENTIFY_LEVEL, ci) = 500
++			fixlv = FIX_QUALITY_UNIQUE
++			return
++		}
++		if ( dbmode == DBMODE_REF ) {
++			ichargelevel = 0
++			infilterref = ""
++			reftype = FILTER_RANGE
++			return
++		}
++		if ( dbmode == DBMODE_REF_SPEC ) {
++			if ( dbspec == 5 ) {
++				return 24000
++			}
++			if ( dbspec == 9 ) {
++				return 24030
++			}
++			if ( dbspec == 20 ) {
++				return 33000
++			}
++			if ( dbspec == 19 ) {
++				return
++			}
++			if ( dbspec == 18 ) {
++				return 0
++			}
++			if ( dbspec == 7 ) {
++				return 50
++			}
++			if ( dbspec == 8 ) {
++				return 1000
++			}
++			return 0
++		}
++		if ( dbmode == DBMODE_DESC ) {
++			if ( jp ) {
++				description(0) = "パンジャンドラムの残骸から見つけたパンジャン胎児をヨーヨーに改造した、非パン道的な悪魔の武器。胎児なので内部に炸薬が無く爆発しないが、ロケット噴射はこの段階でも可能。紐で繋がれているとはいえ空中を疾走する様子はとても鮮やか。もしかすると不整地で迷走爆散する爆雷として産まれてくるよりも幸せだったのかもしれない。\n#～イルヴァ幻想辞典～"
++				description(1) = ""
++				description(2) = ""
++				description(3) = "紐で繋いだ投擲用武器だ。\n#～鑑定報告書：＜秘宝＞カテゴリ～"
++			}
++			else {
++				description(0) = ""
++				description(1) = ""
++				description(3) = ""
++			}
++			return
++		}
++		return 0
++	}
++	if ( dbid == 1332 ) {
++		if ( dbmode == DBMODE_SET_STATS | dbmode == DBMODE_SET ) {
++			inv(INV_ITEM_VALUE, ci) = 9000
++			inv(INV_ITEM_WEIGHT, ci) = 200
++		}
++		if ( dbmode == DBMODE_SET ) {
++			inv(INV_ITEM_ID, ci) = ITEM_ID_GLASSES
++			inv(INV_ITEM_PIC, ci) = xy2pic(22, 40)
++			reftype = FILTER_ITEM_TOOL
++			reftypeminor = (0 /*!!!@[FILTER_NOTHING @@@ FILTER_NOTHING]@!!! */)
++			inv(INV_ITEM_NUM, ci) = 1
++			fixeditemenc = 0
++			inv(INV_ITEM_EFFECT, ci) = 155
++			inv(INV_ITEM_IDENTIFY_LEVEL, ci) = 0
++			return
++		}
++		if ( dbmode == DBMODE_REF ) {
++			ichargelevel = 0
++			infilterref = ""
++			reftype = FILTER_ITEM_TOOL
++			return
++		}
++		if ( dbmode == DBMODE_REF_SPEC ) {
++			if ( dbspec == 5 ) {
++				return 59000
++			}
++			if ( dbspec == 9 ) {
++				return 99999
++			}
++			if ( dbspec == 20 ) {
++				return 9000
++			}
++			if ( dbspec == 19 ) {
++				return
++			}
++			if ( dbspec == 11 ) {
++				return 1
++			}
++			if ( dbspec == 18 ) {
++				return 0
++			}
++			if ( dbspec == 7 ) {
++				return 1
++			}
++			if ( dbspec == 8 ) {
++				return 1000
++			}
++			return 0
++		}
++		if ( dbmode == DBMODE_DESC ) {
++			if ( jp ) {
++				description(0) = "古代文明において視力の低下した人類が着用していたという矯正器具。様々なデザインがあり、現代では一種のオシャレアイテムとして認識されている。\n#～パルミア秋冬物コレクション～"
++				description(1) = "バックパックに存在するメガネを５つまでゲームから除外することで除外したメガネ１つにつき１１％のパワーゲージを得る。この効果はパワーゲージが０％の場合にのみ発動することができる。\n#～人を惹きつけるメガネの魔力～"
++				description(2) = ""
++				description(3) = "不思議な力を秘めたメガネだ。使うことができる(使い捨て)。\n#～鑑定報告書：＜用具＞カテゴリ～"
++			}
++			else {
++				description(0) = ""
++				description(1) = ""
++				description(3) = ""
++			}
++			return
++		}
++		return 0
++	}
++	if ( dbid == 1331 ) {
++		if ( dbmode == DBMODE_SET_STATS | dbmode == DBMODE_SET ) {
++			inv(INV_ITEM_VALUE, ci) = 30
++			inv(INV_ITEM_WEIGHT, ci) = 200
++		}
++		if ( dbmode == DBMODE_SET ) {
++			inv(INV_ITEM_ID, ci) = ITEM_ID_INVITATION_LETTER
++			inv(INV_ITEM_PIC, ci) = xy2pic(28, 38)
++			reftype = FILTER_JUNK
++			reftypeminor = (0 /*!!!@[FILTER_NOTHING @@@ FILTER_NOTHING]@!!! */)
++			inv(INV_ITEM_NUM, ci) = 1
++			fixeditemenc = 0
++			inv(INV_ITEM_IDENTIFY_LEVEL, ci) = 0
++			return
++		}
++		if ( dbmode == DBMODE_REF ) {
++			ichargelevel = 0
++			infilterref = ""
++			reftype = FILTER_JUNK
++			return
++		}
++		if ( dbmode == DBMODE_REF_SPEC ) {
++			if ( dbspec == 5 ) {
++				return 64000
++			}
++			if ( dbspec == 9 ) {
++				return 99999
++			}
++			if ( dbspec == 20 ) {
++				return 30
++			}
++			if ( dbspec == 19 ) {
++				return
++			}
++			if ( dbspec == 18 ) {
++				return 0
++			}
++			if ( dbspec == 7 ) {
++				return 1
++			}
++			if ( dbspec == 8 ) {
++				return 600
++			}
++			return 0
++		}
++		if ( dbmode == DBMODE_DESC ) {
++			if ( jp ) {
++				description(0) = "パーティーへ招待するための手紙。行きたくないのなら普通に断ればいいだけなのだが、受け取ると必要もないのになぜか無性に破りたくなってくる。\n#～超お手紙大全～"
++				description(1) = ""
++				description(2) = ""
++				description(3) = "渡すとカルマ低下せずに敵対する手紙だ。\n#～鑑定報告書：＜紙片＞カテゴリ～"
++			}
++			else {
++				description(0) = ""
++				description(1) = ""
++				description(3) = ""
++			}
++			return
++		}
++		return 0
++	}
++	if ( dbid == 1330 ) {
++		if ( dbmode == DBMODE_SET_STATS | dbmode == DBMODE_SET ) {
++			inv(INV_ITEM_VALUE, ci) = 30
++			inv(INV_ITEM_WEIGHT, ci) = 200
++		}
++		if ( dbmode == DBMODE_SET ) {
++			inv(INV_ITEM_ID, ci) = ITEM_ID_LOVE_LETTER
++			inv(INV_ITEM_PIC, ci) = xy2pic(28, 38)
++			reftype = FILTER_JUNK
++			reftypeminor = (0 /*!!!@[FILTER_NOTHING @@@ FILTER_NOTHING]@!!! */)
++			inv(INV_ITEM_NUM, ci) = 1
++			fixeditemenc = 0
++			inv(INV_ITEM_IDENTIFY_LEVEL, ci) = 0
++			return
++		}
++		if ( dbmode == DBMODE_REF ) {
++			ichargelevel = 0
++			infilterref = ""
++			reftype = FILTER_JUNK
++			return
++		}
++		if ( dbmode == DBMODE_REF_SPEC ) {
++			if ( dbspec == 5 ) {
++				return 64000
++			}
++			if ( dbspec == 9 ) {
++				return 99999
++			}
++			if ( dbspec == 20 ) {
++				return 30
++			}
++			if ( dbspec == 19 ) {
++				return
++			}
++			if ( dbspec == 18 ) {
++				return 0
++			}
++			if ( dbspec == 7 ) {
++				return 1
++			}
++			if ( dbspec == 8 ) {
++				return 600
++			}
++			return 0
++		}
++		if ( dbmode == DBMODE_DESC ) {
++			if ( jp ) {
++				description(0) = "溢れる想いを伝えるための手紙。相手にその気がなかった場合に晒しものにされるリスクがあるため、個人を特定できる表記を徹底的に避けている。これが現代イルヴァにおけるラブレターの定石である。\n#～超お手紙大全～"
++				description(1) = ""
++				description(2) = ""
++				description(3) = "渡す相手の友好度が重要になる手紙だ。\n#～鑑定報告書：＜紙片＞カテゴリ～"
++			}
++			else {
++				description(0) = ""
++				description(1) = ""
++				description(3) = ""
++			}
++			return
++		}
++		return 0
++	}
++	if ( dbid == 1329 ) {
++		if ( dbmode == DBMODE_SET_STATS | dbmode == DBMODE_SET ) {
++			inv(INV_ITEM_VALUE, ci) = 30
++			inv(INV_ITEM_WEIGHT, ci) = 200
++		}
++		if ( dbmode == DBMODE_SET ) {
++			inv(INV_ITEM_ID, ci) = ITEM_ID_WINNING_NOTIFICATION
++			inv(INV_ITEM_PIC, ci) = xy2pic(28, 38)
++			reftype = FILTER_JUNK
++			reftypeminor = (0 /*!!!@[FILTER_NOTHING @@@ FILTER_NOTHING]@!!! */)
++			inv(INV_ITEM_NUM, ci) = 1
++			fixeditemenc = 0
++			inv(INV_ITEM_IDENTIFY_LEVEL, ci) = 0
++			return
++		}
++		if ( dbmode == DBMODE_REF ) {
++			ichargelevel = 0
++			infilterref = ""
++			reftype = FILTER_JUNK
++			return
++		}
++		if ( dbmode == DBMODE_REF_SPEC ) {
++			if ( dbspec == 5 ) {
++				return 64000
++			}
++			if ( dbspec == 9 ) {
++				return 99999
++			}
++			if ( dbspec == 20 ) {
++				return 30
++			}
++			if ( dbspec == 19 ) {
++				return
++			}
++			if ( dbspec == 18 ) {
++				return 0
++			}
++			if ( dbspec == 7 ) {
++				return 1
++			}
++			if ( dbspec == 8 ) {
++				return 600
++			}
++			return 0
++		}
++		if ( dbmode == DBMODE_DESC ) {
++			if ( jp ) {
++				description(0) = "とても嬉しいことが書いてある手紙。嬉しすぎて、応募した覚えがないキャンペーンに当選したことになっていても気にならない。\n#～超お手紙大全～"
++				description(1) = "ご当選おめでとうございます！このたびはプラチナ硬貨１億枚プレゼントキャンペーンにご応募いただきありがとうございました。発送料は応募者負担であるため、金貨３千枚を３日以内に納税箱へお納めください。期限までに発送料が確認できなかった場合は当選の権利が失われますので、今すぐ納めに向かうことをお勧めします。\n#～手紙の文面～"
++				description(2) = ""
++				description(3) = "渡すとパワーゲージが上がる手紙だ。\n#～鑑定報告書：＜紙片＞カテゴリ～"
++			}
++			else {
++				description(0) = ""
++				description(1) = ""
++				description(3) = ""
++			}
++			return
++		}
++		return 0
++	}
++	if ( dbid == 1328 ) {
++		if ( dbmode == DBMODE_SET_STATS | dbmode == DBMODE_SET ) {
++			inv(INV_ITEM_VALUE, ci) = 30
++			inv(INV_ITEM_WEIGHT, ci) = 200
++		}
++		if ( dbmode == DBMODE_SET ) {
++			inv(INV_ITEM_ID, ci) = ITEM_ID_BUSINESS_LETTER
++			inv(INV_ITEM_PIC, ci) = xy2pic(28, 38)
++			reftype = FILTER_JUNK
++			reftypeminor = (0 /*!!!@[FILTER_NOTHING @@@ FILTER_NOTHING]@!!! */)
++			inv(INV_ITEM_NUM, ci) = 1
++			fixeditemenc = 0
++			inv(INV_ITEM_IDENTIFY_LEVEL, ci) = 0
++			return
++		}
++		if ( dbmode == DBMODE_REF ) {
++			ichargelevel = 0
++			infilterref = ""
++			reftype = FILTER_JUNK
++			return
++		}
++		if ( dbmode == DBMODE_REF_SPEC ) {
++			if ( dbspec == 5 ) {
++				return 64000
++			}
++			if ( dbspec == 9 ) {
++				return 99999
++			}
++			if ( dbspec == 20 ) {
++				return 30
++			}
++			if ( dbspec == 19 ) {
++				return
++			}
++			if ( dbspec == 18 ) {
++				return 0
++			}
++			if ( dbspec == 7 ) {
++				return 1
++			}
++			if ( dbspec == 8 ) {
++				return 600
++			}
++			return 0
++		}
++		if ( dbmode == DBMODE_DESC ) {
++			if ( jp ) {
++				description(0) = "所属組織や関係機関から送られてきた手紙。様々な用件やお知らせが書いてあるが、重要な物はあんまりない。\n#～超お手紙大全～"
++				description(1) = ""
++				description(2) = ""
++				description(3) = "渡してもなかなか読まれない手紙だ。\n#～鑑定報告書：＜紙片＞カテゴリ～"
++			}
++			else {
++				description(0) = ""
++				description(1) = ""
++				description(3) = ""
++			}
++			return
++		}
++		return 0
++	}
++	if ( dbid == 1327 ) {
++		if ( dbmode == DBMODE_SET_STATS | dbmode == DBMODE_SET ) {
++			inv(INV_ITEM_VALUE, ci) = 30
++			inv(INV_ITEM_WEIGHT, ci) = 200
++		}
++		if ( dbmode == DBMODE_SET ) {
++			inv(INV_ITEM_ID, ci) = ITEM_ID_FAN_LETTER
++			inv(INV_ITEM_PIC, ci) = xy2pic(28, 38)
++			reftype = FILTER_JUNK
++			reftypeminor = (0 /*!!!@[FILTER_NOTHING @@@ FILTER_NOTHING]@!!! */)
++			inv(INV_ITEM_NUM, ci) = 1
++			fixeditemenc = 0
++			inv(INV_ITEM_IDENTIFY_LEVEL, ci) = 0
++			return
++		}
++		if ( dbmode == DBMODE_REF ) {
++			ichargelevel = 0
++			infilterref = ""
++			reftype = FILTER_JUNK
++			return
++		}
++		if ( dbmode == DBMODE_REF_SPEC ) {
++			if ( dbspec == 5 ) {
++				return 64000
++			}
++			if ( dbspec == 9 ) {
++				return 99999
++			}
++			if ( dbspec == 20 ) {
++				return 30
++			}
++			if ( dbspec == 19 ) {
++				return
++			}
++			if ( dbspec == 18 ) {
++				return 0
++			}
++			if ( dbspec == 7 ) {
++				return 1
++			}
++			if ( dbspec == 8 ) {
++				return 600
++			}
++			return 0
++		}
++		if ( dbmode == DBMODE_DESC ) {
++			if ( jp ) {
++				description(0) = "熱烈なファンから送られてきた手紙。感謝や応援が盛り込まれているが、たまになんだか気持ち悪い物も紛れている。\n#～超お手紙大全～"
++				description(1) = ""
++				description(2) = ""
++				description(3) = "渡した相手の興味を惹く手紙だ。\n#～鑑定報告書：＜紙片＞カテゴリ～"
++			}
++			else {
++				description(0) = ""
++				description(1) = ""
++				description(3) = ""
++			}
++			return
++		}
++		return 0
++	}
++	if ( dbid == 1326 ) {
++		if ( dbmode == DBMODE_SET_STATS | dbmode == DBMODE_SET ) {
++			inv(INV_ITEM_VALUE, ci) = 30
++			inv(INV_ITEM_WEIGHT, ci) = 200
++		}
++		if ( dbmode == DBMODE_SET ) {
++			inv(INV_ITEM_ID, ci) = ITEM_ID_SUSPICIOUS_LETTER
++			inv(INV_ITEM_PIC, ci) = xy2pic(28, 38)
++			reftype = FILTER_JUNK
++			reftypeminor = (0 /*!!!@[FILTER_NOTHING @@@ FILTER_NOTHING]@!!! */)
++			inv(INV_ITEM_NUM, ci) = 1
++			fixeditemenc = 0
++			inv(INV_ITEM_IDENTIFY_LEVEL, ci) = 0
++			return
++		}
++		if ( dbmode == DBMODE_REF ) {
++			ichargelevel = 0
++			infilterref = ""
++			reftype = FILTER_JUNK
++			return
++		}
++		if ( dbmode == DBMODE_REF_SPEC ) {
++			if ( dbspec == 5 ) {
++				return 64000
++			}
++			if ( dbspec == 9 ) {
++				return 99999
++			}
++			if ( dbspec == 20 ) {
++				return 30
++			}
++			if ( dbspec == 19 ) {
++				return
++			}
++			if ( dbspec == 18 ) {
++				return 0
++			}
++			if ( dbspec == 7 ) {
++				return 1
++			}
++			if ( dbspec == 8 ) {
++				return 600
++			}
++			return 0
++		}
++		if ( dbmode == DBMODE_DESC ) {
++			if ( jp ) {
++				description(0) = "正気とは思えない文章が並んでいる手紙。だが心が弱った人間は信じ込んでしまう。\n#～超お手紙大全～"
++				description(1) = "※これは重大な警告です※ザナンの実権は皇帝ではなくある男が掌握しており、パルミア王もその傀儡となっています。ザナンとパルミアの国際的な主張は決して信用してはいけません。この巨大な陰謀に対抗するためには、私たちが国や種族の壁を越えて心をひとつにし、立派な姉へと覚醒する必要があります。姉波動を魂で理解し、共に愚弟愚妹を導いていきましょう。\n#～手紙の文面～"
++				description(2) = ""
++				description(3) = "渡した相手が混乱する手紙だ。\n#～鑑定報告書：＜紙片＞カテゴリ～"
++			}
++			else {
++				description(0) = ""
++				description(1) = ""
++				description(3) = ""
++			}
++			return
++		}
++		return 0
++	}
++	if ( dbid == 1325 ) {
++		if ( dbmode == DBMODE_SET_STATS | dbmode == DBMODE_SET ) {
++			inv(INV_ITEM_VALUE, ci) = 30
++			inv(INV_ITEM_WEIGHT, ci) = 200
++		}
++		if ( dbmode == DBMODE_SET ) {
++			inv(INV_ITEM_ID, ci) = ITEM_ID_CHAIN_LETTER_OF_MISFORTUNE
++			inv(INV_ITEM_PIC, ci) = xy2pic(28, 38)
++			reftype = FILTER_JUNK
++			reftypeminor = (0 /*!!!@[FILTER_NOTHING @@@ FILTER_NOTHING]@!!! */)
++			inv(INV_ITEM_NUM, ci) = 1
++			fixeditemenc = 0
++			inv(INV_ITEM_IDENTIFY_LEVEL, ci) = 0
++			return
++		}
++		if ( dbmode == DBMODE_REF ) {
++			ichargelevel = 0
++			infilterref = ""
++			reftype = FILTER_JUNK
++			return
++		}
++		if ( dbmode == DBMODE_REF_SPEC ) {
++			if ( dbspec == 5 ) {
++				return 64000
++			}
++			if ( dbspec == 9 ) {
++				return 99999
++			}
++			if ( dbspec == 20 ) {
++				return 30
++			}
++			if ( dbspec == 19 ) {
++				return
++			}
++			if ( dbspec == 18 ) {
++				return 0
++			}
++			if ( dbspec == 7 ) {
++				return 1
++			}
++			if ( dbspec == 8 ) {
++				return 600
++			}
++			return 0
++		}
++		if ( dbmode == DBMODE_DESC ) {
++			if ( jp ) {
++				description(0) = "誰かから送られてきた嫌な手紙。ほとんどの人は嫌な気分になるくらいでそこまで気にしないが、一部のとても不安になった人が連鎖して送ってしまう。世界のどこかにはこれをわざわざ何十通も収集して「自分はこれだけの不幸に打ち勝ってきた」とトロフィー扱いする者もいるらしい…。\n#～超お手紙大全～"
++				description(1) = "これは不幸の手紙といって、私のもとに来た死神です。読んでしまったあなたは４日以内に４人に同じ内容の手紙を送らなければなりません。不幸の手紙を止めた者には必ず災いが降りかかります。実際に、手紙を無視したサルギスタンさんは街に出没したモツヘグイに引っかかれて顔面の８割を喪失し、生きたまま腹を裂かれて内臓を食われるという結末を迎えました。\n#～手紙の文面～"
++				description(2) = ""
++				description(3) = "特定人物以外には受け取りを拒否される手紙だ。\n#～鑑定報告書：＜紙片＞カテゴリ～"
++			}
++			else {
++				description(0) = ""
++				description(1) = ""
++				description(3) = ""
++			}
++			return
++		}
++		return 0
++	}
++	if ( dbid == 1324 ) {
++		if ( dbmode == DBMODE_SET_STATS | dbmode == DBMODE_SET ) {
++			inv(INV_ITEM_DV, ci) = 9
++			inv(INV_ITEM_PV, ci) = 110
++			inv(INV_ITEM_MATERIAL, ci) = ITEM_MATERIAL_NANOMACHINE
++			inv(INV_ITEM_VALUE, ci) = 40000
++			inv(INV_ITEM_WEIGHT, ci) = 8000
++		}
++		if ( dbmode == DBMODE_SET ) {
++			inv(INV_ITEM_ID, ci) = ITEM_ID_EGELMAIL
++			inv(INV_ITEM_PIC, ci) = xy2pic(29, 41)
++			reftype = FILTER_ARMOR
++			reftypeminor = FILTER_ARMOR_HEAVY
++			inv(INV_ITEM_NUM, ci) = 1
++			fixeditemenc = ENCHANT_SKILL * EXT_ENCHANTMENT + SKILL_NORMAL_HEAVY_ARMOR, 250, ENCHANT_RESISTANCE * EXT_ENCHANTMENT + SKILL_RES_NERVE, 600, ENCHANT_ATTRIBUTE * EXT_ENCHANTMENT + SKILL_ATTR_CON, 500, 46, 100, 55, 100, 22, 100, 0
++			ibitmod ITEM_BIT_PRECIOUS, ci, TRUE
++			inv(INV_ITEM_IDENTIFY_LEVEL, ci) = 500
++			fixlv = FIX_QUALITY_UNIQUE
++			return
++		}
++		if ( dbmode == DBMODE_REF ) {
++			ichargelevel = 0
++			infilterref = ""
++			reftype = FILTER_ARMOR
++			return
++		}
++		if ( dbmode == DBMODE_REF_SPEC ) {
++			if ( dbspec == 5 ) {
++				return 16000
++			}
++			if ( dbspec == 9 ) {
++				return 16001
++			}
++			if ( dbspec == 20 ) {
++				return 40000
++			}
++			if ( dbspec == 19 ) {
++				return
++			}
++			if ( dbspec == 18 ) {
++				return 2
++			}
++			if ( dbspec == 7 ) {
++				return 60
++			}
++			if ( dbspec == 8 ) {
++				return 1000
++			}
++			return 0
++		}
++		if ( dbmode == DBMODE_DESC ) {
++			if ( jp ) {
++				description(0) = "細い触手が絡み合って形成されている輪鎧。勝手に動いて身体にジャストフィットするし、緊急時には触手が勝手に止血する。少し締め付けが強い気がするのと何か大事なものを吸われているような感覚があるのが難点。\n#～イルヴァ幻想辞典～"
++				description(1) = ""
++				description(2) = ""
++				description(3) = "束縛の悪魔の輪鎧だ。\n#～鑑定報告書：＜秘宝＞カテゴリ～"
++			}
++			else {
++				description(0) = ""
++				description(1) = ""
++				description(3) = ""
++			}
++			return
++		}
++		return 0
++	}
++	if ( dbid == 1323 ) {
++		if ( dbmode == DBMODE_SET_STATS | dbmode == DBMODE_SET ) {
++			inv(INV_ITEM_PV, ci) = 6
++			inv(INV_ITEM_MATERIAL, ci) = ITEM_MATERIAL_IRON
++			inv(INV_ITEM_VALUE, ci) = 40000
++			inv(INV_ITEM_WEIGHT, ci) = 100
++		}
++		if ( dbmode == DBMODE_SET ) {
++			inv(INV_ITEM_ID, ci) = ITEM_ID_ROATONING
++			inv(INV_ITEM_PIC, ci) = xy2pic(28, 41)
++			reftype = FILTER_ACCESSORY_RING
++			reftypeminor = FILTER_ACCESSORY_SMALL_RING
++			inv(INV_ITEM_NUM, ci) = 1
++			fixeditemenc = ENCHANT_SKILL * EXT_ENCHANTMENT + SKILL_NORMAL_TAILORING, 250, ENCHANT_RESISTANCE * EXT_ENCHANTMENT + SKILL_RES_POISON, 600, ENCHANT_ATTRIBUTE * EXT_ENCHANTMENT + SKILL_ATTR_MAG, 500, 85, 100, 75, 100, 0
++			ibitmod ITEM_BIT_PRECIOUS, ci, TRUE
++			inv(INV_ITEM_IDENTIFY_LEVEL, ci) = 500
++			fixlv = FIX_QUALITY_UNIQUE
++			return
++		}
++		if ( dbmode == DBMODE_REF ) {
++			ichargelevel = 0
++			infilterref = ""
++			reftype = FILTER_ACCESSORY_RING
++			return
++		}
++		if ( dbmode == DBMODE_REF_SPEC ) {
++			if ( dbspec == 5 ) {
++				return 32000
++			}
++			if ( dbspec == 9 ) {
++				return 32001
++			}
++			if ( dbspec == 20 ) {
++				return 40000
++			}
++			if ( dbspec == 19 ) {
++				return
++			}
++			if ( dbspec == 18 ) {
++				return 0
++			}
++			if ( dbspec == 7 ) {
++				return 60
++			}
++			if ( dbspec == 8 ) {
++				return 1000
++			}
++			return 0
++		}
++		if ( dbmode == DBMODE_DESC ) {
++			if ( jp ) {
++				description(0) = "邪悪な魔力を内包した指当て。装着していると様々な種類の毒が勝手に染み出してくる。古代の生物なら死ぬかもしれないが、現代イルヴァに適応した生物にとっては少しかぶれる程度の毒でしかない。かえって免疫力がつく。\n#～イルヴァ幻想辞典～"
++				description(1) = ""
++				description(2) = ""
++				description(3) = "疫病の悪魔の指当てだ。\n#～鑑定報告書：＜秘宝＞カテゴリ～"
++			}
++			else {
++				description(0) = ""
++				description(1) = ""
++				description(3) = ""
++			}
++			return
++		}
++		return 0
++	}
++	if ( dbid == 1322 ) {
++		if ( dbmode == DBMODE_SET_STATS | dbmode == DBMODE_SET ) {
++			inv(INV_ITEM_PV, ci) = 10
++			inv(INV_ITEM_MATERIAL, ci) = ITEM_MATERIAL_RUBYNUS
++			inv(INV_ITEM_VALUE, ci) = 40000
++			inv(INV_ITEM_WEIGHT, ci) = 600
++		}
++		if ( dbmode == DBMODE_SET ) {
++			inv(INV_ITEM_ID, ci) = ITEM_ID_INQTUAFFLER
++			inv(INV_ITEM_PIC, ci) = xy2pic(27, 41)
++			reftype = FILTER_ACCESSORY_AMULET
++			reftypeminor = FILTER_ACCESSORY_SMALL_AMULET
++			inv(INV_ITEM_NUM, ci) = 1
++			fixeditemenc = ENCHANT_SKILL * EXT_ENCHANTMENT + SKILL_NORMAL_MEDIUM_ARMOR, 250, ENCHANT_RESISTANCE * EXT_ENCHANTMENT + SKILL_RES_MIND, 600, ENCHANT_ATTRIBUTE * EXT_ENCHANTMENT + SKILL_ATTR_PER, 500, 44, 400, 64, 200, 0
++			ibitmod ITEM_BIT_PRECIOUS, ci, TRUE
++			inv(INV_ITEM_IDENTIFY_LEVEL, ci) = 500
++			fixlv = FIX_QUALITY_UNIQUE
++			return
++		}
++		if ( dbmode == DBMODE_REF ) {
++			ichargelevel = 0
++			infilterref = ""
++			reftype = FILTER_ACCESSORY_AMULET
++			return
++		}
++		if ( dbmode == DBMODE_REF_SPEC ) {
++			if ( dbspec == 5 ) {
++				return 34000
++			}
++			if ( dbspec == 9 ) {
++				return 34001
++			}
++			if ( dbspec == 20 ) {
++				return 40000
++			}
++			if ( dbspec == 19 ) {
++				return
++			}
++			if ( dbspec == 18 ) {
++				return 0
++			}
++			if ( dbspec == 7 ) {
++				return 60
++			}
++			if ( dbspec == 8 ) {
++				return 1000
++			}
++			return 0
++		}
++		if ( dbmode == DBMODE_DESC ) {
++			if ( jp ) {
++				description(0) = "マフラーのようなものが付いている首当て。ひらひらしているが結構頑丈であり、他者の感情を感じ取る機能もあるようだ。勝手に相手の心理的な死角に付け入ったり、勝手に相手の殺意に反応して防御に回ったりする。\n#～イルヴァ幻想辞典～"
++				description(1) = ""
++				description(2) = ""
++				description(3) = "復讐の悪魔の首当てだ。\n#～鑑定報告書：＜秘宝＞カテゴリ～"
++			}
++			else {
++				description(0) = ""
++				description(1) = ""
++				description(3) = ""
++			}
++			return
++		}
++		return 0
++	}
++	if ( dbid == 1321 ) {
++		if ( dbmode == DBMODE_SET_STATS | dbmode == DBMODE_SET ) {
++			inv(INV_ITEM_PV, ci) = 24
++			inv(INV_ITEM_MATERIAL, ci) = ITEM_MATERIAL_CRYSTAL
++			inv(INV_ITEM_VALUE, ci) = 40000
++			inv(INV_ITEM_WEIGHT, ci) = 3800
++		}
++		if ( dbmode == DBMODE_SET ) {
++			inv(INV_ITEM_ID, ci) = ITEM_ID_LAZASYEEL
++			inv(INV_ITEM_PIC, ci) = xy2pic(26, 41)
++			reftype = FILTER_BOOTS
++			reftypeminor = FILTER_BOOTS_HEAVY
++			inv(INV_ITEM_NUM, ci) = 1
++			fixeditemenc = ENCHANT_RESISTANCE * EXT_ENCHANTMENT + SKILL_RES_NETHER, 600, ENCHANT_ATTRIBUTE * EXT_ENCHANTMENT + SKILL_ATTR_CON, 200, ENCHANT_ATTRIBUTE * EXT_ENCHANTMENT + SKILL_ATTR_STR, 500, 66, 200, 32, 100, 0
++			ibitmod ITEM_BIT_PRECIOUS, ci, TRUE
++			inv(INV_ITEM_IDENTIFY_LEVEL, ci) = 500
++			fixlv = FIX_QUALITY_UNIQUE
++			return
++		}
++		if ( dbmode == DBMODE_REF ) {
++			ichargelevel = 0
++			infilterref = ""
++			reftype = FILTER_BOOTS
++			return
++		}
++		if ( dbmode == DBMODE_REF_SPEC ) {
++			if ( dbspec == 5 ) {
++				return 18000
++			}
++			if ( dbspec == 9 ) {
++				return 18001
++			}
++			if ( dbspec == 20 ) {
++				return 40000
++			}
++			if ( dbspec == 19 ) {
++				return
++			}
++			if ( dbspec == 18 ) {
++				return 4
++			}
++			if ( dbspec == 7 ) {
++				return 30
++			}
++			if ( dbspec == 8 ) {
++				return 1000
++			}
++			return 0
++		}
++		if ( dbmode == DBMODE_DESC ) {
++			if ( jp ) {
++				description(0) = "青い水晶のような装甲靴。足先も膝部分もやたらと尖っており、これらで蹴ると破壊力抜群。つま先立ちを強制されるが、勝手に浮くので足が痛くなることはない。\n#～イルヴァ幻想辞典～"
++				description(1) = ""
++				description(2) = ""
++				description(3) = "破壊の悪魔の装甲靴だ。\n#～鑑定報告書：＜秘宝＞カテゴリ～"
++			}
++			else {
++				description(0) = ""
++				description(1) = ""
++				description(3) = ""
++			}
++			return
++		}
++		return 0
++	}
+ 	if ( dbid == 1320 ) {
+ 		if ( dbmode == DBMODE_SET_STATS | dbmode == DBMODE_SET ) {
+ 			inv(INV_ITEM_VALUE, ci) = 4500
+ 			inv(INV_ITEM_WEIGHT, ci) = 3200
+ 		}
+@@ -50999,11 +52249,11 @@
+ 			return 0
+ 		}
+ 		if ( dbmode == DBMODE_DESC ) {
+ 			if ( jp ) {
+ 				description(0) = "テスカトリポカからこぼれ落ちた歪な結晶。通常のネフィア守護者が遺す欠片とは似て非なる物体。これ自体に魔力はないが、強力な触媒になる。\n#～イルヴァ幻想辞典～"
+-				description(1) = ""
++				description(1) = "「これを所持した状態の遺伝子を引き継ぐと、ＡＰと充填用魔力が増加した状態で始めることができる」\n#～周回者の殴り書き～"
+ 				description(2) = ""
+ 				description(3) = "能力を一定値まで上昇させる結晶。何度でも使用することができる。\n#～鑑定報告書：＜秘宝＞カテゴリ～"
+ 			}
+ 			else {
+ 				description(0) = ""
+@@ -51069,11 +52319,11 @@
+ 			return 0
+ 		}
+ 		if ( dbmode == DBMODE_DESC ) {
+ 			if ( jp ) {
+ 				description(0) = "異形の天使の体内から見つかった歪な結晶。通常のネフィア守護者が遺す欠片とは似て非なる物体。これ自体に魔力はないが、強力な触媒になる。\n#～イルヴァ幻想辞典～"
+-				description(1) = ""
++				description(1) = "「これを所持した状態の遺伝子を引き継ぐと、名声と深淵魔力が増加した状態で始めることができる」\n#～周回者の殴り書き～"
+ 				description(2) = ""
+ 				description(3) = "能力を一定値まで上昇させる結晶。何度でも使用することができる。\n#～鑑定報告書：＜秘宝＞カテゴリ～"
+ 			}
+ 			else {
+ 				description(0) = ""
+@@ -51139,11 +52389,11 @@
+ 			return 0
+ 		}
+ 		if ( dbmode == DBMODE_DESC ) {
+ 			if ( jp ) {
+ 				description(0) = "ゼームが保管していた歪な結晶。通常のネフィア守護者が遺す欠片とは似て非なる物体。これ自体に魔力はないが、強力な触媒になる。\n#～イルヴァ幻想辞典～"
+-				description(1) = ""
++				description(1) = "「これを所持した状態の遺伝子を引き継ぐと、全初期スキルが増加した状態で始めることができる」\n#～周回者の殴り書き～"
+ 				description(2) = ""
+ 				description(3) = "能力を一定値まで上昇させる結晶。何度でも使用することができる。\n#～鑑定報告書：＜秘宝＞カテゴリ～"
+ 			}
+ 			else {
+ 				description(0) = ""
+@@ -83734,14 +84984,14 @@
+ 			}
+ 			return 0
+ 		}
+ 		if ( dbmode == DBMODE_DESC ) {
+ 			if ( jp ) {
+-				description(0) = "見ているだけで不快な気分を感じる謎の宝石。使用することができるが、効果の程を確認した者はいないという。\n#～イルヴァ幻想辞典～"
+-				description(1) = ""
++				description(0) = "見ているだけで不快な気分を感じる謎の宝石。使用することができるが、嫌な感じがするだけ。この世には、知らないほうが幸せなものもある。\n#～イルヴァ幻想辞典～"
++				description(1) = "「これを所持した状態の遺伝子を引き継ぐと、ろくでもない光景を見ることができる」\n#～周回者の殴り書き～"
+ 				description(2) = ""
+-				description(3) = "使用することで、今後に何か変化をもたらす宝石だ。\n#～鑑定報告書：＜宝珠＞カテゴリ～"
++				description(3) = "何度でも使用することができるが使用しても意味がない宝石だ。\n#～鑑定報告書：＜宝珠＞カテゴリ～"
+ 			}
+ 			else {
+ 				description(0) = ""
+ 				description(1) = ""
+ 				description(3) = ""
+@@ -131206,10 +132456,36 @@
+ 		return 0
+ 	}
+ 	return -999
+ 
+ *db_setFilterItem
++	filter_item(ITEM_ID_DEVIL_SHOOT) = ""
++	rffilter_item(ITEM_ID_DEVIL_SHOOT) = ""
++	filter_item(ITEM_ID_GLASSES) = ""
++	rffilter_item(ITEM_ID_GLASSES) = ""
++	filter_item(ITEM_ID_INVITATION_LETTER) = ""
++	rffilter_item(ITEM_ID_INVITATION_LETTER) = ""
++	filter_item(ITEM_ID_LOVE_LETTER) = ""
++	rffilter_item(ITEM_ID_LOVE_LETTER) = ""
++	filter_item(ITEM_ID_WINNING_NOTIFICATION) = ""
++	rffilter_item(ITEM_ID_WINNING_NOTIFICATION) = ""
++	filter_item(ITEM_ID_BUSINESS_LETTER) = ""
++	rffilter_item(ITEM_ID_BUSINESS_LETTER) = ""
++	filter_item(ITEM_ID_FAN_LETTER) = ""
++	rffilter_item(ITEM_ID_FAN_LETTER) = ""
++	filter_item(ITEM_ID_SUSPICIOUS_LETTER) = ""
++	rffilter_item(ITEM_ID_SUSPICIOUS_LETTER) = ""
++	filter_item(ITEM_ID_CHAIN_LETTER_OF_MISFORTUNE) = ""
++	rffilter_item(ITEM_ID_CHAIN_LETTER_OF_MISFORTUNE) = ""
++	filter_item(ITEM_ID_EGELMAIL) = ""
++	rffilter_item(ITEM_ID_EGELMAIL) = ""
++	filter_item(ITEM_ID_ROATONING) = ""
++	rffilter_item(ITEM_ID_ROATONING) = ""
++	filter_item(ITEM_ID_INQTUAFFLER) = ""
++	rffilter_item(ITEM_ID_INQTUAFFLER) = ""
++	filter_item(ITEM_ID_LAZASYEEL) = ""
++	rffilter_item(ITEM_ID_LAZASYEEL) = ""
+ 	filter_item(ITEM_ID_TZ500_K) = ""
+ 	rffilter_item(ITEM_ID_TZ500_K) = ""
+ 	filter_item(ITEM_ID_TZC_500) = ""
+ 	rffilter_item(ITEM_ID_TZC_500) = ""
+ 	filter_item(ITEM_ID_TZ30_C) = ""
+@@ -133237,11 +134513,11 @@
+ 	filter_item(ITEM_ID_SOFT_BED) = ""
+ 	rffilter_item(ITEM_ID_SOFT_BED) = "/furniture/"
+ 	filter_item(ITEM_ID_FOOD_PROCESSOR) = "/sf/"
+ 	rffilter_item(ITEM_ID_FOOD_PROCESSOR) = "/furniture/"
+ 	filter_item(ITEM_ID_COFFIN) = ""
+-	rffilter_item(ITEM_ID_COFFIN) = "/furniture/"
++	rffilter_item(ITEM_ID_COFFIN) = "/furniture/coffin/"
+ 	filter_item(ITEM_ID_PLAIN_BED) = ""
+ 	rffilter_item(ITEM_ID_PLAIN_BED) = "/furniture/"
+ 	filter_item(ITEM_ID_GIANT_BED) = ""
+ 	rffilter_item(ITEM_ID_GIANT_BED) = "/furniture/"
+ 	filter_item(ITEM_ID_CLOTHES_CHEST) = ""
+@@ -133851,10 +135127,239 @@
+ 	filter_item(ITEM_ID_DUMMY) = ""
+ 	rffilter_item(ITEM_ID_DUMMY) = ""
+ 	return
+ 
+ *db_setItem
++	ilight(ITEM_ID_DEVIL_SHOOT) = LIGHT_TYPE_ITEM
++	ialphanameref(ITEM_ID_DEVIL_SHOOT) = ""
++	iorgweight(ITEM_ID_DEVIL_SHOOT) = 5000
++	if ( jp ) {
++		ioriginalnameref(ITEM_ID_DEVIL_SHOOT) = "《デビルシュート》"
++	}
++	else {
++		ioriginalnameref(ITEM_ID_DEVIL_SHOOT) = "<Devil Shoot>"
++		ioriginalnameref2(ITEM_ID_DEVIL_SHOOT) = ""
++	}
++	ipicref(ITEM_ID_DEVIL_SHOOT) = xy2pic(28, 39)
++	if ( jp ) {
++		iknownnameref(ITEM_ID_DEVIL_SHOOT) = "パンジャンヨーヨー"
++	}
++	else {
++		iknownnameref(ITEM_ID_DEVIL_SHOOT) = "panjanyoyo"
++	}
++	icolref(ITEM_ID_DEVIL_SHOOT) = COLOR_DEFAULT
++	ilight(ITEM_ID_GLASSES) = LIGHT_TYPE_NONE
++	ialphanameref(ITEM_ID_GLASSES) = ""
++	iorgweight(ITEM_ID_GLASSES) = 200
++	if ( jp ) {
++		ioriginalnameref(ITEM_ID_GLASSES) = "メガネ"
++	}
++	else {
++		ioriginalnameref(ITEM_ID_GLASSES) = "glasses"
++		ioriginalnameref2(ITEM_ID_GLASSES) = ""
++	}
++	ipicref(ITEM_ID_GLASSES) = xy2pic(22, 40)
++	iknownnameref(ITEM_ID_GLASSES) = ioriginalnameref(ITEM_ID_GLASSES)
++	icolref(ITEM_ID_GLASSES) = COLOR_RANDOM
++	ilight(ITEM_ID_INVITATION_LETTER) = LIGHT_TYPE_NONE
++	ialphanameref(ITEM_ID_INVITATION_LETTER) = ""
++	iorgweight(ITEM_ID_INVITATION_LETTER) = 200
++	if ( jp ) {
++		ioriginalnameref(ITEM_ID_INVITATION_LETTER) = "招待状"
++	}
++	else {
++		ioriginalnameref(ITEM_ID_INVITATION_LETTER) = "invitation letter"
++		ioriginalnameref2(ITEM_ID_INVITATION_LETTER) = ""
++	}
++	ipicref(ITEM_ID_INVITATION_LETTER) = xy2pic(28, 38)
++	if ( jp ) {
++		iknownnameref(ITEM_ID_INVITATION_LETTER) = "手紙"
++	}
++	else {
++		iknownnameref(ITEM_ID_INVITATION_LETTER) = "letter"
++	}
++	icolref(ITEM_ID_INVITATION_LETTER) = COLOR_DEFAULT
++	ilight(ITEM_ID_LOVE_LETTER) = LIGHT_TYPE_NONE
++	ialphanameref(ITEM_ID_LOVE_LETTER) = ""
++	iorgweight(ITEM_ID_LOVE_LETTER) = 200
++	if ( jp ) {
++		ioriginalnameref(ITEM_ID_LOVE_LETTER) = "ラブレター"
++	}
++	else {
++		ioriginalnameref(ITEM_ID_LOVE_LETTER) = "love letter"
++		ioriginalnameref2(ITEM_ID_LOVE_LETTER) = ""
++	}
++	ipicref(ITEM_ID_LOVE_LETTER) = xy2pic(28, 38)
++	if ( jp ) {
++		iknownnameref(ITEM_ID_LOVE_LETTER) = "手紙"
++	}
++	else {
++		iknownnameref(ITEM_ID_LOVE_LETTER) = "letter"
++	}
++	icolref(ITEM_ID_LOVE_LETTER) = COLOR_DEFAULT
++	ilight(ITEM_ID_WINNING_NOTIFICATION) = LIGHT_TYPE_NONE
++	ialphanameref(ITEM_ID_WINNING_NOTIFICATION) = ""
++	iorgweight(ITEM_ID_WINNING_NOTIFICATION) = 200
++	if ( jp ) {
++		ioriginalnameref(ITEM_ID_WINNING_NOTIFICATION) = "当選通知"
++	}
++	else {
++		ioriginalnameref(ITEM_ID_WINNING_NOTIFICATION) = "winning notification"
++		ioriginalnameref2(ITEM_ID_WINNING_NOTIFICATION) = ""
++	}
++	ipicref(ITEM_ID_WINNING_NOTIFICATION) = xy2pic(28, 38)
++	if ( jp ) {
++		iknownnameref(ITEM_ID_WINNING_NOTIFICATION) = "手紙"
++	}
++	else {
++		iknownnameref(ITEM_ID_WINNING_NOTIFICATION) = "letter"
++	}
++	icolref(ITEM_ID_WINNING_NOTIFICATION) = COLOR_DEFAULT
++	ilight(ITEM_ID_BUSINESS_LETTER) = LIGHT_TYPE_NONE
++	ialphanameref(ITEM_ID_BUSINESS_LETTER) = ""
++	iorgweight(ITEM_ID_BUSINESS_LETTER) = 200
++	if ( jp ) {
++		ioriginalnameref(ITEM_ID_BUSINESS_LETTER) = "ビジネスレター"
++	}
++	else {
++		ioriginalnameref(ITEM_ID_BUSINESS_LETTER) = "business letter"
++		ioriginalnameref2(ITEM_ID_BUSINESS_LETTER) = ""
++	}
++	ipicref(ITEM_ID_BUSINESS_LETTER) = xy2pic(28, 38)
++	if ( jp ) {
++		iknownnameref(ITEM_ID_BUSINESS_LETTER) = "手紙"
++	}
++	else {
++		iknownnameref(ITEM_ID_BUSINESS_LETTER) = "letter"
++	}
++	icolref(ITEM_ID_BUSINESS_LETTER) = COLOR_DEFAULT
++	ilight(ITEM_ID_FAN_LETTER) = LIGHT_TYPE_NONE
++	ialphanameref(ITEM_ID_FAN_LETTER) = ""
++	iorgweight(ITEM_ID_FAN_LETTER) = 200
++	if ( jp ) {
++		ioriginalnameref(ITEM_ID_FAN_LETTER) = "ファンレター"
++	}
++	else {
++		ioriginalnameref(ITEM_ID_FAN_LETTER) = "fan letter"
++		ioriginalnameref2(ITEM_ID_FAN_LETTER) = ""
++	}
++	ipicref(ITEM_ID_FAN_LETTER) = xy2pic(28, 38)
++	if ( jp ) {
++		iknownnameref(ITEM_ID_FAN_LETTER) = "手紙"
++	}
++	else {
++		iknownnameref(ITEM_ID_FAN_LETTER) = "letter"
++	}
++	icolref(ITEM_ID_FAN_LETTER) = COLOR_DEFAULT
++	ilight(ITEM_ID_SUSPICIOUS_LETTER) = LIGHT_TYPE_NONE
++	ialphanameref(ITEM_ID_SUSPICIOUS_LETTER) = ""
++	iorgweight(ITEM_ID_SUSPICIOUS_LETTER) = 200
++	if ( jp ) {
++		ioriginalnameref(ITEM_ID_SUSPICIOUS_LETTER) = "怪文書"
++	}
++	else {
++		ioriginalnameref(ITEM_ID_SUSPICIOUS_LETTER) = "suspicious letter"
++		ioriginalnameref2(ITEM_ID_SUSPICIOUS_LETTER) = ""
++	}
++	ipicref(ITEM_ID_SUSPICIOUS_LETTER) = xy2pic(28, 38)
++	if ( jp ) {
++		iknownnameref(ITEM_ID_SUSPICIOUS_LETTER) = "手紙"
++	}
++	else {
++		iknownnameref(ITEM_ID_SUSPICIOUS_LETTER) = "letter"
++	}
++	icolref(ITEM_ID_SUSPICIOUS_LETTER) = COLOR_DEFAULT
++	ilight(ITEM_ID_CHAIN_LETTER_OF_MISFORTUNE) = LIGHT_TYPE_NONE
++	ialphanameref(ITEM_ID_CHAIN_LETTER_OF_MISFORTUNE) = ""
++	iorgweight(ITEM_ID_CHAIN_LETTER_OF_MISFORTUNE) = 200
++	if ( jp ) {
++		ioriginalnameref(ITEM_ID_CHAIN_LETTER_OF_MISFORTUNE) = "不幸の手紙"
++	}
++	else {
++		ioriginalnameref(ITEM_ID_CHAIN_LETTER_OF_MISFORTUNE) = "chain letter of misfortune"
++		ioriginalnameref2(ITEM_ID_CHAIN_LETTER_OF_MISFORTUNE) = ""
++	}
++	ipicref(ITEM_ID_CHAIN_LETTER_OF_MISFORTUNE) = xy2pic(28, 38)
++	if ( jp ) {
++		iknownnameref(ITEM_ID_CHAIN_LETTER_OF_MISFORTUNE) = "手紙"
++	}
++	else {
++		iknownnameref(ITEM_ID_CHAIN_LETTER_OF_MISFORTUNE) = "letter"
++	}
++	icolref(ITEM_ID_CHAIN_LETTER_OF_MISFORTUNE) = COLOR_DEFAULT
++	ilight(ITEM_ID_EGELMAIL) = LIGHT_TYPE_ITEM
++	ialphanameref(ITEM_ID_EGELMAIL) = ""
++	iorgweight(ITEM_ID_EGELMAIL) = 8000
++	if ( jp ) {
++		ioriginalnameref(ITEM_ID_EGELMAIL) = "《エゲル・メイル》"
++	}
++	else {
++		ioriginalnameref(ITEM_ID_EGELMAIL) = "<Egelmail>"
++		ioriginalnameref2(ITEM_ID_EGELMAIL) = ""
++	}
++	ipicref(ITEM_ID_EGELMAIL) = xy2pic(29, 41)
++	if ( jp ) {
++		iknownnameref(ITEM_ID_EGELMAIL) = "蠢く輪鎧"
++	}
++	else {
++		iknownnameref(ITEM_ID_EGELMAIL) = "wriggling ring armor"
++	}
++	icolref(ITEM_ID_EGELMAIL) = COLOR_DEFAULT
++	ilight(ITEM_ID_ROATONING) = LIGHT_TYPE_ITEM
++	ialphanameref(ITEM_ID_ROATONING) = ""
++	iorgweight(ITEM_ID_ROATONING) = 100
++	if ( jp ) {
++		ioriginalnameref(ITEM_ID_ROATONING) = "《ロアト・ニング》"
++	}
++	else {
++		ioriginalnameref(ITEM_ID_ROATONING) = "<Roatoning>"
++		ioriginalnameref2(ITEM_ID_ROATONING) = ""
++	}
++	ipicref(ITEM_ID_ROATONING) = xy2pic(28, 41)
++	if ( jp ) {
++		iknownnameref(ITEM_ID_ROATONING) = "汚れた指当て"
++	}
++	else {
++		iknownnameref(ITEM_ID_ROATONING) = "soiled armored ring"
++	}
++	icolref(ITEM_ID_ROATONING) = COLOR_DEFAULT
++	ilight(ITEM_ID_INQTUAFFLER) = LIGHT_TYPE_ITEM
++	ialphanameref(ITEM_ID_INQTUAFFLER) = ""
++	iorgweight(ITEM_ID_INQTUAFFLER) = 600
++	if ( jp ) {
++		ioriginalnameref(ITEM_ID_INQTUAFFLER) = "《インク・ツァフラ》"
++	}
++	else {
++		ioriginalnameref(ITEM_ID_INQTUAFFLER) = "<Inqtuaffler>"
++		ioriginalnameref2(ITEM_ID_INQTUAFFLER) = ""
++	}
++	ipicref(ITEM_ID_INQTUAFFLER) = xy2pic(27, 41)
++	if ( jp ) {
++		iknownnameref(ITEM_ID_INQTUAFFLER) = "赤い首当て"
++	}
++	else {
++		iknownnameref(ITEM_ID_INQTUAFFLER) = "cloth-lined neck guard"
++	}
++	icolref(ITEM_ID_INQTUAFFLER) = COLOR_DEFAULT
++	ilight(ITEM_ID_LAZASYEEL) = LIGHT_TYPE_ITEM
++	ialphanameref(ITEM_ID_LAZASYEEL) = ""
++	iorgweight(ITEM_ID_LAZASYEEL) = 3800
++	if ( jp ) {
++		ioriginalnameref(ITEM_ID_LAZASYEEL) = "《ラジャ・シェール》"
++	}
++	else {
++		ioriginalnameref(ITEM_ID_LAZASYEEL) = "<Lazasyeel>"
++		ioriginalnameref2(ITEM_ID_LAZASYEEL) = ""
++	}
++	ipicref(ITEM_ID_LAZASYEEL) = xy2pic(26, 41)
++	if ( jp ) {
++		iknownnameref(ITEM_ID_LAZASYEEL) = "鋭い装甲靴"
++	}
++	else {
++		iknownnameref(ITEM_ID_LAZASYEEL) = "sharp armored boots"
++	}
++	icolref(ITEM_ID_LAZASYEEL) = COLOR_DEFAULT
+ 	ilight(ITEM_ID_TZ500_K) = LIGHT_TYPE_NONE
+ 	ialphanameref(ITEM_ID_TZ500_K) = ""
+ 	iorgweight(ITEM_ID_TZ500_K) = 3200
+ 	if ( jp ) {
+ 		ioriginalnameref(ITEM_ID_TZ500_K) = "TZ500-K型麻酔銃"
+@@ -152750,17 +154255,22 @@
+ 		ioriginalnameref2(ITEM_ID_DUMMY) = ""
+ 	}
+ 	ipicref(ITEM_ID_DUMMY) = xy2pic(0, 1)
+ 	iknownnameref(ITEM_ID_DUMMY) = ioriginalnameref(ITEM_ID_DUMMY)
+ 	icolref(ITEM_ID_DUMMY) = COLOR_DEFAULT
+-	maxitemid = 1323
++	maxitemid = 1336
+ 	return
+ 	goto *recipe_ref
+ 
+ #deffunc calcweaponfix int calcweaponfix_itemid
+ 	pierce = 0
+ 	rangemap = 100, 20, 20, 20, 20, 20, 20, 20, 20, 20
++	if ( calcweaponfix_itemid == ITEM_ID_DEVIL_SHOOT ) {
++		pierce = 0
++		rangemap = 100, 150, 150, 150, 50, 50, 50, 10, 10
++		return 1
++	}
+ 	if ( calcweaponfix_itemid == ITEM_ID_TURAHAGI ) {
+ 		pierce = 0
+ 		rangemap = 100, 150, 150, 150, 50, 50, 50, 10, 10
+ 		return 1
+ 	}
+@@ -154092,11 +155602,24 @@
+ 		matval = SKILL_NORMAL_JEWELER, 1, 100
+ 		matneed = MATERIAL_PAPER, 2, MATERIAL_MEMORY_FRAGMENT, 1
+ 		return 1
+ 	}
+ 	return -1
+-	goto *label_3669
++	goto *label_3695
++
++
++
++
++
++
++
++
++
++
++
++
++
+ 
+ 
+ 
+ 
+ 
