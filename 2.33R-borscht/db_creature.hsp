@@ -44,7 +44,7 @@
 		goto *db_creature_ULTIMATE_PHOENIX
 	}
 	if ( flttypemajor != (0 /*!!!@[FILTER_NOTHING @@@ FILTER_NOTHING]@!!! */) ) {
-		if ( flttypemajor != 55 ) {
+		if ( flttypemajor != FILTER_RACE_SPIRIT_OF_PANTY ) {
 			goto *db_creature_ULTIMATE_PHOENIX
 		}
 	}
@@ -38590,7 +38590,7 @@
 			cdata(CDATA_AI_MOVE_FREQ, rc) = 20
 			cdata(CDATA_AI_DISTANCE, rc) = 4
 			cdata(CDATA_AI_SUB, rc) = 8
-			creaturepack = 55
+			creaturepack = FILTER_RACE_SPIRIT_OF_PANTY
 			cdata(STARTING_CDATA_ACT_MAIN, rc) = SKILL_SPELL_CHAOS_EYE
 			cdata(STARTING_CDATA_ACT_SUB, rc) = SKILL_SPELL_FEATHER
 			cdata(CDATA_ACT_INDEX, rc) = 11

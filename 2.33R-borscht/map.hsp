@@ -10652,7 +10652,7 @@
 	}
 	if ( mdata(MDATA_TYPE) == MAP_TYPE_TOWN ) {
 		if ( rnd(5) == 0 ) {
-			evadd 100
+			evadd EVENT_CARRIER_PIGEON
 		}
 	}
 	if ( gdata(GDATA_AREA) == AREA_AMUR_CAGE ) {

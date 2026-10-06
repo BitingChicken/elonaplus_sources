@@ -1,5 +1,5 @@
---- ./2.32.hsp	2026-10-05 16:07:45.725754798 +0100
-+++ ./2.33R.hsp	2026-10-05 16:07:45.778754209 +0100
+--- ./2.32.hsp	2026-10-06 22:37:52.191119002 +0100
++++ ./2.33R.hsp	2026-10-06 22:37:52.259118268 +0100
 @@ -1263,11 +1263,11 @@
  #define global	CREATURE_ID_HOLY_BEAST	349
  #define global	CREATURE_ID_FESTIVAL_TOURIST	350
@@ -36,7 +36,31 @@
  #define global	CHAR_STATE_DEAD	0
  #define global	CHAR_STATE_ALIVE	1
  #define global	CHAR_STATE_SPIRIT	2
-@@ -3391,10 +3403,11 @@
+@@ -2665,10 +2677,11 @@
+ #define global	EVENT_SHIP_MERCHANT	95
+ #define global	EVENT_LEAVING_BEGGAR_CAVE	96
+ #define global	EVENT_ELEA_REPARATION	97
+ #define global	EVENT_MATICK_SPAWN	98
+ #define global	EVENT_HARVEST_ENEMY	99
++#define global	EVENT_CARRIER_PIGEON	100
+ 
+ // Group: evitem
+ #define global	EVITEM_HEART_KING	11
+ #define global	EVITEM_HEART_MACHINE	12
+ #define global	EVITEM_HEART_GOD	13
+@@ -2879,10 +2892,11 @@
+ #define global	FILTER_RACE_KUSOSUGI	50
+ #define global	FILTER_RACE_SEAMONSTER_DOLPHIN_SOLDIER	51
+ #define global	FILTER_RACE_SEAMONSTER_DAGANOTOSUS	52
+ #define global	FILTER_RACE_RAT_GUNDEGU	53
+ #define global	FILTER_RACE_KAKOI_ANAGUMA	54
++#define global	FILTER_RACE_SPIRIT_OF_PANTY	55
+ 
+ // Group: fishdata
+ #define global	FISHDATA_PIC	0
+ #define global	FISHDATA_LEVEL	1
+ #define global	FISHDATA_RARE	2
+@@ -3391,10 +3405,11 @@
  #define global	GDATA_FLAG_MOST_EXPENSIVE_SHIP_THIS_MONTH	STARTING_GDATA_FLAG + 446
  #define global	GDATA_FLAG_SHIP_LAST_PORT	STARTING_GDATA_FLAG + 447
  #define global	GDATA_PRESERVE_PIETY	187
@@ -48,7 +72,19 @@
  #define global	GDATAN_TEAM1	0
  #define global	GDATAN_TEAM2	1
  
-@@ -4559,11 +4572,11 @@
+@@ -3734,10 +3749,11 @@
+ #define global	EFFECT_MIMIRROCRY	150
+ #define global	EFFECT_HAIRMET	151
+ #define global	EFFECT_GENOCIDE_TAIL	152
+ #define global	EFFECT_WARIBASI	153
+ #define global	EFFECT_TRANQ_RIFLE	154
++#define global	EFFECT_GLASSES	155
+ 
+ // Group: item_file
+ #define global	ITEM_ROLE_FILE_NONE2	-1
+ #define global	ITEM_ROLE_FILE_NONE	0
+ #define global	ITEM_ROLE_FILE_WANDER	1
+@@ -4559,11 +4575,11 @@
  #define global	ITEM_ID_SKULL_BOW	788
  #define global	ITEM_ID_POT_FOR_FUSION	789
  #define global	ITEM_ID_POT_OF_ALCHEMIST	790
@@ -61,7 +97,7 @@
  #define global	ITEM_ID_NEGATIVE_EDGE	794
  #define global	ITEM_ID_GAU_17_CUSTOM	795
  #define global	ITEM_ID_KANEITUUHOU	796
-@@ -5089,10 +5102,23 @@
+@@ -5089,10 +5105,23 @@
  #define global	ITEM_ID_WARIBASI	1316
  #define global	ITEM_ID_TZ_30	1317
  #define global	ITEM_ID_TZ30_C	1318
@@ -85,7 +121,7 @@
  #define global	ITEM_KNOWN_NONE	0
  #define global	ITEM_KNOWN_NAME	1
  #define global	ITEM_KNOWN_QUALITY	2
-@@ -5983,10 +6009,11 @@
+@@ -5983,10 +6012,11 @@
  #define global	MAX_ROLE_GUEST	3000
  #define global	ROLE_BOUNTY_HUNTER	24
  #define global	ROLE_GUEST_HOUSEMATE	2007

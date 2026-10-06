@@ -1,6 +1,6 @@
 diff -U5 --recursive -x 'db_creature*' -x 'db_item*' '-I\*label_' ../2.32-borscht/action.hsp ../2.33R-borscht/action.hsp
 --- ../2.32-borscht/action.hsp	2026-10-05 12:57:05.244249375 +0100
-+++ ../2.33R-borscht/action.hsp	2026-10-05 15:46:03.898530504 +0100
++++ ../2.33R-borscht/action.hsp	2026-10-06 22:37:52.382116942 +0100
 @@ -9131,10 +9131,52 @@
  		gosub *charaRefresh
  		gosub *calcBurdenPc
@@ -56,7 +56,7 @@ diff -U5 --recursive -x 'db_creature*' -x 'db_item*' '-I\*label_' ../2.32-borsch
  		}
 diff -U5 --recursive -x 'db_creature*' -x 'db_item*' '-I\*label_' ../2.32-borscht/ai.hsp ../2.33R-borscht/ai.hsp
 --- ../2.32-borscht/ai.hsp	2026-10-05 12:57:05.274249049 +0100
-+++ ../2.33R-borscht/ai.hsp	2026-10-05 15:46:06.816503219 +0100
++++ ../2.33R-borscht/ai.hsp	2026-10-06 22:37:52.417116565 +0100
 @@ -842,26 +842,28 @@
  			}
  		}
@@ -148,7 +148,7 @@ diff -U5 --recursive -x 'db_creature*' -x 'db_item*' '-I\*label_' ../2.32-borsch
  				}
 diff -U5 --recursive -x 'db_creature*' -x 'db_item*' '-I\*label_' ../2.32-borscht/calculation.hsp ../2.33R-borscht/calculation.hsp
 --- ../2.32-borscht/calculation.hsp	2026-10-05 12:57:05.303248734 +0100
-+++ ../2.33R-borscht/calculation.hsp	2026-10-05 15:46:07.418497590 +0100
++++ ../2.33R-borscht/calculation.hsp	2026-10-06 22:37:52.428116447 +0100
 @@ -2117,12 +2117,16 @@
  	}
  	if ( cdata(CDATA_CONDITION_BLEED, r1) > 0 ) {
@@ -169,7 +169,7 @@ diff -U5 --recursive -x 'db_creature*' -x 'db_item*' '-I\*label_' ../2.32-borsch
  		}
 diff -U5 --recursive -x 'db_creature*' -x 'db_item*' '-I\*label_' ../2.32-borscht/chara_func.hsp ../2.33R-borscht/chara_func.hsp
 --- ../2.32-borscht/chara_func.hsp	2026-10-05 12:57:05.339248343 +0100
-+++ ../2.33R-borscht/chara_func.hsp	2026-10-05 15:46:07.940492709 +0100
++++ ../2.33R-borscht/chara_func.hsp	2026-10-06 22:37:52.436116360 +0100
 @@ -6815,442 +6815,447 @@
  		}
  		if ( dmghp_charid != CHARA_PLAYER ) {
@@ -1010,7 +1010,7 @@ diff -U5 --recursive -x 'db_creature*' -x 'db_item*' '-I\*label_' ../2.32-borsch
  		locvar_dmgmp_d = -cdata(CDATA_MP, dmgmp_charid) * 400 / (100 + sdata(SKILL_NORMAL_MAGIC_CAPACITY, dmgmp_charid) * 10)
 diff -U5 --recursive -x 'db_creature*' -x 'db_item*' '-I\*label_' ../2.32-borscht/chara.hsp ../2.33R-borscht/chara.hsp
 --- ../2.32-borscht/chara.hsp	2026-10-05 12:57:05.321248538 +0100
-+++ ../2.33R-borscht/chara.hsp	2026-10-05 15:46:08.014492017 +0100
++++ ../2.33R-borscht/chara.hsp	2026-10-06 22:37:52.444116274 +0100
 @@ -2398,10 +2398,13 @@
  		cdata(CDATA_PIC, rc) = 905 + (rnd(26) + 2) * 1000
  	}
@@ -1154,7 +1154,7 @@ diff -U5 --recursive -x 'db_creature*' -x 'db_item*' '-I\*label_' ../2.32-borsch
  		cdatan(CDATAN_FAKE_CLASS, rc) = lang("–œŽ–‰®", "Handyman")
 diff -U5 --recursive -x 'db_creature*' -x 'db_item*' '-I\*label_' ../2.32-borscht/chat.hsp ../2.33R-borscht/chat.hsp
 --- ../2.32-borscht/chat.hsp	2026-10-05 12:57:05.403247648 +0100
-+++ ../2.33R-borscht/chat.hsp	2026-10-05 15:46:08.067491522 +0100
++++ ../2.33R-borscht/chat.hsp	2026-10-06 22:37:52.505115616 +0100
 @@ -1012,10 +1012,100 @@
  			}
  		}
@@ -1942,7 +1942,7 @@ diff -U5 --recursive -x 'db_creature*' -x 'db_item*' '-I\*label_' ../2.32-borsch
  				loop
 diff -U5 --recursive -x 'db_creature*' -x 'db_item*' '-I\*label_' ../2.32-borscht/chips.hsp ../2.33R-borscht/chips.hsp
 --- ../2.32-borscht/chips.hsp	2026-10-05 12:57:05.648244987 +0100
-+++ ../2.33R-borscht/chips.hsp	2026-10-05 15:46:08.098491232 +0100
++++ ../2.33R-borscht/chips.hsp	2026-10-06 22:37:52.966110647 +0100
 @@ -1164,21 +1164,21 @@
  	lightdata(LIGHTDATA_PIC, LIGHT_TYPE_WINDOW_RED) = 13, 0, 70, 35, 3, 10
  	sdim tname, 16, 38
@@ -1985,7 +1985,7 @@ diff -U5 --recursive -x 'db_creature*' -x 'db_item*' '-I\*label_' ../2.32-borsch
  		deco(0, 4 + cnt * 16) = 1, 0
 diff -U5 --recursive -x 'db_creature*' -x 'db_item*' '-I\*label_' ../2.32-borscht/command.hsp ../2.33R-borscht/command.hsp
 --- ../2.32-borscht/command.hsp	2026-10-05 12:57:05.670244748 +0100
-+++ ../2.33R-borscht/command.hsp	2026-10-05 15:46:08.111491110 +0100
++++ ../2.33R-borscht/command.hsp	2026-10-06 22:37:52.984110453 +0100
 @@ -14037,10 +14037,108 @@
  					snd SOUNDLIST_FAIL1
  					txt lang(name(tc) + "u" + s(f) + "v", cnvtalk(s(f)))
@@ -2143,7 +2143,7 @@ diff -U5 --recursive -x 'db_creature*' -x 'db_item*' '-I\*label_' ../2.32-borsch
  	noteadd fixtxt("E‹Æ       : " + classname, 30) + fixtxt("Š‘®      : " + guildname(), 32)
 diff -U5 --recursive -x 'db_creature*' -x 'db_item*' '-I\*label_' ../2.32-borscht/db_card.hsp ../2.33R-borscht/db_card.hsp
 --- ../2.32-borscht/db_card.hsp	2026-10-05 12:57:05.735244042 +0100
-+++ ../2.33R-borscht/db_card.hsp	2026-10-05 15:46:08.157490680 +0100
++++ ../2.33R-borscht/db_card.hsp	2026-10-06 22:37:53.093109278 +0100
 @@ -1,6 +1,162 @@
  *db_card
 +	if ( dbid == 1162 ) {
@@ -2430,7 +2430,7 @@ diff -U5 --recursive -x 'db_creature*' -x 'db_item*' '-I\*label_' ../2.32-borsch
  		cardreftype = 10
 diff -U5 --recursive -x 'db_creature*' -x 'db_item*' '-I\*label_' ../2.32-borscht/event.hsp ../2.33R-borscht/event.hsp
 --- ../2.32-borscht/event.hsp	2026-10-05 12:57:06.913231246 +0100
-+++ ../2.33R-borscht/event.hsp	2026-10-05 15:46:08.693485668 +0100
++++ ../2.33R-borscht/event.hsp	2026-10-06 22:37:55.416084238 +0100
 @@ -4674,10 +4674,13 @@
  		if ( gdata(STARTING_GDATA_RANK + cnt) >= 10000 ) {
  			continue
@@ -2461,7 +2461,7 @@ diff -U5 --recursive -x 'db_creature*' -x 'db_item*' '-I\*label_' ../2.32-borsch
  	if ( income(1) != 0 ) {
 diff -U5 --recursive -x 'db_creature*' -x 'db_item*' '-I\*label_' ../2.32-borscht/help.hsp ../2.33R-borscht/help.hsp
 --- ../2.32-borscht/help.hsp	2026-10-05 12:57:06.939230964 +0100
-+++ ../2.33R-borscht/help.hsp	2026-10-05 15:46:08.768484967 +0100
++++ ../2.33R-borscht/help.hsp	2026-10-06 22:37:55.429084098 +0100
 @@ -5510,11 +5510,11 @@
  	}
  	if ( mode == MODELIST_QUICK_START ) {
@@ -2600,7 +2600,7 @@ diff -U5 --recursive -x 'db_creature*' -x 'db_item*' '-I\*label_' ../2.32-borsch
  					break
 diff -U5 --recursive -x 'db_creature*' -x 'db_item*' '-I\*label_' ../2.32-borscht/init.hsp ../2.33R-borscht/init.hsp
 --- ../2.32-borscht/init.hsp	2026-10-05 12:57:06.985230464 +0100
-+++ ../2.33R-borscht/init.hsp	2026-10-05 15:46:08.795484714 +0100
++++ ../2.33R-borscht/init.hsp	2026-10-06 22:37:55.454083828 +0100
 @@ -6243,11 +6243,11 @@
  	goto *label_0059
  
@@ -2715,7 +2715,7 @@ diff -U5 --recursive -x 'db_creature*' -x 'db_item*' '-I\*label_' ../2.32-borsch
  		if ( ci >= 0 ) {
 diff -U5 --recursive -x 'db_creature*' -x 'db_item*' '-I\*label_' ../2.32-borscht/item_func.hsp ../2.33R-borscht/item_func.hsp
 --- ../2.32-borscht/item_func.hsp	2026-10-05 12:57:07.116229041 +0100
-+++ ../2.33R-borscht/item_func.hsp	2026-10-05 15:46:08.932483433 +0100
++++ ../2.33R-borscht/item_func.hsp	2026-10-06 22:37:55.490083440 +0100
 @@ -1056,10 +1056,20 @@
  				else {
  					locvar_itemowner_s += _furniture(inv(INV_ITEM_SUB_NAME, itemowner_itemid))
@@ -2772,7 +2772,7 @@ diff -U5 --recursive -x 'db_creature*' -x 'db_item*' '-I\*label_' ../2.32-borsch
  			if ( inv(INV_ITEM_PARAM2, itemname_itemid) != 0 ) {
 diff -U5 --recursive -x 'db_creature*' -x 'db_item*' '-I\*label_' ../2.32-borscht/item.hsp ../2.33R-borscht/item.hsp
 --- ../2.32-borscht/item.hsp	2026-10-05 12:57:07.092229302 +0100
-+++ ../2.33R-borscht/item.hsp	2026-10-05 15:46:08.991482882 +0100
++++ ../2.33R-borscht/item.hsp	2026-10-06 22:37:55.495083386 +0100
 @@ -1403,10 +1403,63 @@
  			if ( stat != 0 ) {
  				inv(INV_ITEM_PARAM1, ci) = 169
@@ -2897,7 +2897,7 @@ diff -U5 --recursive -x 'db_creature*' -x 'db_item*' '-I\*label_' ../2.32-borsch
  	if ( synccheck(cc, -1) ) {
 diff -U5 --recursive -x 'db_creature*' -x 'db_item*' '-I\*label_' ../2.32-borscht/main.hsp ../2.33R-borscht/main.hsp
 --- ../2.32-borscht/main.hsp	2026-10-05 12:57:07.131228878 +0100
-+++ ../2.33R-borscht/main.hsp	2026-10-05 15:46:08.992482872 +0100
++++ ../2.33R-borscht/main.hsp	2026-10-06 22:37:55.495083386 +0100
 @@ -182,11 +182,11 @@
  	if ( dbg_randseed != 0 ) {
  		randseed = dbg_randseed
@@ -2913,7 +2913,7 @@ diff -U5 --recursive -x 'db_creature*' -x 'db_item*' '-I\*label_' ../2.32-borsch
  	netrequest netload_filename
 diff -U5 --recursive -x 'db_creature*' -x 'db_item*' '-I\*label_' ../2.32-borscht/map.hsp ../2.33R-borscht/map.hsp
 --- ../2.32-borscht/map.hsp	2026-10-05 12:57:07.139228791 +0100
-+++ ../2.33R-borscht/map.hsp	2026-10-05 15:46:09.095481909 +0100
++++ ../2.33R-borscht/map.hsp	2026-10-06 22:37:55.542082880 +0100
 @@ -538,10 +538,15 @@
  						chara_vanquish cnt
  					}
@@ -2976,7 +2976,7 @@ diff -U5 --recursive -x 'db_creature*' -x 'db_item*' '-I\*label_' ../2.32-borsch
  	}
 +	if ( mdata(MDATA_TYPE) == MAP_TYPE_TOWN ) {
 +		if ( rnd(5) == 0 ) {
-+			evadd 100
++			evadd EVENT_CARRIER_PIGEON
 +		}
 +	}
  	if ( gdata(GDATA_AREA) == AREA_AMUR_CAGE ) {
@@ -2986,7 +2986,7 @@ diff -U5 --recursive -x 'db_creature*' -x 'db_item*' '-I\*label_' ../2.32-borsch
  		if ( gdata(GDATA_LEVEL) == 11 ) {
 diff -U5 --recursive -x 'db_creature*' -x 'db_item*' '-I\*label_' ../2.32-borscht/module.hsp ../2.33R-borscht/module.hsp
 --- ../2.32-borscht/module.hsp	2026-10-05 12:57:07.237227726 +0100
-+++ ../2.33R-borscht/module.hsp	2026-10-05 15:46:09.291480077 +0100
++++ ../2.33R-borscht/module.hsp	2026-10-06 22:37:55.601082244 +0100
 @@ -3547,11 +3547,11 @@
  						if ( cdata(CDATA_ID, locvar_cell_draw_c) == CREATURE_ID_CRYSTALIAN & cdata(CDATA_PIC, locvar_cell_draw_c) >= xy2pic(31, 33) ) {
  							pos locvar_cell_draw_dx, locvar_cell_draw_dy - 15
@@ -3066,7 +3066,7 @@ diff -U5 --recursive -x 'db_creature*' -x 'db_item*' '-I\*label_' ../2.32-borsch
  								}
 diff -U5 --recursive -x 'db_creature*' -x 'db_item*' '-I\*label_' ../2.32-borscht/proc.hsp ../2.33R-borscht/proc.hsp
 --- ../2.32-borscht/proc.hsp	2026-10-05 12:57:07.301227031 +0100
-+++ ../2.33R-borscht/proc.hsp	2026-10-05 15:46:09.429478786 +0100
++++ ../2.33R-borscht/proc.hsp	2026-10-06 22:37:55.661081597 +0100
 @@ -9773,23 +9773,13 @@
  							}
  						}
@@ -3110,7 +3110,7 @@ diff -U5 --recursive -x 'db_creature*' -x 'db_item*' '-I\*label_' ../2.32-borsch
  		_switch_sw++
 diff -U5 --recursive -x 'db_creature*' -x 'db_item*' '-I\*label_' ../2.32-borscht/screen.hsp ../2.33R-borscht/screen.hsp
 --- ../2.32-borscht/screen.hsp	2026-10-05 12:57:07.405225901 +0100
-+++ ../2.33R-borscht/screen.hsp	2026-10-05 15:46:09.513478001 +0100
++++ ../2.33R-borscht/screen.hsp	2026-10-06 22:37:55.943078558 +0100
 @@ -1152,11 +1152,11 @@
  			color 0, 0, 0
  			bmes "You can surrender by pressing the ESC key.", 235, 235, 235
@@ -3182,7 +3182,7 @@ diff -U5 --recursive -x 'db_creature*' -x 'db_item*' '-I\*label_' ../2.32-borsch
  			}
 diff -U5 --recursive -x 'db_creature*' -x 'db_item*' '-I\*label_' ../2.32-borscht/system.hsp ../2.33R-borscht/system.hsp
 --- ../2.32-borscht/system.hsp	2026-10-05 12:57:07.440225521 +0100
-+++ ../2.33R-borscht/system.hsp	2026-10-05 15:46:09.566477505 +0100
++++ ../2.33R-borscht/system.hsp	2026-10-06 22:37:56.021077717 +0100
 @@ -38,11 +38,11 @@
  	}
  	gdata(GDATA_TEMPORARY_FLAGS2) = 0

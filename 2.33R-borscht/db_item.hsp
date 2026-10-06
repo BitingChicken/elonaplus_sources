@@ -44121,7 +44121,7 @@
 			reftypeminor = (0 /*!!!@[FILTER_NOTHING @@@ FILTER_NOTHING]@!!! */)
 			inv(INV_ITEM_NUM, ci) = 1
 			fixeditemenc = 0
-			inv(INV_ITEM_EFFECT, ci) = 155
+			inv(INV_ITEM_EFFECT, ci) = EFFECT_GLASSES
 			inv(INV_ITEM_IDENTIFY_LEVEL, ci) = 0
 			return
 		}

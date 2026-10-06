@@ -1,5 +1,5 @@
 --- ../2.32-borscht/db_item.hsp	2026-10-05 12:57:06.414236667 +0100
-+++ ../2.33R-borscht/db_item.hsp	2026-10-05 15:46:08.569486828 +0100
++++ ../2.33R-borscht/db_item.hsp	2026-10-06 22:37:54.262096676 +0100
 @@ -2,10 +2,439 @@
  	if ( dbmode != DBMODE_FIND ) {
  		goto *db_item_set
@@ -526,7 +526,7 @@
 +			reftypeminor = (0 /*!!!@[FILTER_NOTHING @@@ FILTER_NOTHING]@!!! */)
 +			inv(INV_ITEM_NUM, ci) = 1
 +			fixeditemenc = 0
-+			inv(INV_ITEM_EFFECT, ci) = 155
++			inv(INV_ITEM_EFFECT, ci) = EFFECT_GLASSES
 +			inv(INV_ITEM_IDENTIFY_LEVEL, ci) = 0
 +			return
 +		}
